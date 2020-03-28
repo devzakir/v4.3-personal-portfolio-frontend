@@ -1,0 +1,21 @@
+// prefix
+@mixin prefix($property, $val) {
+    -webkit-#{$property}: $val;
+    -moz-#{$property}: $val;
+    -ms-#{$property}: $val;
+    #{$property}: $val;
+}
+
+// animation
+@mixin animate() {
+    @include prefix(transition, all .4s ease);
+}
+
+// animation property
+@mixin animateIt($animateProperty) {
+    @include prefix($animateProperty, all .4s ease);
+}
+
+.animate {
+    @include animate();
+}

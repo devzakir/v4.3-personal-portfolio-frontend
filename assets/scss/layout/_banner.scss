@@ -1,0 +1,98 @@
+
+.breadcrumb{
+    padding: 30px 0;
+}
+
+.banner-section{
+    position: relative;
+    background-image: url('~static/images/background.png');
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+    header{
+        // background-color: #245cd1;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 99;
+    }
+    .particle {
+        position: absolute;
+        border-radius: 50%;
+    }
+    
+    @for $i from 1 through 30 {
+        @keyframes particle-animation-#{$i} {
+            100% {
+                transform: translate3d((random(90) * 1vw), (random(90) * 1vh), (random(100) * 1px));
+            }
+        }        
+        .particle:nth-child(#{$i}){
+            animation: particle-animation-#{$i} 60s infinite;
+            $size: random(8) + 8 + px;
+            opacity: random(100)/100;
+            height: $size;
+            width: $size;
+            animation-delay: -$i * .1s;
+            transform: translate3d((random(90) * 1vw), (random(90) * 1vh), (random(100) * 1px));
+            background: hsl(random(360), 70%, 50%);
+        }
+    }
+}
+
+.banner{
+    min-height: 100vh;
+    .intro{
+        h1{
+            font-size: 45px;
+        }
+        h5{
+            font-size: 22px;
+        }
+        p{
+            max-width: 350px;
+            font-size: 16px;
+            margin-top: 16px;
+        }
+    }
+    .banner-img{
+        z-index: -1;
+    }
+}
+
+
+// Responsive 
+@media(max-width: 991px){
+    .banner-img {
+        display: none;
+    }
+}
+@media( min-width:768px ) and (max-width: 991px){
+    .banner-section header .menu-part .logo {
+        max-width: 40px;
+        margin-right: 10px;
+    }
+    
+    .banner-section header .menu-part li a {
+        padding: 20px 5px;
+        &.hire-me {
+            padding: 5px 10px;
+        }
+    } 
+}
+
+@media(max-width:767px){
+
+    .banner .intro h1 {
+        font-size: 35px;
+    }
+
+    .banner-preview{
+        display: none;
+    }
+}
+
+@media(max-width: 575px){
+    
+}

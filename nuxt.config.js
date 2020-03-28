@@ -28,6 +28,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/fontawesome.js', mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -45,6 +46,22 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    ['nuxt-fontawesome', {
+      imports: [
+       {
+         set: '@fortawesome/free-solid-svg-icons',
+         icons: ['fas']
+       },
+       {
+         set: '@fortawesome/free-regular-svg-icons',
+         icons: ['far']
+       },
+       {
+         set:'@fortawesome/free-brands-svg-icons',
+         icons: ['fab']
+       }
+     ]
+    }],
   ],
   /*
   ** Axios module configuration

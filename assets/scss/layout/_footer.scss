@@ -1,0 +1,56 @@
+
+.sub-footer{
+    padding: 100px 0;
+    background-color: rgba(41, 48, 68, 1);
+    color: $white;
+    ul>li{
+        list-style: square;
+        color: darken($white, 25%);
+        margin-left: 20px; 
+        @include animate();
+        &:hover{
+            margin-left: 25px;
+            color: $white;
+            a {
+                color: $white;
+            }
+        }
+        a{
+            color: darken($white, 25%);
+            
+        }
+    }
+}
+
+.footer-section{
+    background-color: #0E1833;
+    padding: 20px 0;
+    color: $white;
+    .footer-text{
+        p {
+            font-size: 13px;
+            color: darken($bgColor, 30%);
+        }
+        a{
+            color: darken($bgColor, 30%);
+        }
+    }
+}
+
+// Responsive 
+@media(max-width: 991px){
+    
+}
+@media( min-width:768px ) and (max-width: 991px){
+    
+}
+
+@media(max-width:767px){
+    .sub-footer .item {
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 575px){
+    
+}
