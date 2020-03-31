@@ -90,11 +90,21 @@ export default {
     methods: {
         async loadSetting(){
             const data = await this.$axios.$get(process.env.API_URL+'/setting');
+            this.$store.commit('setSetting', data);
             this.setting = data;
         }
     },
     mounted(){
-        this.loadSetting();
+        if(Object.keys(this.getSetting).length){
+            this.setting = this.getSetting;
+        }else {
+            this.loadSetting();
+        }
+    },
+    computed: {
+        getSetting(){
+            return this.$store.getters.getSetting;
+        }
     }
 }
 </script>
