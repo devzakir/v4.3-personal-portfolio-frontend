@@ -67,30 +67,22 @@
                             <p class="mb-0">My Introduction</p>
                         </div>
                         <div class="about-me">
-                            <nav>
-                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
-                                        role="tab" aria-controls="nav-home" aria-selected="true">Profile</a>
-                                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
-                                        role="tab" aria-controls="nav-profile" aria-selected="false">Skills</a>
-                                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact"
-                                        role="tab" aria-controls="nav-contact" aria-selected="false">Connect</a>
-                                </div>
-                            </nav>
-                            <div class="tab-content" id="nav-tabContent">
-                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                    <div class="intro">
-                                        <h3>Zakir Hossen</h3>
-                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure ipsum quidem beatae numquam doloremque consequuntur sequi, illum ab incidunt, quos quae adipisci suscipit accusantium labore ullam nihil nulla est soluta.</p>
-                                        <p class="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                            Assumenda, cum. Voluptates nostrum nisi voluptatum, distinctio suscipit quasi eveniet officiis consectetur facilis? Earum distinctio dolorem assumenda pariatur illo, perspiciatis ratione provident!</p>
-                                        <div class="buttons">
-                                            <a href="#resume">My Resume</a>
-                                            <a href="#resume">Hire Me</a>
-                                        </div>
+                            <ul class="tabs d-flex">
+                                <li><a href="#" @click.prevent="tabId = 123" :class="{'active': tabId == 123}"> Profile </a></li>
+                                <li><a href="#" @click.prevent="tabId = 124" :class="{'active': tabId == 124}"> Skills </a></li>
+                                <li><a href="#" @click.prevent="tabId = 125" :class="{'active': tabId == 125}"> Connect </a></li>
+                            </ul>
+                            <div class="tabs-content">
+                                <div class="intro" v-if="tabId == 123">
+                                    <h3>Zakir Hossen</h3>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure ipsum quidem beatae numquam doloremque consequuntur sequi, illum ab incidunt, quos quae adipisci suscipit accusantium labore ullam nihil nulla est soluta.</p>
+                                    <p class="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, cum. Voluptates nostrum nisi voluptatum, distinctio suscipit quasi eveniet officiis consectetur facilis? Earum distinctio dolorem assumenda pariatur illo, perspiciatis ratione provident!</p>
+                                    <div class="buttons">
+                                        <a href="#resume">My Resume</a>
+                                        <a href="#resume">Hire Me</a>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                <div class="skills" v-if="tabId == 124">
                                     <div class="skill-box">
                                         <h6>Front End</h6>
                                         <div>
@@ -126,47 +118,29 @@
                                             <span>Affiliate Marketing</span>
                                         </div>
                                     </div>
-
                                 </div>
-                                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                                    <div class="connect-info">
-                                        <div class="info-item">
-                                            <strong>Phone</strong>
-                                            <p class="mb-0">+880 1794 1724 79</p>
-                                        </div>
-                                        <div class="info-item">
-                                            <strong>Email</strong>
-                                            <p class="mb-0">web.zakirbd@gmail.com</p>
-                                        </div>
-                                        <div class="info-item">
-                                            <strong>Address</strong>
-                                            <p class="mb-0">Adabor, Dhaka-1207, Bangladesh</p>
-                                        </div>
-                                        <div class="info-item">
-                                            <ul class="find-me">
-                                                <li><a href="#"> <font-awesome-icon :icon="['fab', 'facebook-f']" /> </a></li>
-                                                <li><a href="#"> <font-awesome-icon :icon="['fab', 'linkedin-in']" /> </a></li>
-                                                <li><a href="#"> <font-awesome-icon :icon="['fab', 'github']" /> </a></li>
-                                                <li><a href="#"> <font-awesome-icon :icon="['fab', 'stack-overflow']" /> </a></li>
-                                                <li><a href="#"> <font-awesome-icon :icon="['fab', 'quora']" /> </a></li>
-                                            </ul>
-                                        </div>
+                                <div class="connect-info" v-if="tabId == 125">
+                                    <div class="info-item">
+                                        <strong>Phone</strong>
+                                        <p class="mb-0">{{ getSetting.phone }}</p>
                                     </div>
-                                </div>
-                            </div>
-                            <ul class="tabs d-flex">
-                                <li><a href="#" class="active"> Profile </a></li>
-                                <li><a href="#"> Skills </a></li>
-                                <li><a href="#"> Connect </a></li>
-                            </ul>
-                            <div class="tabs-content">
-                                <div class="intro">
-                                    <h3>Zakir Hossen</h3>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure ipsum quidem beatae numquam doloremque consequuntur sequi, illum ab incidunt, quos quae adipisci suscipit accusantium labore ullam nihil nulla est soluta.</p>
-                                    <p class="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, cum. Voluptates nostrum nisi voluptatum, distinctio suscipit quasi eveniet officiis consectetur facilis? Earum distinctio dolorem assumenda pariatur illo, perspiciatis ratione provident!</p>
-                                    <div class="buttons">
-                                        <a href="#resume">My Resume</a>
-                                        <a href="#resume">Hire Me</a>
+                                    <div class="info-item">
+                                        <strong>Email</strong>
+                                        <p class="mb-0">{{ getSetting.email }}</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <strong>Address</strong>
+                                        <p class="mb-0">{{ getSetting.address }}</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <ul class="find-me">
+                                            <li v-if="getSetting.facebook"><a :href="getSetting.facebook" target="_blank"> <font-awesome-icon :icon="['fab', 'facebook-f']" /> </a></li>
+                                            <li v-if="getSetting.linkedin"><a :href="getSetting.linkedin" target="_blank"> <font-awesome-icon :icon="['fab', 'linkedin-in']" /> </a></li>
+                                            <li v-if="getSetting.github"><a :href="getSetting.github" target="_blank"> <font-awesome-icon :icon="['fab', 'github']" /> </a></li>
+                                            <li v-if="getSetting.skype"><a :href="getSetting.skype" target="_blank"> <font-awesome-icon :icon="['fab', 'skype']" /> </a></li>
+                                            <li v-if="getSetting.stackoverflow"><a :href="getSetting.stackoverflow" target="_blank"> <font-awesome-icon :icon="['fab', 'stack-overflow']" /> </a></li>
+                                            <li v-if="getSetting.quora"><a :href="getSetting.quora" target="_blank"> <font-awesome-icon :icon="['fab', 'quora']" /> </a></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -301,45 +275,17 @@
                     </div>
                 </div>
                 <div class="row portfolio-list">
-                    <div class="col-12 col-md-6 col-lg-4">
+                    <div class="col-12 col-md-6 col-lg-4" v-for="portfolio in portfolios" :key="portfolio.id">
                         <div class="item">
                             <div class="preview">
-                                <img src="~/static/images/portfolio1.jpg" alt="" class="img-fluid">
+                                <img :src="updateImage(portfolio.image)" alt="" class="img-fluid">
                             </div>
                             <div class="details">
-                                <small>Category name</small>
-                                <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quidem!</h6>
+                                <small>{{ portfolio.category_name }}</small>
+                                <h6>{{ portfolio.title }}</h6>
                                 <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, iure quos perspiciatis blanditiis soluta quod tempora vitae esse dolores debitis, voluptatem, officia repella</p> -->
                                 <div class="text-center">
-                                    <a href="#">Preview</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="item">
-                            <div class="preview">
-                                <img src="~/static/images/portfolio1.jpg" alt="" class="img-fluid">
-                            </div>
-                            <div class="details">
-                                <small>Category name</small>
-                                <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quidem!</h6>
-                                <div class="text-center">
-                                    <a href="#">Preview</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="item">
-                            <div class="preview">
-                                <img src="~/static/images/portfolio1.jpg" alt="" class="img-fluid">
-                            </div>
-                            <div class="details">
-                                <small>Category name</small>
-                                <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quidem!</h6>
-                                <div class="text-center">
-                                    <a href="#">Preview</a>
+                                    <a :href="portfolio.link">Preview</a>
                                 </div>
                             </div>
                         </div>
@@ -371,53 +317,16 @@
                                 <li data-target="#testimonialSlider" data-slide-to="2"></li>
                             </ol>
                             <div class="carousel-inner">
-                                <div class="carousel-item active">
+                                <div class="carousel-item  active" v-for="testimonial in testimonials" :key="testimonial.id">
                                     <div class="item">
                                         <div class="client-avatar">
                                             <img src="~/static/images/my-photo.png" alt="" class="img-fluid">
                                         </div>
                                         <div class="testimonial-description">
-                                            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-                                                eligendi corrupti, deserunt voluptas nisi perspiciatis non voluptate
-                                                earum doloribus architecto nulla molestias natus quidem, ducimus quis
-                                                praesentium, aliquid possimus magni? </p>
+                                            <p> {{ testimonial.description }} </p>
                                             <div class="client-intro">
-                                                <h6> Zakir Hossen </h6>
-                                                <i>Chairman of MeshDroid</i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="item">
-                                        <div class="client-avatar">
-                                            <img src="~/static/images/my-photo.png" alt="" class="img-fluid">
-                                        </div>
-                                        <div class="testimonial-description">
-                                            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-                                                eligendi corrupti, deserunt voluptas nisi perspiciatis non voluptate
-                                                earum doloribus architecto nulla molestias natus quidem, ducimus quis
-                                                praesentium, aliquid possimus magni? </p>
-                                            <div class="client-intro">
-                                                <h6> Zakir Hossen </h6>
-                                                <i>Chairman of MeshDroid</i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="item">
-                                        <div class="client-avatar">
-                                            <img src="~/static/images/my-photo.png" alt="" class="img-fluid">
-                                        </div>
-                                        <div class="testimonial-description">
-                                            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-                                                eligendi corrupti, deserunt voluptas nisi perspiciatis non voluptate
-                                                earum doloribus architecto nulla molestias natus quidem, ducimus quis
-                                                praesentium, aliquid possimus magni? </p>
-                                            <div class="client-intro">
-                                                <h6> Zakir Hossen </h6>
-                                                <i>Chairman of MeshDroid</i>
+                                                <h6> {{ testimonial.name }} </h6>
+                                                <i>{{ testimonial.designation }}</i>
                                             </div>
                                         </div>
                                     </div>
@@ -444,23 +353,24 @@
                             <div class="details-left connect-info">
                                 <div class="info-item">
                                     <strong>Phone</strong>
-                                    <p class="mb-0">+880 1794 1724 79</p>
+                                    <p class="mb-0">{{ getSetting.phone }}</p>
                                 </div>
                                 <div class="info-item">
                                     <strong>Email</strong>
-                                    <p class="mb-0">web.zakirbd@gmail.com</p>
+                                    <p class="mb-0">{{ getSetting.email }}</p>
                                 </div>
                                 <div class="info-item">
                                     <strong>Address</strong>
-                                    <p class="mb-0">Adabor, Dhaka-1207, Bangladesh</p>
+                                    <p class="mb-0">{{ getSetting.address }}</p>
                                 </div>
                                 <div class="info-item">
                                     <ul class="find-me">
-                                        <li><a href="#"> <font-awesome-icon :icon="['fab', 'facebook-f']" /> </a></li>
-                                        <li><a href="#"> <font-awesome-icon :icon="['fab', 'linkedin-in']" /> </a></li>
-                                        <li><a href="#"> <font-awesome-icon :icon="['fab', 'github']" /> </a></li>
-                                        <li><a href="#"> <font-awesome-icon :icon="['fab', 'stack-overflow']" /> </a></li>
-                                        <li><a href="#"> <font-awesome-icon :icon="['fab', 'quora']" /> </a></li>
+                                        <li v-if="getSetting.facebook"><a :href="getSetting.facebook" target="_blank"> <font-awesome-icon :icon="['fab', 'facebook-f']" /> </a></li>
+                                        <li v-if="getSetting.linkedin"><a :href="getSetting.linkedin" target="_blank"> <font-awesome-icon :icon="['fab', 'linkedin-in']" /> </a></li>
+                                        <li v-if="getSetting.github"><a :href="getSetting.github" target="_blank"> <font-awesome-icon :icon="['fab', 'github']" /> </a></li>
+                                        <li v-if="getSetting.skype"><a :href="getSetting.skype" target="_blank"> <font-awesome-icon :icon="['fab', 'skype']" /> </a></li>
+                                        <li v-if="getSetting.stackoverflow"><a :href="getSetting.stackoverflow" target="_blank"> <font-awesome-icon :icon="['fab', 'stack-overflow']" /> </a></li>
+                                        <li v-if="getSetting.quora"><a :href="getSetting.quora" target="_blank"> <font-awesome-icon :icon="['fab', 'quora']" /> </a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -497,6 +407,37 @@ export default {
     layout: 'home',
     components: {
         'siteHeader': Header,
+    },
+    data(){
+        return {
+            tabId: 123,
+            portfolios: [],
+            next_page: '',
+            testimonials: [],
+        }
+    },
+    methods: {
+        async loadPortfolio(){
+            let data = await this.$axios.$get(process.env.API_URL+'/portfolio');
+            this.portfolios = data.data;
+            this.next_page = data.next_page_url;
+        },
+        async loadTestimonial(){
+            let data = await this.$axios.$get(process.env.API_URL+'/testimonial');
+            this.testimonials = data;
+        },
+        updateImage(image){
+            return image;
+        }
+    },
+    computed: {
+        getSetting(){
+            return this.$store.getters.getSetting;
+        }
+    },
+    mounted(){
+        this.loadPortfolio();
+        this.loadTestimonial();
     }
 }
 </script>
