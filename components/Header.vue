@@ -4,9 +4,9 @@
             <div class="row">
                 <div class="col-12">
                     <nav class="menu-part d-flex align-items-center">
-                        <a href="index.html" class="logo d-flex align-items-center">
+                        <nuxt-link :to="{name: 'index'}" class="logo d-flex align-items-center">
                             <img src="~static/images/logo.svg" alt="" class="img-fluid">
-                        </a>
+                        </nuxt-link>
                         <ul class="mobile-nav">
                             <li><nuxt-link :to="{name: 'index'}"> Home </nuxt-link></li>
                             <li><nuxt-link :to="{name: 'product'}"> Products </nuxt-link></li>
@@ -15,11 +15,12 @@
                             <li><nuxt-link :to="{name: 'blog'}"> Blog </nuxt-link></li>
                         </ul>
                         <ul class="right ml-auto">
-                            <li><a href="#"> <font-awesome-icon :icon="['fab', 'facebook-f']" /> </a></li>
-                            <li><a href="#"> <font-awesome-icon :icon="['fab', 'linkedin-in']" /> </a></li>
-                            <li><a href="#"> <font-awesome-icon :icon="['fab', 'github']" /> </a></li>
-                            <li><a href="#"> <font-awesome-icon :icon="['fab', 'stack-overflow']" /> </a></li>
-                            <li><a href="#"> <font-awesome-icon :icon="['fab', 'quora']" /> </a></li>
+                            <li v-if="setting.facebook"><a :href="setting.facebook" target="_blank"> <font-awesome-icon :icon="['fab', 'facebook-f']" /> </a></li>
+                            <li v-if="setting.linkedin"><a :href="setting.linkedin" target="_blank"> <font-awesome-icon :icon="['fab', 'linkedin-in']" /> </a></li>
+                            <li v-if="setting.github"><a :href="setting.github" target="_blank"> <font-awesome-icon :icon="['fab', 'github']" /> </a></li>
+                            <li v-if="setting.skype"><a :href="setting.skype" target="_blank"> <font-awesome-icon :icon="['fab', 'skype']" /> </a></li>
+                            <li v-if="setting.stackoverflow"><a :href="setting.stackoverflow" target="_blank"> <font-awesome-icon :icon="['fab', 'stack-overflow']" /> </a></li>
+                            <li v-if="setting.quora"><a :href="setting.quora" target="_blank"> <font-awesome-icon :icon="['fab', 'quora']" /> </a></li>
                             <li><a href="#" class="hire-me" data-toggle="modal" data-target="#hireMe"> Hire Me </a></li>
                         </ul>
                         <div class="menu-toggle">
@@ -81,7 +82,20 @@
 
 <script>
 export default {
-
+    data(){
+        return {
+            setting: [],
+        }
+    },
+    methods: {
+        async loadSetting(){
+            const data = await this.$axios.$get(process.env.API_URL+'/setting');
+            this.setting = data;
+        }
+    },
+    mounted(){
+        this.loadSetting();
+    }
 }
 </script>
 

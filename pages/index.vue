@@ -1,37 +1,7 @@
 <template>
     <div>
         <section class="banner-section">
-            <header>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <nav class="menu-part d-flex align-items-center">
-                                <a href="index.html" class="logo d-flex align-items-center">
-                                    <img src="~/static/images/logo.svg" alt="" class="img-fluid">
-                                </a>
-                                <ul class="mobile-nav">
-                                    <li><nuxt-link :to="{name: 'index'}"> Home </nuxt-link></li>
-                                    <li><nuxt-link :to="{name: 'product'}"> Products </nuxt-link></li>
-                                    <li><nuxt-link :to="{name: 'course'}"> Courses </nuxt-link></li>
-                                    <li><nuxt-link :to="{name: 'resource'}"> Resources </nuxt-link></li>
-                                    <li><nuxt-link :to="{name: 'blog'}"> Blog </nuxt-link></li>
-                                </ul>
-                                <ul class="right ml-auto">
-                                    <li><a href="#"> <font-awesome-icon :icon="['fab', 'facebook-f']" /> </a></li>
-                                    <li><a href="#"> <font-awesome-icon :icon="['fab', 'linkedin-in']" /> </a></li>
-                                    <li><a href="#"> <font-awesome-icon :icon="['fab', 'github']" /> </a></li>
-                                    <li><a href="#"> <font-awesome-icon :icon="['fab', 'stack-overflow']" /> </a></li>
-                                    <li><a href="#"> <font-awesome-icon :icon="['fab', 'quora']" /> </a></li>
-                                    <li><a href="#" class="hire-me" data-toggle="modal" data-target="#hireMe"> Hire Me </a></li>
-                                </ul>
-                                <div class="menu-toggle">
-                                    <font-awesome-icon :icon="['fas', 'bars']" />
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </header>
+            <siteHeader/>
             <div id="particle-container">
                 <div class="particle"></div>
                 <div class="particle"></div>
@@ -522,9 +492,12 @@
 </template>
 
 <script>
+import Header from '~/components/Header';
 export default {
     layout: 'home',
-    components: {}
+    components: {
+        'siteHeader': Header,
+    }
 }
 </script>
 
