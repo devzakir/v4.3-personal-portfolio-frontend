@@ -427,7 +427,11 @@ export default {
             this.testimonials = data;
         },
         updateImage(image){
-            return image;
+            if(image){
+                return this.$store.getters.updateImageURL(image);
+            }
+            console.log(updatedImage);
+            return updatedImage;
         },
         async loadMorePortfolio(){
             let data = await this.$axios.$get(this.next_page);
