@@ -361,21 +361,26 @@
                                 </div>
                             </div>
                             <div class="details-right">
-                                <form class="contact-form">
+                                <form class="contact-form" @submit.prevent="contact" @keydown="contactForm.onKeydown($event)">
+                                    <div class="alert alert-success" v-if="contactForm.successfull">Message sent successfully</div>
                                     <div class="form-input">
-                                        <input type="text" name="name" placeholder="Your name">
+                                        <input type="text" name="name" placeholder="Your name" v-model="contactForm.name" :class="{ 'is-invalid': contactForm.errors.has('name') }">
+                                        <has-error :form="contactForm" field="name"></has-error>
                                     </div>
                                     <div class="form-input">
-                                        <input type="text" name="email" placeholder="Your email">
+                                        <input type="text" name="email" placeholder="Your email" v-model="contactForm.email" :class="{ 'is-invalid': contactForm.errors.has('email') }">
+                                        <has-error :form="contactForm" field="email"></has-error>
                                     </div>
                                     <div class="form-input">
-                                        <input type="text" name="subject" placeholder="Contact purpose">
+                                        <input type="text" name="subject" placeholder="Contact purpose" v-model="contactForm.subject" :class="{ 'is-invalid': contactForm.errors.has('subject') }">
+                                        <has-error :form="contactForm" field="subject"></has-error>
                                     </div>
                                     <div class="form-input">
-                                        <textarea name="message" rows="4" placeholder="Your message"></textarea>
+                                        <textarea name="message" rows="4" placeholder="Your message" v-model="contactForm.message" :class="{ 'is-invalid': contactForm.errors.has('message') }"></textarea>
+                                        <has-error :form="contactForm" field="message"></has-error>
                                     </div>
                                     <div class="form-input text-center">
-                                        <button type="submit" class="send-message">Send Message</button>
+                                        <button type="submit" class="send-message" :disabled="contactForm.busy">Send Message</button>
                                     </div>
                                 </form>
                             </div>
@@ -400,6 +405,13 @@ export default {
             portfolios: [],
             next_page: '',
             testimonials: [],
+
+            contactForm: this.$vform({
+                name: '',
+                email: '',
+                subject: '',
+                message: '',
+            }),
         }
     },
     methods: {
@@ -425,7 +437,17 @@ export default {
                 this.portfolios.push(element); 
             });
             this.next_page = data.next_page_url;
-        }
+        },
+
+        async contact() {
+            try {
+                await this.contactForm.post(process.env.API_URL+'/contact');
+                // clear login form 
+                // this.resetLoginForm();
+            }catch(e){
+                
+            }
+        },
     },
     computed: {
         getSetting(){

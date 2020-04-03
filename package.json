@@ -19,12 +19,14 @@
     "@nuxtjs/axios": "^5.9.7",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
+    "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.0.0",
     "jquery": "^3.4.1",
     "nuxt": "^2.12.1",
     "nuxt-fontawesome": "^0.4.0",
-    "v-owl-carousel": "^1.0.8"
+    "v-owl-carousel": "^1.0.8",
+    "vform": "^1.0.1"
   },
   "devDependencies": {
     "node-sass": "^4.13.1",
