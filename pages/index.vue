@@ -362,7 +362,7 @@
                             </div>
                             <div class="details-right">
                                 <form class="contact-form" @submit.prevent="contact" @keydown="contactForm.onKeydown($event)">
-                                    <div class="alert alert-success" v-if="contactForm.successfull">Message sent successfully</div>
+                                    <div class="alert alert-success" v-if="contactForm.successful">Message sent successfully</div>
                                     <div class="form-input">
                                         <input type="text" name="name" placeholder="Your name" v-model="contactForm.name" :class="{ 'is-invalid': contactForm.errors.has('name') }">
                                         <has-error :form="contactForm" field="name"></has-error>
@@ -443,7 +443,10 @@ export default {
             try {
                 await this.contactForm.post(process.env.API_URL+'/contact');
                 // clear login form 
-                // this.resetLoginForm();
+                this.contactForm.name = '';
+                this.contactForm.email = '';
+                this.contactForm.subject = '';
+                this.contactForm.message = '';
             }catch(e){
                 
             }
