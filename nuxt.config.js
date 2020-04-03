@@ -28,7 +28,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/fontawesome.js', mode: 'client' }
+    { src: '~/plugins/slider.js', mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules
