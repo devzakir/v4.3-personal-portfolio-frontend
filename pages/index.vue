@@ -75,8 +75,9 @@
                             <div class="tabs-content">
                                 <div class="intro" v-if="tabId == 123">
                                     <h3>Zakir Hossen</h3>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure ipsum quidem beatae numquam doloremque consequuntur sequi, illum ab incidunt, quos quae adipisci suscipit accusantium labore ullam nihil nulla est soluta.</p>
-                                    <p class="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, cum. Voluptates nostrum nisi voluptatum, distinctio suscipit quasi eveniet officiis consectetur facilis? Earum distinctio dolorem assumenda pariatur illo, perspiciatis ratione provident!</p>
+                                    <p>Hi, I am Zakir. A passionate Web Developer from Dhaka, Bangladesh. I prefer to learn consistently to expand my knowledge.</p>
+                                    <p class="mt-3">I started my career as a Web Designer. After 3 years of consistently working in this field. It helped me gain lots of knowledge about business, marketing, and user experience. Also, I have tried a few more things to understand customer satisfaction, business engagement & marketing including e-commerce business, blogging, writing, YouTube & affiliate marketing.</p>
+                                    <p class="mt-3">Now I am working as a Full-stack Web Developer. I am able to design & develop responsive website using the latest technology & design trends. I have worked with many clients and a few local companies in the past few years. I am very interested to work with future projects and able to use my coding skills to make a super-fast and & super professional website.</p>
                                     <div class="buttons">
                                         <a href="#resume">My Resume</a>
                                         <a href="#resume">Hire Me</a>
@@ -192,9 +193,7 @@
                                         <img src="~/static/images/web-design.svg" alt="" class="img-fluid">
                                     </div>
                                     <h3>Web Design</h3>
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione debitis
-                                        deserunt repellat quas quia nesciunt, praesentium beatae consequatur officia
-                                        enim.</p>
+                                    <p>Professional and affordable web design service. I design website with your customer in mind using latest technology & modern design trends</p>
                                 </div>
                             </div>
                             <div class="item item2">
@@ -203,9 +202,7 @@
                                         <img src="~/static/images/web-development.svg" alt="" class="img-fluid">
                                     </div>
                                     <h3>Web Development</h3>
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione debitis
-                                        deserunt repellat quas quia nesciunt, praesentium beatae consequatur officia
-                                        enim.</p>
+                                    <p>Expert and experienced in web development. Proving all kinds of website development service from standard to complicated websites</p>
                                 </div>
                             </div>
                             <div class="item item3">
@@ -214,9 +211,7 @@
                                         <img src="~/static/images/web-application.svg" alt="" class="img-fluid">
                                     </div>
                                     <h3>Application</h3>
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione debitis
-                                        deserunt repellat quas quia nesciunt, praesentium beatae consequatur officia
-                                        enim.</p>
+                                    <p>Easy to use and trustworthy application development service. Fully functional and detailed report based custom solution for enterprise platform</p>
                                 </div>
                             </div>
                             <div class="item item4">
@@ -225,9 +220,7 @@
                                         <img src="~/static/images/wordpress.svg" alt="" class="img-fluid">
                                     </div>
                                     <h3>WordPress</h3>
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione debitis
-                                        deserunt repellat quas quia nesciunt, praesentium beatae consequatur officia
-                                        enim.</p>
+                                    <p>Looking for a powerful, compact and a high-performing WordPress website? You're in the right place. I am providing responsive and full functional wordpress website development services</p>
                                 </div>
                             </div>
                         </div>
@@ -294,7 +287,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="buttons text-center">
-                            <button type="button" @click="loadMorePortfolio()" :disabled="!next_page">Load More</button>
+                            <button type="button" v-if="portfolios.length > 6" @click="loadMorePortfolio()" :disabled="!next_page">Load More</button>
                         </div>
                     </div>
                 </div>
@@ -310,29 +303,22 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <div id="testimonialSlider" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#testimonialSlider" data-slide-to="0" class="active"></li>
-                                <li data-target="#testimonialSlider" data-slide-to="1"></li>
-                                <li data-target="#testimonialSlider" data-slide-to="2"></li>
-                            </ol>
-                            <div class="carousel-inner">
-                                <div class="carousel-item  active" v-for="testimonial in testimonials" :key="testimonial.id">
-                                    <div class="item">
-                                        <div class="client-avatar">
-                                            <img src="~/static/images/my-photo.png" alt="" class="img-fluid">
-                                        </div>
-                                        <div class="testimonial-description">
-                                            <p> {{ testimonial.description }} </p>
-                                            <div class="client-intro">
-                                                <h6> {{ testimonial.name }} </h6>
-                                                <i>{{ testimonial.designation }}</i>
-                                            </div>
-                                        </div>
+                        <no-ssr> <!-- important to add no-ssr-->
+                        <carousel v-if="testimonials.length" :autoplay="true" :nav="false" :items="1" :mouseDrag="true" :touchDrag="true" :dots="true">
+                            <div v-for="testimonial in testimonials" :key="testimonial.id" class="item">
+                                <div class="client-avatar">
+                                    <img src="~/static/images/my-photo.png" alt="" class="img-fluid">
+                                </div>
+                                <div class="testimonial-description">
+                                    <p> {{ testimonial.description }} </p>
+                                    <div class="client-intro">
+                                        <h6> {{ testimonial.name }} </h6>
+                                        <i>{{ testimonial.designation }}</i>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </carousel>
+                        </no-ssr>
                     </div>
                 </div>
             </div>

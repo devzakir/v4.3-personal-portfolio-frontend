@@ -31,12 +31,12 @@
     }
     .item{
         max-width: 800px;
-        background-color: $white;
+        background-color: $white; 
         padding: 30px 30px 30px;
         border-radius: 5px;
         position: relative;
         text-align: center;
-        margin:50px auto 70px;
+        margin:50px auto 20px;
         .client-avatar{
             width: 100px;
             height: 100px;
@@ -68,5 +68,17 @@
                 } 
             }
         }
+    }
+}
+
+
+.owl-theme .owl-dots .owl-dot{
+    &.active span {
+        background-color: $white !important;
+    }
+    span {
+        height: 15px !important;
+        width: 15px !important;
+        background-color: darken($white, 25%) !important;
     }
 }
