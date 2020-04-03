@@ -35,9 +35,12 @@
             margin-bottom: 30px;
             .preview{
                 height: 220px;
+                width: 100%;
                 overflow: hidden;
                 img{
-                    transform: scale(1.1);
+                    height: 220px;
+                    width: 100%;
+                    object-fit: cover;
                     @include animate();
                 }
             }
