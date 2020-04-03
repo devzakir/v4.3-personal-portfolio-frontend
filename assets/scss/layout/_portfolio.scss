@@ -87,7 +87,7 @@
             max-width: 300px;
         }
         .buttons{
-            a{
+            button, a{
                 &:hover{
                     box-shadow: none;
                     background-color: $white;

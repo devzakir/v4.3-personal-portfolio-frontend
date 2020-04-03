@@ -294,7 +294,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="buttons text-center">
-                            <a href="#">Load More</a>
+                            <button type="button" @click="loadMorePortfolio()" :disabled="!next_page">Load More</button>
                         </div>
                     </div>
                 </div>
@@ -428,6 +428,13 @@ export default {
         },
         updateImage(image){
             return image;
+        },
+        async loadMorePortfolio(){
+            let data = await this.$axios.$get(this.next_page);
+            data.data.forEach(element => {
+                this.portfolios.push(element); 
+            });
+            this.next_page = data.next_page_url;
         }
     },
     computed: {
