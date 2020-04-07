@@ -79,7 +79,7 @@
                                     <p class="mt-3">I started my career as a Web Designer. After 3 years of consistently working in this field. It helped me gain lots of knowledge about business, marketing, and user experience. Also, I have tried a few more things to understand customer satisfaction, business engagement & marketing including e-commerce business, blogging, writing, YouTube & affiliate marketing.</p>
                                     <p class="mt-3">Now I am working as a Full-stack Web Developer. I am able to design & develop responsive website using the latest technology & design trends. I have worked with many clients and a few local companies in the past few years. I am very interested to work with future projects and able to use my coding skills to make a super-fast and & super professional website.</p>
                                     <div class="buttons">
-                                        <a href="#resume">My Resume</a>
+                                        <a target="_blank" :href="getSetting.resume">My Resume</a>
                                         <a href="#resume">Hire Me</a>
                                     </div>
                                 </div>
@@ -362,7 +362,7 @@
                             </div>
                             <div class="details-right">
                                 <form class="contact-form" @submit.prevent="contact" @keydown="contactForm.onKeydown($event)">
-                                    <div class="alert alert-success" v-if="contactForm.successful">Message sent successfully</div>
+                                    <div class="alert alert-success d-flex justify-content-between align-items-center" v-if="contactForm.successful"> <span>Message sent successfully</span><font-awesome-icon style="cursor:pointer" @click="contactForm.successful = false" :icon="['fas', 'times']" /></div>
                                     <div class="form-input">
                                         <input type="text" name="name" placeholder="Your name" v-model="contactForm.name" :class="{ 'is-invalid': contactForm.errors.has('name') }">
                                         <has-error :form="contactForm" field="name"></has-error>
