@@ -1,5 +1,5 @@
 /* header section */
-header.active {
+header {
     background-color: $color;
     .menu-part{
         li {
@@ -34,9 +34,13 @@ header.active {
                 a {
                     &.hire-me {
                         border: 1px solid #fff;
+                        &::after {
+                            display: none;
+                        }
                         &:hover{
                             background-color: $white;
                             color: $color;
+                            
                         }
                     }
                 }
@@ -71,7 +75,6 @@ header{
                 padding: 20px 10px;
                 font-size: 14px;
                 text-transform: uppercase;
-                color: darken($color, 0%);
                 font-weight: 600;
                 &.hire-me {
                     border: 1px solid $color;
@@ -93,7 +96,7 @@ header{
                 a {
                     font-weight: 600;
                     &.hire-me {
-                        font-weight: 600;
+                        // font-weight: 600;
                     }
                 }
             }
