@@ -10,7 +10,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-color: white;
-    header{
+    header.active{
         background-color: transparent;
         position: absolute;
         top: 0;
@@ -94,12 +94,12 @@
     }
 }
 @media( min-width:768px ) and (max-width: 991px){
-    .banner-section header .menu-part .logo {
+    .banner-section header.active .menu-part .logo {
         max-width: 40px;
         margin-right: 10px;
     }
     
-    .banner-section header .menu-part li a {
+    .banner-section header.active .menu-part li a {
         padding: 20px 5px;
         &.hire-me {
             padding: 5px 10px;

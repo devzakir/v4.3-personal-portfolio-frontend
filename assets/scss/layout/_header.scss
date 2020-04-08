@@ -1,5 +1,5 @@
 /* header section */
-header {
+header.active {
     background-color: $color;
     .menu-part{
         li {
@@ -51,7 +51,7 @@ header {
 }
 
 
-header{
+header.active{
     &+ .about-section:before{
         content: "";
         position: absolute;
@@ -107,9 +107,17 @@ header{
     }
 }
 
+.modal {
+    background-color: rgba(0,0,0,0.5);
+    .modal-body {
+        overflow-y: scroll;
+        max-height: calc(100vh - 199px);
+    }
+}
+
 // Responsive
 @media(max-width: 991px){
-    header{
+    header.active{
         .menu-part {
             flex-wrap: wrap;
             .logo {
@@ -150,23 +158,23 @@ header{
 
 
 @media( min-width:768px ) and (max-width: 991px){
-    .banner-section header .menu-part .logo {
+    .banner-section header.active .menu-part .logo {
         max-width: 40px;
         margin-right: 10px;
     }
     
-    .banner-section header .menu-part li a {
+    .banner-section header.active .menu-part li a {
         padding: 20px 5px;
         &.hire-me {
             padding: 5px 10px;
         }
     }
 
-    header .menu-part li a {
+    header.active .menu-part li a {
         padding: 20px 4px;
     }
     
-    header .menu-part li a.hire-me {
+    header.active .menu-part li a.hire-me {
         margin-left: 0;
     }
  
@@ -197,11 +205,11 @@ header{
         }
     }
     
-    header .menu-part li a.hire-me{
+    header.active .menu-part li a.hire-me{
         display: none;
     }
 
-    header .menu-part ul.mobile-nav {
+    header.active .menu-part ul.mobile-nav {
         display: none;
         &.active {
             display: block;
