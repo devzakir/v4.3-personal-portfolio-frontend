@@ -10,7 +10,7 @@
                     </div>
                 </div>
                 <div class="row resource-list">
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/vscode.png" alt="" class="img-fluid">
@@ -19,7 +19,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/sublime.png" alt="" class="img-fluid">
@@ -28,7 +28,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/atom.png" alt="" class="img-fluid">
@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 <div class="row resource-list">
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/codepen.png" alt="" class="img-fluid">
@@ -60,7 +60,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/jsfiddle.png" alt="" class="img-fluid">
@@ -69,7 +69,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/codesandbox.png" alt="" class="img-fluid">
@@ -92,7 +92,7 @@
                     </div>
                 </div>
                 <div class="row resource-list">
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/mdn.png" alt="" class="img-fluid">
@@ -101,7 +101,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/w3schools.jpg" alt="" class="img-fluid">
@@ -110,7 +110,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/youtube.webp" alt="" class="img-fluid">
@@ -119,7 +119,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/css-tricks-3.png" alt="" class="img-fluid">
@@ -128,7 +128,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/html-cheat.png" alt="" class="img-fluid">
@@ -150,7 +150,7 @@
                     </div>
                 </div>
                 <div class="row resource-list">
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/mdn.png" alt="" class="img-fluid">
@@ -159,7 +159,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/w3schools.jpg" alt="" class="img-fluid">
@@ -168,7 +168,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/codrops.png" alt="" class="img-fluid">
@@ -177,7 +177,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/tutplus.png" alt="" class="img-fluid">
@@ -186,7 +186,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/animatecss.png" alt="" class="img-fluid">
@@ -195,7 +195,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/responsivegrid.png" alt="" class="img-fluid">
@@ -204,7 +204,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/clippy.png" alt="" class="img-fluid">
@@ -213,7 +213,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/cubic.png" alt="" class="img-fluid">
@@ -235,7 +235,7 @@
                     </div>
                 </div>
                 <div class="row resource-list">
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/javascript-info.png" alt="" class="img-fluid">
@@ -244,7 +244,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/eloquentjs.jpg" alt="" class="img-fluid">
@@ -253,7 +253,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/mdn.png" alt="" class="img-fluid">
@@ -262,7 +262,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/github.jpg" alt="" class="img-fluid">
@@ -271,7 +271,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/freecodecamp.png" alt="" class="img-fluid">
@@ -280,7 +280,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/github.jpg" alt="" class="img-fluid">
@@ -289,7 +289,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/es6-compat.png" alt="" class="img-fluid">
@@ -311,7 +311,7 @@
                     </div>
                 </div>
                 <div class="row resource-list">
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/googlefonts.jpg" alt="" class="img-fluid">
@@ -320,7 +320,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/creativeblog.jpg" alt="" class="img-fluid">
@@ -329,7 +329,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/fontspace.jpg" alt="" class="img-fluid">
@@ -351,7 +351,7 @@
                     </div>
                 </div>
                 <div class="row resource-list">
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/flatuicolors.png" alt="" class="img-fluid">
@@ -360,7 +360,7 @@
                             <p>A good starting point for choosing a flat design color for your next project.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/materialpalette.jpg" alt="" class="img-fluid">
@@ -369,7 +369,7 @@
                             <p>Another great set of colors, inspired in material design. Generate and download your palette.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/colorhunt.gif" alt="" class="img-fluid">
@@ -378,7 +378,7 @@
                             <p>Don't know what colors to use for your website? Colorhunt helps you with beautiful color palettes.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/uigradients.png" alt="" class="img-fluid">
@@ -387,7 +387,7 @@
                             <p>Collection of beautiful color gradients for you to choose from and export to your project.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/lolcolors.svg" alt="" class="img-fluid">
@@ -409,7 +409,7 @@
                     </div>
                 </div>
                 <div class="row resource-list">
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/unsplash.svg" alt="" class="img-fluid">
@@ -418,7 +418,7 @@
                             <p>My #1 resource for free high-resolution photos. 10 new photos every 10 days.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/burst-logo.jpg" alt="" class="img-fluid">
@@ -427,7 +427,7 @@
                             <p>Browse thousands of beautiful copyright-free images. All our pictures are free to download for personal and commercial use, no attribution required.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/subtlepatterns.png" alt="" class="img-fluid">
@@ -436,7 +436,7 @@
                             <p>High quality resource of tilable textured patterns, completely free to use.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/placeit.png" alt="" class="img-fluid">
@@ -445,7 +445,7 @@
                             <p>Instant iPhone and Macbook mockups. Just place your screenshot on a device, no Photoshop.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/canva.png" alt="" class="img-fluid">
@@ -467,7 +467,7 @@
                     </div>
                 </div>
                 <div class="row resource-list">
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/fontawesome.png" alt="" class="img-fluid">
@@ -476,7 +476,7 @@
                             <p>My #1 resource for free high-resolution photos. 10 new photos every 10 days.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/iconfont.svg" alt="" class="img-fluid">
@@ -485,7 +485,7 @@
                             <p>IcoFont is an icon font application that contains 2100+ icons in a single font. Download the font for free or build icons bundle and download custom build font.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/bootstrap.svg" alt="" class="img-fluid">
@@ -494,7 +494,7 @@
                             <p>Official open source SVG icon library for Bootstrap.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/flaticon.png" alt="" class="img-fluid">
@@ -503,7 +503,7 @@
                             <p>The largest database of free icons available in PNG, SVG, EPS and PSD. It's even searchable.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/placeit.png" alt="" class="img-fluid">
@@ -525,7 +525,7 @@
                     </div>
                 </div>
                 <div class="row resource-list">
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/dribbble.png" alt="" class="img-fluid">
@@ -534,7 +534,7 @@
                             <p>The ultimate design inspiration resource, not just for web design. The show and tell for designers.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/landbook.jpg" alt="" class="img-fluid">
@@ -543,7 +543,7 @@
                             <p>Product landing page gallery. My #1 inspiration resource when I build a landing page.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/onepagelove.png" alt="" class="img-fluid">
@@ -565,7 +565,7 @@
                     </div>
                 </div>
                 <div class="row resource-list">
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/codepen.png" alt="" class="img-fluid">
@@ -574,7 +574,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/codrops.png" alt="" class="img-fluid">
@@ -583,7 +583,7 @@
                             <p>Another blog, writing articles and tutorials about latest web trends, techniques and new possibilities.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/smashingmagazine.png" alt="" class="img-fluid">
@@ -592,7 +592,7 @@
                             <p>A very popular web design and development blog, writing about all things coding and designing.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/stackoverflow.png" alt="" class="img-fluid">
@@ -601,7 +601,7 @@
                             <p>The biggest programmer community. Ask and find answers to HTML, CSS and JS questions.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/github.webp" alt="" class="img-fluid">
@@ -610,7 +610,7 @@
                             <p>GitHub brings together the world's largest community of developers to discover, share, and build better software. From open source projects to private team</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/devto.svg" alt="" class="img-fluid">
@@ -632,7 +632,7 @@
                     </div>
                 </div>
                 <div class="row resource-list">
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/w3c.png" alt="" class="img-fluid">
@@ -641,7 +641,7 @@
                             <p>Check if your HTML markup is valid and contains no errors. Official W3C tool.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/w3c.png" alt="" class="img-fluid">
@@ -650,7 +650,7 @@
                             <p>Check if your CSS code is valid and contains no errors. Official W3C tool.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/tinypng.png" alt="" class="img-fluid">
@@ -659,7 +659,7 @@
                             <p>Make your website faster and save bandwidth. TinyPNG optimizes your PNG images by 50-80% while preserving full transparency!</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/responsinator.png" alt="" class="img-fluid">
@@ -668,7 +668,7 @@
                             <p>The Responsinator is designed to test responsive websites on different device resolutions.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/googledev.png" alt="" class="img-fluid">
@@ -677,7 +677,7 @@
                             <p>Quick tool to test your webpage for performance on all devices.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
                                 <img src="../../static/images/resources/git.png" alt="" class="img-fluid">
