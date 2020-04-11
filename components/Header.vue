@@ -5,7 +5,7 @@
                 <div class="col-12">
                     <nav class="menu-part d-flex align-items-center">
                         <nuxt-link :to="{name: 'index'}" class="logo d-flex align-items-center">
-                            <img src="~static/images/logo.svg" alt="" class="img-fluid">
+                            <img src="~static/images/logo.png" alt="" class="img-fluid">
                         </nuxt-link>
                         <ul class="mobile-nav">
                             <li><nuxt-link :to="{name: 'index'}"> Home </nuxt-link></li>

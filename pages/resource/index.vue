@@ -104,7 +104,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
-                                <img src="../../static/images/resources/w3schools.jpg" alt="" class="img-fluid">
+                                <img src="../../static/images/resources/w3schools.png" alt="" class="img-fluid">
                             </div>
                             <a href="https://www.w3schools.com/html/default.asp" class="title">w3schools.com</a>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
@@ -113,7 +113,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
-                                <img src="../../static/images/resources/youtube.webp" alt="" class="img-fluid">
+                                <img src="../../static/images/resources/youtube.png" alt="" class="img-fluid">
                             </div>
                             <a href="https://www.youtube.com/playlist?list=PLgGbWId6zgaWZkPFI4Sc9QXDmmOWa1v5F" class="title">HTML & CSS in 30 Days (Youtube)</a>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
@@ -162,7 +162,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
-                                <img src="../../static/images/resources/w3schools.jpg" alt="" class="img-fluid">
+                                <img src="../../static/images/resources/w3schools.png" alt="" class="img-fluid">
                             </div>
                             <a href="https://www.w3schools.com/html/default.asp" class="title">Tutorial by w3schools.com</a>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
@@ -247,7 +247,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
-                                <img src="../../static/images/resources/eloquentjs.jpg" alt="" class="img-fluid">
+                                <img src="../../static/images/resources/eloquentjs.png" alt="" class="img-fluid">
                             </div>
                             <a href="https://eloquentjavascript.net/" class="title">Eloquent Javascript</a>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
@@ -265,7 +265,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
-                                <img src="../../static/images/resources/github.jpg" alt="" class="img-fluid">
+                                <img src="../../static/images/resources/github.png" alt="" class="img-fluid">
                             </div>
                             <a href="https://github.com/getify/You-Dont-Know-JS/blob/master/README.md" class="title">You don't know JS</a>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
@@ -283,7 +283,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
-                                <img src="../../static/images/resources/github.jpg" alt="" class="img-fluid">
+                                <img src="../../static/images/resources/github.png" alt="" class="img-fluid">
                             </div>
                             <a href="https://github.com/rwaldron/idiomatic.js" class="title">Principles of Writing JavaScript</a>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
@@ -314,7 +314,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
-                                <img src="../../static/images/resources/googlefonts.jpg" alt="" class="img-fluid">
+                                <img src="../../static/images/resources/googlefonts.png" alt="" class="img-fluid">
                             </div>
                             <a href="https://fonts.google.com/" class="title">Google Fonts</a>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
@@ -332,7 +332,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
-                                <img src="../../static/images/resources/fontspace.jpg" alt="" class="img-fluid">
+                                <img src="../../static/images/resources/fontspace.png" alt="" class="img-fluid">
                             </div>
                             <a href="https://www.fontspace.com/" class="title">Font Space</a>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad omnis voluptatum.</p>
@@ -390,7 +390,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
-                                <img src="../../static/images/resources/lolcolors.svg" alt="" class="img-fluid">
+                                <img src="../../static/images/resources/lolcolors.png" alt="" class="img-fluid">
                             </div>
                             <a href="https://www.webdesignrankings.com/resources/lolcolors/" class="title">Lol Colors</a>
                             <p>Curated color palettes inspiration. Another source for great color palettes.</p>
@@ -412,7 +412,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
-                                <img src="../../static/images/resources/unsplash.svg" alt="" class="img-fluid">
+                                <img src="../../static/images/resources/unsplash.png" alt="" class="img-fluid">
                             </div>
                             <a href="https://unsplash.com" class="title">Unsplash</a>
                             <p>My #1 resource for free high-resolution photos. 10 new photos every 10 days.</p>
@@ -421,7 +421,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
-                                <img src="../../static/images/resources/burst-logo.jpg" alt="" class="img-fluid">
+                                <img src="../../static/images/resources/burst.jpg" alt="" class="img-fluid">
                             </div>
                             <a href="https://burst.shopify.com" class="title">Shopify Brust</a>
                             <p>Browse thousands of beautiful copyright-free images. All our pictures are free to download for personal and commercial use, no attribution required.</p>
@@ -479,7 +479,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
-                                <img src="../../static/images/resources/iconfont.svg" alt="" class="img-fluid">
+                                <img src="../../static/images/resources/iconfont.png" alt="" class="img-fluid">
                             </div>
                             <a href="https://icofont.com" class="title">Ico Font</a>
                             <p>IcoFont is an icon font application that contains 2100+ icons in a single font. Download the font for free or build icons bundle and download custom build font.</p>
@@ -488,7 +488,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
-                                <img src="../../static/images/resources/bootstrap.svg" alt="" class="img-fluid">
+                                <img src="../../static/images/resources/bootstrap.png" alt="" class="img-fluid">
                             </div>
                             <a href="https://icons.getbootstrap.com" class="title">Bootstrap Icon</a>
                             <p>Official open source SVG icon library for Bootstrap.</p>
@@ -604,7 +604,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
-                                <img src="../../static/images/resources/github.webp" alt="" class="img-fluid">
+                                <img src="../../static/images/resources/github.png" alt="" class="img-fluid">
                             </div>
                             <a href="https://github.com/" class="title">Github</a>
                             <p>GitHub brings together the world's largest community of developers to discover, share, and build better software. From open source projects to private team</p>
@@ -613,7 +613,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="block">
                             <div class="icon">
-                                <img src="../../static/images/resources/devto.svg" alt="" class="img-fluid">
+                                <img src="../../static/images/resources/devto.png" alt="" class="img-fluid">
                             </div>
                             <a href="https://dev.to/" class="title">Dev.to</a>
                             <p>Where programmers share ideas and help each other grow—A constructive and inclusive social network.</p>
