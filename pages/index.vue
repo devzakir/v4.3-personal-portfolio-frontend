@@ -41,8 +41,8 @@
                         <h1>Full Stack Web Developer</h1>
                         <p>Let me help you increase business egagement with qualityful Websites and Web Applications</p>
                         <div class="buttons">
-                            <a href="#">About Me</a>
-                            <a href="#">Recent Projects</a>
+                            <nuxt-link :to="{ name: 'index', hash:'#about'}">About Me</nuxt-link>
+                            <nuxt-link :to="{ name: 'index', hash:'#portfolio'}">Recent Projects</nuxt-link>
                         </div>
                     </div>
                     <div class="col-lg-6 col-12 banner-preview">
@@ -80,7 +80,7 @@
                                     <p class="mt-3">Now I am working as a Full-stack Web Developer. I am able to design & develop responsive website using the latest technology & design trends. I have worked with many clients and a few local companies in the past few years. I am very interested to work with future projects and able to use my coding skills to make a super-fast and & super professional website.</p>
                                     <div class="buttons">
                                         <a target="_blank" :href="getSetting.resume">My Resume</a>
-                                        <a href="#resume">Hire Me</a>
+                                        <nuxt-link  :to="{ name: 'index', hash:'#contact'}">Contact Me</nuxt-link>
                                     </div>
                                 </div>
                                 <div class="skills" v-if="tabId == 124">
@@ -236,8 +236,8 @@
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At earum cum id autem velit
                             quidem, vel, amet adipisci nesciunt!</p>
                         <div class="buttons">
-                            <a href="#">Get Quote</a>
-                            <a href="#">Hire Me</a>
+                            <nuxt-link :to="{ name: 'index', hash:'#contact'}">Get Quote</nuxt-link>
+                            <!-- <nuxt-link :to="{ name: 'index', hash:'#contact'}">Contact Me</nuxt-link> -->
                         </div>
                     </div>
                     <div class="col-12 col-md-6 content-preview">
