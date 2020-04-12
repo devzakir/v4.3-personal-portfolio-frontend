@@ -10,9 +10,9 @@
                         <ul class="mobile-nav">
                             <li><nuxt-link :to="{name: 'index'}"> Home </nuxt-link></li>
                             <li><nuxt-link :to="{name: 'product'}"> Products </nuxt-link></li>
-                            <li><nuxt-link :to="{name: 'course'}"> Courses </nuxt-link></li>
+                            <!-- <li><nuxt-link :to="{name: 'course'}"> Courses </nuxt-link></li> -->
                             <li><nuxt-link :to="{name: 'resource'}"> Resources </nuxt-link></li>
-                            <li><nuxt-link :to="{name: 'blog'}"> Blog </nuxt-link></li>
+                            <!-- <li><nuxt-link :to="{name: 'blog'}"> Blog </nuxt-link></li> -->
                         </ul>
                         <ul class="right ml-auto">
                             <li v-if="setting.facebook"><a :href="setting.facebook" target="_blank"> <font-awesome-icon :icon="['fab', 'facebook-f']" /> </a></li>
