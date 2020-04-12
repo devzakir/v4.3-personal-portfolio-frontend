@@ -12,13 +12,13 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+      { rel: 'icon', type: 'image/png', href: '/images/favicon.png' }
+    ],
   },
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#245cd1' },
   /*
   ** Global CSS
   */
@@ -70,7 +70,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: 'http://127.0.0.1:8000/api',
+    baseURL: 'https://api.zakirhossen.com/api',
   },
   /*
   ** Build configuration
