@@ -399,6 +399,18 @@ export default {
     components: {
         'siteHeader': Header,
     },
+    head() {
+        return {
+            title: 'Zakir Hossen Personal Portfolio',
+            meta: [
+                { hid: 'description', name: 'description', content: 'A passionate Web Developer from Dhaka, Bangladesh. I prefer to learn consistently to expand my knowledge. I am working with Laravel, Vue.js & Nuxt.js.' },
+                { hid: 'og:type', property: 'og:type', content: "website" },
+                { hid: 'og:title', name: 'og:title', content: 'A passionate Web Developer from Dhaka, Bangladesh. I prefer to learn consistently to expand my knowledge. I am working with Laravel, Vue.js & Nuxt.js.' },
+                { hid: 'og:description', name: 'og:description', content: 'A passionate Web Developer from Dhaka, Bangladesh. I prefer to learn consistently to expand my knowledge. I am working with Laravel, Vue.js & Nuxt.js.' },
+                // { hid: 'og:image', property: 'og:image', content: "/images/product.jpg" },
+            ]
+        }
+    },
     data(){
         return {
             tabId: 123,
