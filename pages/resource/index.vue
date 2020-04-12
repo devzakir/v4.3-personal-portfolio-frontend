@@ -694,7 +694,19 @@
 
 <script>
   export default {
-    components: {}
+    components: {},
+    head() {
+        return {
+            title: 'A curated List for Designer and Developer - Zakir Hossen',
+            meta: [
+                // { hid: 'description', name: 'description', content: '' },
+                // { hid: 'og:type', property: 'og:type', content: "website" },
+                // { hid: 'og:title', name: 'og:title', content: '' },
+                // { hid: 'og:description', name: 'og:description', content: '' },
+                // { hid: 'og:image', property: 'og:image', content: "/img/product.jpg" },
+            ]
+        }
+    },
   }
 </script>
 
