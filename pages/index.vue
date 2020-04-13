@@ -429,6 +429,7 @@ export default {
     methods: {
         async loadPortfolio(){
             let data = await this.$axios.$get(process.env.API_URL+'/portfolio');
+            console.log(data);
             this.portfolios = data.data;
             this.next_page = data.next_page_url;
         },

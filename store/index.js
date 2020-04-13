@@ -8,7 +8,8 @@ export const getters = {
     },
     updateImageURL(){
         return function(image){
-            return 'http://localhost:8000'+image;
+            // return 'https://api.zakirhossen.com'+image;
+            return process.env.APP_URL  + image;
         }
     }
 }
