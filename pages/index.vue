@@ -307,7 +307,7 @@
                         <carousel v-if="testimonials.length" :autoplay="true" :nav="false" :items="1" :mouseDrag="true" :touchDrag="true" :dots="true">
                             <div v-for="testimonial in testimonials" :key="testimonial.id" class="item">
                                 <div class="client-avatar">
-                                    <img src="~/static/images/my-photo.png" alt="" class="img-fluid">
+                                    <img :src="updateImage(testimonial.avatar)" alt="" class="img-fluid">
                                 </div>
                                 <div class="testimonial-description">
                                     <p> {{ testimonial.description }} </p>
@@ -440,8 +440,7 @@ export default {
             if(image){
                 return this.$store.getters.updateImageURL(image);
             }
-            console.log(updatedImage);
-            return updatedImage;
+            return 'null';
         },
         async loadMorePortfolio(){
             let data = await this.$axios.$get(this.next_page);
