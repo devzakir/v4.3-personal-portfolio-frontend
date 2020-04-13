@@ -55,7 +55,7 @@
         </section>
         <section class="about-section" id="about">
             <div class="container">
-                <div class="row align-items-center">
+                <div class="row">
                     <div class="col-12 col-lg-6">
                         <div class="my-photo">
                             <img :src="getAuthorImage()" alt="" class="img-fluid">
