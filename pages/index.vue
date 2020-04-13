@@ -58,7 +58,7 @@
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <div class="my-photo">
-                            <img src="~/static/images/my-photo.png" alt="" class="img-fluid">
+                            <img :src="getAuthorImage()" alt="" class="img-fluid">
                         </div>
                     </div>
                     <div class="col-12 col-lg-6">
@@ -462,6 +462,14 @@ export default {
                 
             }
         },
+
+        getAuthorImage(){
+            if(this.getSetting.avatar){
+                return this.updateImage(this.getSetting.avatar);
+            }else {
+                return "~/static/images/my-photo.png";
+            }
+        }
     },
     computed: {
         getSetting(){
