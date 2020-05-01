@@ -87,14 +87,17 @@
                                     <div class="skill-box">
                                         <h6>Front End</h6>
                                         <div>
+                                            <span>Nuxt JS</span>
                                             <span>Vue JS</span>
                                         <span>JavaScript</span>
                                         <span>jQuery</span>
-                                        <span>BootStrap</span>
+                                        <span>Bootstrap</span>
                                         <span>HTML5</span>
                                         <span>CSS3</span>
                                         <span>SCSS</span>
                                         <span>Flexbox</span>
+                                        <span>JSON</span>
+                                        <span>Webpack</span>
                                         </div>
                                     </div>
                                     <div class="skill-box">
@@ -106,17 +109,20 @@
                                         <span>REST API</span>
                                         <span>API Integration</span>
                                         <span>Database Design</span>
+                                        <span>Payment Integration</span>
                                         </div>
                                     </div>
+
                                     <div class="skill-box">
                                         <h6>Others</h6>
                                         <div>
-                                            <span>Project Planning</span>
-                                            <span>Client Handling</span>
-                                            <span>WordPress</span>
-                                            <span>Adobe Photoshop</span>
-                                            <span>Writing</span>
-                                            <span>Affiliate Marketing</span>
+                                            <span>CLI</span>
+                                            <span>Git</span>
+                                            <span>Github</span>
+                                            <span>Ubuntu</span>
+                                            <span>DigitalOcean</span>
+                                            <span>Forge</span>
+                                            <span>Cloudflare</span>
                                         </div>
                                     </div>
                                 </div>
