@@ -213,6 +213,46 @@ header.active{
         display: none;
         &.active {
             display: block;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 11;
+            background-color: #245cd1;
+            li{
+                a {
+                    width: 100%;
+                    // color: $color;
+                    &.active {
+                        border-color: $color;
+                        &::after {
+                            width: 100%;
+                            background-color: $color;
+                        }
+                    }
+                }
+            } 
+        }
+    }
+
+    .banner-section {
+        header.active .menu-part ul.mobile-nav {
+            &.active {
+                background-color: $white;
+                margin-top: 0;
+                li{
+                    a {
+                        width: 100%;
+                        // color: $color;
+                        &.active {
+                            border-color: $color;
+                            &::after {
+                                width: 100%;
+                                background-color: $color;
+                            }
+                        }
+                    }
+                } 
+            }
         }
     }
 

@@ -73,6 +73,11 @@ export default {
   axios: {
     baseURL: 'https://api.zakirhossen.com/api',
   },
+
+  router: {
+    linkActiveClass: 'your-custom-active-link',
+    linkExactActiveClass: 'active',
+  },
   /*
   ** Build configuration
   */

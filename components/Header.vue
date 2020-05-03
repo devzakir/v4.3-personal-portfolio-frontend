@@ -7,7 +7,7 @@
                         <nuxt-link :to="{name: 'index'}" class="logo d-flex align-items-center">
                             <img src="~static/images/logo.png" alt="" class="img-fluid">
                         </nuxt-link>
-                        <ul class="mobile-nav">
+                        <ul class="mobile-nav" :class="{'active' : dropdown}">
                             <li><nuxt-link :to="{name: 'index'}"> Home </nuxt-link></li>
                             <li><nuxt-link :to="{name: 'product'}"> Products </nuxt-link></li>
                             <!-- <li><nuxt-link :to="{name: 'course'}"> Courses </nuxt-link></li> -->
@@ -23,8 +23,9 @@
                             <li v-if="setting.quora"><a :href="setting.quora" target="_blank"> <font-awesome-icon :icon="['fab', 'quora']" /> </a></li>
                             <!-- <li><a href="#" class="hire-me" data-toggle="modal" v-b-modal.modal-tall data-target="#hireMe"> Hire Me </a></li> -->
                         </ul>
-                        <div class="menu-toggle">
-                            <font-awesome-icon :icon="['fas', 'bars']" />
+                        <div class="menu-toggle" @click="toggleDropdown">
+                            <font-awesome-icon v-if="dropdown" :icon="['fas', 'times']" />
+                            <font-awesome-icon v-else :icon="['fas', 'bars']" />
                         </div>
                     </nav>
                 </div>
@@ -70,6 +71,7 @@ export default {
     data(){
         return {
             setting: [],
+            dropdown: false,
         }
     },
     methods: {
@@ -77,6 +79,9 @@ export default {
             const data = await this.$axios.$get(process.env.API_URL+'/setting');
             this.$store.commit('setSetting', data);
             this.setting = data;
+        },
+        toggleDropdown(){
+            this.dropdown = !this.dropdown;
         }
     },
     mounted(){
