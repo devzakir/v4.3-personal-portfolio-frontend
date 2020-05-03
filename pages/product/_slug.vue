@@ -14,8 +14,8 @@
                     </div>
                     <div class="col-4">
                         <div class="template-box">
-                            <a href="#" class="demo"> <i class="far fa-eye"></i> Demo</a>
-                            <a href="" class="download"> <i class="fas fa-cloud-download-alt"></i> Downloads</a>
+                            <a href="#" class="demo"> <font-awesome-icon :icon="['far', 'eye']" /> Demo</a>
+                            <a href="" class="download"> <font-awesome-icon :icon="['fas', 'cloud-download-alt']" />  Downloads</a>
                         </div>
                         <div class="sidebar-box">
                             <h3>Template Summery</h3>

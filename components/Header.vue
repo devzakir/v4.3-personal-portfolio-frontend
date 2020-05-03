@@ -24,7 +24,7 @@
                             <!-- <li><a href="#" class="hire-me" data-toggle="modal" v-b-modal.modal-tall data-target="#hireMe"> Hire Me </a></li> -->
                         </ul>
                         <div class="menu-toggle">
-                            <i class="fas fa-bars"></i>
+                            <font-awesome-icon :icon="['fas', 'bars']" />
                         </div>
                     </nav>
                 </div>
