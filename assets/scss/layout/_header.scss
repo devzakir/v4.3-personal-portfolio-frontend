@@ -211,6 +211,7 @@ header.active{
 
     header.active .menu-part ul.mobile-nav {
         display: none;
+        text-align: center;
         &.active {
             display: block;
             position: absolute;
@@ -218,15 +219,15 @@ header.active{
             left: 0;
             z-index: 11;
             background-color: #245cd1;
+            padding-top: 0;
             li{
                 a {
-                    width: 100%;
+                    width: auto;
                     // color: $color;
                     &.active {
-                        border-color: $color;
                         &::after {
                             width: 100%;
-                            background-color: $color;
+                            background-color: $white;
                         }
                     }
                 }
@@ -239,12 +240,10 @@ header.active{
             &.active {
                 background-color: $white;
                 margin-top: 0;
-                li{
+                padding-top: 10px;
+                li {
                     a {
-                        width: 100%;
-                        // color: $color;
                         &.active {
-                            border-color: $color;
                             &::after {
                                 width: 100%;
                                 background-color: $color;
