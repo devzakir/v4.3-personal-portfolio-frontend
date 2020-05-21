@@ -22,7 +22,8 @@
                                     <p>{{ product.category_name }}</p>
                                 </div>
                                 <div class="hightlight">
-                                    <p>{{ product.price }}</p>
+                                    <p v-if="product.price > 0">{{ product.price }}</p>
+                                    <p v-else>Free</p>
                                 </div>
                             </div>
                         </div>
