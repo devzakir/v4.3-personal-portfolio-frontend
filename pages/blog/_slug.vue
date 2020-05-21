@@ -1,6 +1,6 @@
 <template>
     <div>
-        <breadcrumb name="Blog" slug="blog-single"/>
+        <breadcrumb name="Blog" slug="blog-single" title="Course Title"/>
         <section class="single-product">
             <div class="container">
                 <div class="row">
