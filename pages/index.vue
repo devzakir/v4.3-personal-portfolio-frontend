@@ -284,7 +284,7 @@
                                 <h6>{{ portfolio.title }}</h6>
                                 <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, iure quos perspiciatis blanditiis soluta quod tempora vitae esse dolores debitis, voluptatem, officia repella</p> -->
                                 <div class="text-center">
-                                    <a :href="portfolio.link">Preview</a>
+                                    <a target="_blank" :href="portfolio.link">Preview</a>
                                 </div>
                             </div>
                         </div>
