@@ -19,7 +19,8 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#245cd1' },
+  // loading: { color: '#245cd1' },
+  loading: { color: '#000000' },
   /*
   ** Global CSS
   */
@@ -32,6 +33,29 @@ export default {
     { src: '~/plugins/slider.js', mode: 'client' },
     { src: '~/plugins/vform.js'}
   ],
+
+  /*
+  ** Nuxt Auth Package configurationApiAuthController
+  */
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: 'auth/login', method: 'post', propertyName: 'token' },
+          logout: { url: 'auth/logout', method: 'post' },
+          user: { url: 'auth/me', method: 'get', propertyName: false }
+        },
+        // home: '/',
+        tokenRequired: true,
+        tokenType: 'bearer'
+      // tokenRequired: true,
+        // tokenType: 'bearer',
+        // globalToken: true,
+        // autoFetchUser: true
+      }
+    }
+  },
+
   /*
   ** Nuxt.js dev-modules
   */
@@ -45,8 +69,8 @@ export default {
     'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/auth',
     '@nuxtjs/pwa',
-    '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     ['nuxt-fontawesome', {
@@ -71,7 +95,8 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: 'https://api.zakirhossen.com/api',
+    // baseURL: 'https://api.zakirhossen.com/api',
+    baseURL: 'http://127.0.0.1:8000/api',
   },
 
   router: {

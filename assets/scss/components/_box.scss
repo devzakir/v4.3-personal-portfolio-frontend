@@ -5,12 +5,15 @@
     border-radius: 6px;
     overflow: hidden;
     margin-bottom: 30px;
+    height: 100%;
     @include animate();
     .image {
         height: 300px;
+        overflow: hidden;
         img {
             object-fit: cover;
-            height: 100%;
+            min-height: 100%;
+            min-width: 100%;
         }
     }
     .info {

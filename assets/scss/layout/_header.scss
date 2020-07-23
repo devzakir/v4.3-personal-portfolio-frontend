@@ -76,6 +76,7 @@ header.active{
                 font-size: 14px;
                 text-transform: uppercase;
                 font-weight: 600;
+                
                 &.hire-me {
                     border: 1px solid $color;
                     padding: 5px 10px;
@@ -85,6 +86,13 @@ header.active{
                         background-color: $color;
                         color: $white;
                     }
+                }
+            }
+            .focus-btn {
+                a {
+                    background-color: white;
+                    padding: 3px 5px;
+                    border-radius: 10px;
                 }
             }
         }

@@ -1,45 +1,45 @@
 <template>
     <div> 
-        <breadcrumb name="Course" slug="course-single" title="Course Title"/>
+        <breadcrumb name="Course" :slug="course.slug" :title="course.title"/>
         <section class="single-product">
             <div class="container">
                 <div class="row">
                     <div class="col-8">
                         <div class="product-image">
-                            <img src="~/static/images/banner.png" alt="" class="img-fluid">
+                            <img :src="updateImage(course.image)" alt="" class="img-fluid">
                         </div>
-                        <div class="description">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam a nulla voluptatem, illum sint quis nihil temporibus aut necessitatibus perspiciatis aspernatur quos sed provident, harum laudantium cumque nisi maxime est!</p>
+                        <div class="description" v-html="course.description">
+                            
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="template-box">
-                            <a href="#" class="demo"> <font-awesome-icon :icon="['far', 'eye']" /> Demo</a>
-                            <a href="" class="download"> <font-awesome-icon :icon="['fas', 'cloud-download-alt']" />  Downloads</a>
+                            <a href="#" class="demo"> <font-awesome-icon :icon="['far', 'eye']" /> Course Overview</a>
+                            <a href="" class="download"> <font-awesome-icon :icon="['fas', 'cart-plus']" /> Enroll Now </a>
                         </div>
                         <div class="sidebar-box">
-                            <h3>Template Summery</h3>
+                            <h3>Course Summery</h3>
                             <div class="content">
                                 <table>
                                     <tr>
-                                        <td> Category </td>
-                                        <td> Version </td>
+                                        <td> Level  </td>
+                                        <td> {{ course.category.name }} </td>
                                     </tr>
                                     <tr>
-                                        <td> Version </td>
-                                        <td> Version </td>
+                                        <td> Lessons  </td>
+                                        <td> {{ course.user_id }} </td>
                                     </tr>
                                     <tr>
-                                        <td> Layout </td>
-                                        <td> Responsive </td>
+                                        <td> Hours of Video </td>
+                                        <td> 420+ </td>
                                     </tr>
                                     <tr>
-                                        <td> Created </td>
-                                        <td> Responsive </td>
+                                        <td> Projects  </td>
+                                        <td> 12+ </td>
                                     </tr>
                                     <tr>
-                                        <td> Last Updated </td>
-                                        <td> Responsive </td>
+                                        <td> Downloadable </td>
+                                        <td> {{ course.updated_at }} </td>
                                     </tr>
                                     <tr>
                                         <td> License </td>
@@ -65,7 +65,35 @@ import Breadcrumb from '~/components/Breadcrumb';
 export default {
     components: {
         'breadcrumb': Breadcrumb
-    }
+    },
+    async asyncData({$axios, params}){
+        let { data } = await $axios.get(process.env.API_URL+'/course/'+params.slug);
+
+        return { course: data }
+    },
+    data(){
+        return {
+            course: {},
+        }
+    },
+    methods: {
+        price(value){
+            if(value > 0){
+                return value;
+            }else {
+                return 'Free';
+            }
+        },
+        updateImage(image){
+            return this.$store.getters.updateImageURL(image);
+        }
+    },
+    computed: {
+
+    },
+    mounted() {
+
+    },
 }
 </script>
 

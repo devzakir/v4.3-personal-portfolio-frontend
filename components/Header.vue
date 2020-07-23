@@ -10,7 +10,7 @@
                         <ul class="mobile-nav" :class="{'active' : dropdown}">
                             <li><nuxt-link :to="{name: 'index'}"> Home </nuxt-link></li>
                             <li><nuxt-link :to="{name: 'product'}"> Products </nuxt-link></li>
-                            <!-- <li><nuxt-link :to="{name: 'course'}"> Courses </nuxt-link></li> -->
+                            <li><nuxt-link :to="{name: 'course'}"> Courses </nuxt-link></li>
                             <li><nuxt-link :to="{name: 'resource'}"> Resources </nuxt-link></li>
                             <!-- <li><nuxt-link :to="{name: 'blog'}"> Blog </nuxt-link></li> -->
                         </ul>
@@ -21,6 +21,8 @@
                             <li v-if="setting.skype"><a :href="setting.skype" target="_blank"> <font-awesome-icon :icon="['fab', 'skype']" /> </a></li>
                             <li v-if="setting.stackoverflow"><a :href="setting.stackoverflow" target="_blank"> <font-awesome-icon :icon="['fab', 'stack-overflow']" /> </a></li>
                             <li v-if="setting.quora"><a :href="setting.quora" target="_blank"> <font-awesome-icon :icon="['fab', 'quora']" /> </a></li>
+                            <li class="focus-btn" v-if="!auth.loggedIn"><nuxt-link :to="{name: 'login'}"> <font-awesome-icon  class="mr-2" :icon="['fas', 'user']" /> Login </nuxt-link></li>
+                            <li class="focus-btn" v-else><nuxt-link :to="{name: 'account'}"> <font-awesome-icon  class="mr-2" :icon="['fas', 'user']" /> {{ auth.user.name }} </nuxt-link></li>
                             <!-- <li><a href="#" class="hire-me" data-toggle="modal" v-b-modal.modal-tall data-target="#hireMe"> Hire Me </a></li> -->
                         </ul>
                         <div class="menu-toggle" @click="toggleDropdown">
@@ -53,7 +55,7 @@
                     <option value="">$1000 to $1500 </option>
                     <option value="">$1500+ </option>
                 </select>
-            </div>                    
+            </div>
             <div class="form-group">
                 <label for="email">Your social</label>
                 <input type="text" class="form-control" name="email" placeholder="Skype/Telegram/Whatsapp/Viber">
@@ -82,7 +84,7 @@ export default {
         },
         toggleDropdown(){
             this.dropdown = !this.dropdown;
-        }
+        },
     },
     mounted(){
         if(Object.keys(this.getSetting).length){
@@ -94,6 +96,9 @@ export default {
     computed: {
         getSetting(){
             return this.$store.getters.getSetting;
+        },
+        auth(){
+            return this.$store.state.auth;
         }
     }
 }
