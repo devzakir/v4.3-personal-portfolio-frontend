@@ -9,7 +9,7 @@ header.active {
                 &::after{
                     content: '';
                     position: absolute;
-                    width: 0%;
+                    width: 0;
                     height: 2px;
                     background-color: $white;
                     bottom: 0;
@@ -40,12 +40,12 @@ header.active {
                         &:hover{
                             background-color: $white;
                             color: $color;
-                            
+
                         }
                     }
                 }
             }
-        } 
+        }
 
     }
 }
@@ -76,7 +76,7 @@ header.active{
                 font-size: 14px;
                 text-transform: uppercase;
                 font-weight: 600;
-                
+
                 &.hire-me {
                     border: 1px solid $color;
                     padding: 5px 10px;
@@ -149,9 +149,9 @@ header.active{
                         width: 100%;
                         margin: 0;
                         padding: 10px 20px;
-                    } 
+                    }
                 }
-            } 
+            }
             .menu-toggle {
                 display: flex;
                 order: 3;
@@ -170,7 +170,7 @@ header.active{
         max-width: 40px;
         margin-right: 10px;
     }
-    
+
     .banner-section header.active .menu-part li a {
         padding: 20px 5px;
         &.hire-me {
@@ -181,11 +181,11 @@ header.active{
     header.active .menu-part li a {
         padding: 20px 4px;
     }
-    
+
     header.active .menu-part li a.hire-me {
         margin-left: 0;
     }
- 
+
 }
 
 @media(max-width:767px){
@@ -212,7 +212,7 @@ header.active{
             order: 2;
         }
     }
-    
+
     header.active .menu-part li a.hire-me{
         display: none;
     }
@@ -239,7 +239,7 @@ header.active{
                         }
                     }
                 }
-            } 
+            }
         }
     }
 
@@ -258,7 +258,7 @@ header.active{
                             }
                         }
                     }
-                } 
+                }
             }
         }
     }
@@ -286,5 +286,5 @@ header.active{
 }
 
 @media(max-width: 575px){
-    
+
 }

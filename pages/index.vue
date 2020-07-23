@@ -451,7 +451,7 @@ export default {
         async loadMorePortfolio(){
             let data = await this.$axios.$get(this.next_page);
             data.data.forEach(element => {
-                this.portfolios.push(element); 
+                this.portfolios.push(element);
             });
             this.next_page = data.next_page_url;
         },
@@ -459,13 +459,13 @@ export default {
         async contact() {
             try {
                 await this.contactForm.post(process.env.API_URL+'/contact');
-                // clear login form 
+                // clear login form
                 this.contactForm.name = '';
                 this.contactForm.email = '';
                 this.contactForm.subject = '';
                 this.contactForm.message = '';
             }catch(e){
-                
+
             }
         },
 
@@ -489,6 +489,11 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+    .owl-carousel .owl-item img {
+        display: block;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
 </style>

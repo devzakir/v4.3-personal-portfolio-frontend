@@ -20,7 +20,7 @@ export default {
   ** Customize the progress-bar color
   */
   // loading: { color: '#245cd1' },
-  loading: { color: '#000000' },
+  loading: { color: '#ffc107' },
   /*
   ** Global CSS
   */
@@ -45,7 +45,6 @@ export default {
           logout: { url: 'auth/logout', method: 'post' },
           user: { url: 'auth/me', method: 'get', propertyName: false }
         },
-        // home: '/',
         tokenRequired: true,
         tokenType: 'bearer'
       // tokenRequired: true,
@@ -53,6 +52,12 @@ export default {
         // globalToken: true,
         // autoFetchUser: true
       }
+    },
+    redirect: {
+      login: '/login',
+      logout: '/',
+      callback: '/login',
+      home: '/account'
     }
   },
 

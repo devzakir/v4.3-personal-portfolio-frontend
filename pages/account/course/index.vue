@@ -25,7 +25,7 @@
                                 <p>FREE</p>
                             </div>
                         </div> -->
-                        <nuxt-link :to="{name: 'account-course-slug', params:{ slug: 'hello' } }" class="btn btn-primary mt-2">Watch Course</nuxt-link>
+                        <nuxt-link :to="{ name: 'watch-course-lesson', params:{ course: 'course', lesson: 'lesson'} }" class="btn btn-primary mt-2">Watch Course</nuxt-link>
                     </div>
                 </div>
             </div>

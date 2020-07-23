@@ -6,8 +6,8 @@
             </nuxt-link>
             <div class="navbar-nav-scroll ml-2">
                 <ul class="navbar-nav bd-navbar-nav flex-row">
-                    <li class="nav-item">
-                        <nuxt-link class="nav-link" :to="{name: 'index'}" >Course Name Goes Here</nuxt-link>
+                    <li class="nav-item active">
+                        <nuxt-link class="nav-link" :to="{name: 'course-slug', params: {slug: 'course-name-here' }}" >Course Name Goes Here</nuxt-link>
                     </li>
                 </ul>
             </div>
@@ -30,6 +30,7 @@
             <div class="row">
                 <div class="col-md-3 col-lg-3 d-md-block bg-light sidebar collapse py-3">
                     <h4 class="mb-3 text-secondary">Course Module</h4>
+                    <module-dropdown :section="{}" />
                     <div class="card mb-2">
                         <div class="card-header d-flex align-items-center justify-content-between">
                             <p class="mb-0">Course Introduction</p>
@@ -225,9 +226,13 @@
 </template>
 
 <script>
+import ModuleDropdown from '@/components/course/ModuleDropdown'
 export default {
-    layout: 'course',
+    layout: 'lesson',
     // middleware: 'auth',
+    components: {
+        'module-dropdown': ModuleDropdown
+    },
     computed: {
         auth(){
             return this.$store.state.auth;

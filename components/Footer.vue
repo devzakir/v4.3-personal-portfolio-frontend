@@ -50,7 +50,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="footer-text text-center">
-                            <p class="mb-0"> Design & Developed with 🧡 by <a href="#"> Zakir Hossen</a></p>
+                            <p class="mb-0"> Design & Developed with 🧡 by <nuxt-link :to="{name: 'index'}"> Zakir Hossen</nuxt-link></p>
                         </div>
                     </div>
                 </div>
