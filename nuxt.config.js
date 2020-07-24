@@ -94,7 +94,30 @@ export default {
        }
      ]
     }],
+    // You can also pass plugin options
+    ["vue-toastification/nuxt", {
+      transition: "Vue-Toastification__bounce",
+      maxToasts: 6,
+      newestOnTop: true
+    }],
   ],
+  // Or pass options through the "toast" key
+  toast: {
+    // Use your own CSS file
+    cssFile: "vue-toastification/dist/index.css",
+    position: "top-right",
+    timeout: 5000,
+    closeOnClick: true,
+    pauseOnFocusLoss: true,
+    pauseOnHover: true,
+    draggable: true,
+    draggablePercent: 0.6,
+    showCloseButtonOnHover: false,
+    hideProgressBar: true,
+    closeButton: "button",
+    icon: true,
+    rtl: false
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options

@@ -1,5 +1,5 @@
 <template>
-    <div> 
+    <div>
         <breadcrumb name="Course" :slug="course.slug" :title="course.title"/>
         <section class="single-product">
             <div class="container">
@@ -9,13 +9,15 @@
                             <img :src="updateImage(course.image)" alt="" class="img-fluid">
                         </div>
                         <div class="description" v-html="course.description">
-                            
+
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="template-box">
                             <a href="#" class="demo"> <font-awesome-icon :icon="['far', 'eye']" /> Course Overview</a>
-                            <a href="" class="download"> <font-awesome-icon :icon="['fas', 'cart-plus']" /> Enroll Now </a>
+                            <a href="#" @click.prevent="enrollNow()" class="download">
+                                 <font-awesome-icon :icon="['fas', 'cart-plus']" /> Enroll Now
+                            </a>
                         </div>
                         <div class="sidebar-box">
                             <h3>Course Summery</h3>
@@ -86,6 +88,25 @@ export default {
         },
         updateImage(image){
             return this.$store.getters.updateImageURL(image);
+        },
+        enrollNow(){
+            let item = this.course;
+
+            let product = {
+                id: item.id,
+                title: item.title,
+                slug: item.slug,
+                price: item.sale_price || item.price,
+                image: item.image,
+            }
+            this.$store.dispatch('cart/addToCart', {
+                product: product,
+                quantity: 1
+            });
+
+            this.$toast.success("I'm a toast!");
+
+            this.$router.push({name: 'checkout'});
         }
     },
     computed: {

@@ -20,4 +20,8 @@ export default {
 
 <style lang="scss">
     @import '~/assets/scss/main.scss';
+
+    .Vue-Toastification__progress-bar {
+        opacity: 1 !important;
+    }
 </style>
