@@ -31,7 +31,8 @@ export default {
   */
   plugins: [
     { src: '~/plugins/slider.js', mode: 'client' },
-    { src: '~/plugins/vform.js'}
+    { src: '~/plugins/vform.js'},
+    { src: '~/plugins/form-wizard.js', mode: 'client' }
   ],
 
   /*
