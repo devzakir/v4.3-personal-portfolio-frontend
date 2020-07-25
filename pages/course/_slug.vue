@@ -90,8 +90,12 @@ export default {
             return this.$store.getters.updateImageURL(image);
         },
         enrollNow(){
-            let item = this.course;
+            // let items = JSON.parse(localStorage.getItem('cartProducts'));
+            // this.$store.commit('cart/SET_CART_PRODUCTS', items);
 
+            this.$store.commit('cart/SET_CART_PRODUCTS', []);
+
+            let item = this.course;
             let product = {
                 id: item.id,
                 title: item.title,
@@ -105,7 +109,6 @@ export default {
             });
 
             this.$toast.success("I'm a toast!");
-
             this.$router.push({name: 'checkout'});
         }
     },
