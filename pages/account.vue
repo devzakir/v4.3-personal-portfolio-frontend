@@ -5,6 +5,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-3">
+                        <div class="bg-primary text-white px-4 py-2">Menu</div>
                         <div class="sidebar-sticky bg-white px-2 py-3">
                             <ul class="nav flex-column">
                                 <li class="nav-item">

@@ -1,10 +1,32 @@
 <template>
-    <div class="card">
-        <div class="card-header bg-primary text-white">
-            Dashboard
+    <div>
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                Dashboard
+            </div>
+            <div class="card-body text-center">
+                <h5>Welcome {{ auth.user.name }}!</h5>
+            </div>
         </div>
-        <div class="card-body">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis veniam quo ut. Nesciunt libero quidem aspernatur, ipsa veritatis asperiores laboriosam error, unde, optio sequi illo explicabo aliquam delectus architecto ea?
+        <div class="row mt-4">
+            <div class="col-4">
+                <div class="px-4 py-3 rounded bg-primary text-white">
+                    <h5>0</h5>
+                    <p>Courses</p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="px-4 py-3 rounded bg-success text-white">
+                    <h5>0</h5>
+                    <p>Lesson Completed</p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="px-4 py-3 rounded bg-danger text-white">
+                    <h5>0</h5>
+                    <p>Points</p>
+                </div>
+            </div>
         </div>
     </div>
 </template>
