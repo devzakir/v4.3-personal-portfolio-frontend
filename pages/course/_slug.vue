@@ -8,27 +8,35 @@
                         <div class="product-image">
                             <img :src="updateImage(course.image)" alt="" class="img-fluid">
                         </div>
-                        <div class="description" v-html="course.description">
+                        <div class="mt-5">
+                            <h3> Description </h3>
+                        </div>
+                        <div class="description mt-0" v-html="course.description">
 
+                        </div>
+                        <div class="mt-5" v-if="course.sections && course.sections.length">
+                            <h3> Course Module </h3>
+                            <module-dropdown v-for="section in course.sections" :key="section.id" :section="section" />
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="template-box">
                             <a href="#" class="demo"> <font-awesome-icon :icon="['far', 'eye']" /> Course Overview</a>
-                            <a href="#" @click.prevent="enrollNow()" class="download">
+                            <button class="btn btn-secondary" type="button" v-if="course.coming_soon">Coming Soon</button>
+                            <a href="#" v-else @click.prevent="enrollNow()" class="download">
                                  <font-awesome-icon :icon="['fas', 'cart-plus']" /> Enroll Now
                             </a>
                         </div>
-                        <div class="sidebar-box">
+                        <div class="sidebar-box" v-if="Object.keys(course).length">
                             <h3>Course Summery</h3>
                             <div class="content">
                                 <table>
                                     <tr>
-                                        <td> Level  </td>
+                                        <td> Course Category </td>
                                         <td> {{ course.category.name }} </td>
                                     </tr>
                                     <tr>
-                                        <td> Lessons  </td>
+                                        <td> Total Lessons </td>
                                         <td> {{ course.user_id }} </td>
                                     </tr>
                                     <tr>
@@ -36,7 +44,7 @@
                                         <td> 420+ </td>
                                     </tr>
                                     <tr>
-                                        <td> Projects  </td>
+                                        <td> Projects </td>
                                         <td> 12+ </td>
                                     </tr>
                                     <tr>
@@ -62,11 +70,13 @@
 </template>
 
 <script>
+import ModuleDropdown from '@/components/course/ModuleDropdown'
 import Breadcrumb from '~/components/Breadcrumb';
 
 export default {
     components: {
-        'breadcrumb': Breadcrumb
+        'breadcrumb': Breadcrumb,
+        'module-dropdown': ModuleDropdown
     },
     async asyncData({$axios, params}){
         let { data } = await $axios.get(process.env.API_URL+'/course/'+params.slug);
@@ -76,6 +86,19 @@ export default {
     data(){
         return {
             course: {},
+            // category_id: 2,
+            // coming_soon: 0,
+            // created_at: "2020-07-23 12:48:59",
+            // description: "asdfasdfasfdasdf",
+            // id: 1,
+            // image: "storage/portfolio/1595508539_.jpeg",
+            // price: 1000,
+            // sale_price: 8000,
+            // slug: "complete-web-design-course-beginner-to-advance-updated",
+            // title: "Complete Web Design Course (Beginner to Advance) - updated",
+            // updated_at: "2020-07-23 12:48:59",
+            // user_id: 1,
+            // video: "https://www.youtube.com/watch?v=S6WdBIvVxfg",
         }
     },
     methods: {

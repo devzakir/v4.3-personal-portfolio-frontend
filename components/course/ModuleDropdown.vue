@@ -1,25 +1,22 @@
 <template>
     <div class="card mb-2">
-        <a href="#" @click.prevent="active = !active" class="card-header d-flex align-items-center justify-content-between">
-            <p class="mb-0 text-dark">Course Introduction</p>
-            <div class="badge badge-primary">
+        <a href="#" @click.prevent="active = !active" :class="active ? 'bg-primary' : 'bg-light'" class="card-header d-flex align-items-center justify-content-between">
+            <p class="mb-0" :class="active ? 'text-white' : 'text-dark'">{{ section.name }}</p>
+            <div class="badge" :class="active ? 'bg-white' : 'badge-primary'">
                 <font-awesome-icon v-if="active" :icon="['fas', 'minus']" />
                 <font-awesome-icon v-else :icon="['fas', 'plus']" />
             </div>
         </a>
         <div class="card-body py-2" v-if="active">
-            <ul class="nav flex-column">
-                <li class="nav-item d-flex align-items-center">
-                    <!-- <font-awesome-icon class="text-secondary" :icon="['far', 'check-square']" /> -->
-                    <font-awesome-icon class="text-success" :icon="['fas', 'check-square']" />
-                    <a class="nav-link active" href="#">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum vel
-                    </a>
-                </li>
-                <li class="nav-item d-flex align-items-center">
+            <ul class="nav flex-column" v-if="section.videos">
+                <li v-for="video in section.videos" :key="video.id" class="nav-item d-flex align-items-center">
+                    <!-- <font-awesome-icon class="text-success" :icon="['fas', 'check-square']" /> -->
                     <font-awesome-icon class="text-secondary" :icon="['far', 'check-square']" />
-                    <a class="nav-link active" href="#">
-                        Dashboard
+                    <a class="nav-link active d-block w-100" href="#">
+                        <div class=" d-flex justify-content-between align-items-center">
+                            <span>{{ video.title }}</span>
+                            <span class="badge badge-success">Time - {{ video.video_time }}</span>
+                        </div>
                     </a>
                 </li>
             </ul>

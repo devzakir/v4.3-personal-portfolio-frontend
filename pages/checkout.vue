@@ -3,18 +3,32 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <form-wizard @on-complete="onComplete" @on-error="handleErrorMessage" title="Processing your order" subtitle="Follow the steps to complete your order." color="#245cd1" finishButtonText="Complete Purchase">
+                    <form-wizard @on-complete="onComplete" @on-error="handleErrorMessage" :start-index="startIndex" title="Processing your order" subtitle="Follow the steps to complete your order." color="#245cd1" finishButtonText="Complete Purchase">
                         <div class="row">
                             <div class="col-12 col-lg-6 offset-lg-3">
                                 <div v-if="errorMsg" class="alert alert-danger">{{errorMsg}}</div>
                             </div>
                         </div>
-                        <tab-content title="Account Info" icon="ti-user" :before-change="validateAuthentication">
-                                My first tab content
+                        <tab-content class="my-5" title="Account Info" icon="ti-user" :before-change="validateAuthentication">
+                            <div class="row my-5">
+                                <div class="col-6 offset-3">
+                                    <div v-if="authentication">
+                                        <div class="alert alert-success">You are logged in. You can go to the next step.</div>
+                                    </div>
+                                    <login v-else />
+                                </div>
+                            </div>
                         </tab-content>
-                        <tab-content title="Billing Info" icon="ti-location-pin" :before-change="validateBilling">
-                            <div class="row">
-                                <div class="col-8">
+                        <tab-content class="my-5" title="Billing Info" icon="ti-location-pin" :before-change="validateBilling">
+                            <!-- <div class="row" v-if="bilingForm">
+                                <div class="col-6 off">
+                                    <div>
+                                        <div class="alert alert-success">You are logged in. You can go to the next step.</div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <!-- <div class="row">
+                                <div class="col-8"> -->
                                     <div class="card">
                                         <div class="card-header bg-primary text-white">
                                             Billing Information
@@ -25,35 +39,35 @@
                                                     <div class="col-6">
                                                         <div class="form-group">
                                                             <label for=""> Name </label>
-                                                            <input type="text" class="form-control" name="" placeholder="Hello World">
+                                                            <input type="text" class="form-control" name="" placeholder="name">
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="form-group">
                                                             <label for=""> Email </label>
-                                                            <input type="text" class="form-control" name="" placeholder="Hello World">
+                                                            <input type="text" class="form-control" name="" placeholder="email">
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="form-group">
                                                             <label for=""> Phone </label>
-                                                            <input type="text" class="form-control" name="" placeholder="Hello World">
+                                                            <input type="text" class="form-control" name="" placeholder="phone">
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="form-group">
                                                             <label for=""> Address </label>
-                                                            <input type="text" class="form-control" name="" placeholder="Hello World">
+                                                            <input type="text" class="form-control" name="" placeholder="address">
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <button class="btn btn-primary w-100">Purchase Course</button>
+                                                    <button class="btn btn-primary">Save Billing Info</button>
                                                 </div>
                                             </form>
                                         </div>
                                     </div>
-                                </div>
+                                <!-- </div>
                                 <div class="col-4">
                                     <div class="card">
                                         <div class="card-header bg-primary text-white">
@@ -64,10 +78,32 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </tab-content>
-                        <tab-content title="Payment Info" icon="ti-money" :before-change="validatePaymentInfo">
-
+                        <tab-content class="my-5" title="Payment Info" icon="ti-money" :before-change="validatePaymentInfo">
+                            <div class="card">
+                                <div class="card-header bg-primary text-white">
+                                    Payment Information
+                                </div>
+                                <div class="card-body">
+                                    <form action="">
+                                        <div class="row">
+                                            <div class="col-6 offset-3">
+                                                <div class="alert alert-success mb-4">
+                                                    <p style="font-size: 18px" class="mb-2">Send course fee on this Bkash Number</p>
+                                                    <h4>Personal Bkash Number - 016 25 00 00 00</h4>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 offset-3">
+                                                <div class="form-group">
+                                                    <label for=""> Bkash TrxID </label>
+                                                    <input type="text" class="form-control" name="trxid" placeholder="trxid">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </tab-content>
                     </form-wizard>
                 </div>
@@ -77,6 +113,8 @@
 </template>
 
 <script>
+import Login from '@/components/auth/Login'
+
 export default {
     head() {
         return {
@@ -93,12 +131,16 @@ export default {
             ],
         }
     },
+    components: {
+        'login': Login,
+    },
     data(){
         return {
             errorMsg: null,
-            authentication: true,
+            authentication: false,
             bilingForm: true,
             paymentForm: true,
+            startIndex: 0,
         }
     },
     methods: {
@@ -159,7 +201,14 @@ export default {
                 })
             }
         },
+    },
+    created(){
+        if(this.$auth.loggedIn){
+            this.startIndex = 1;
+            this.authentication = true;
+        }
     }
+
 }
 </script>
 

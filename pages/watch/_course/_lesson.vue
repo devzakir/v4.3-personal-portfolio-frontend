@@ -31,54 +31,6 @@
                 <div class="col-md-3 col-lg-3 d-md-block bg-light sidebar collapse py-3">
                     <h4 class="mb-3 text-secondary">Course Module</h4>
                     <module-dropdown :section="{}" />
-                    <div class="card mb-2">
-                        <div class="card-header d-flex align-items-center justify-content-between">
-                            <p class="mb-0">Course Introduction</p>
-                            <div class="badge badge-primary">
-                                <font-awesome-icon :icon="['fas', 'plus']" />
-                            </div>
-                        </div>
-                        <div class="card-body py-2">
-                            <ul class="nav flex-column">
-                                <li class="nav-item d-flex align-items-center">
-                                    <font-awesome-icon class="text-secondary" :icon="['far', 'check-square']" />
-                                    <a class="nav-link active" href="#">
-                                        Dashboard
-                                    </a>
-                                </li>
-                                <li class="nav-item d-flex align-items-center">
-                                    <font-awesome-icon class="text-secondary" :icon="['far', 'check-square']" />
-                                    <a class="nav-link active" href="#">
-                                        Dashboard
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card mb-2">
-                        <div class="card-header d-flex align-items-center justify-content-between">
-                            <p class="mb-0">Course Introduction</p>
-                            <div class="badge badge-primary">
-                                <font-awesome-icon :icon="['fas', 'plus']" />
-                            </div>
-                        </div>
-                        <div class="card-body py-2">
-                            <ul class="nav flex-column">
-                                <li class="nav-item d-flex align-items-center">
-                                    <font-awesome-icon class="text-success" :icon="['fas', 'check-square']" />
-                                    <a class="nav-link active" href="#">
-                                        Dashboard
-                                    </a>
-                                </li>
-                                <li class="nav-item d-flex align-items-center">
-                                    <font-awesome-icon class="text-success" :icon="['fas', 'check-square']" />
-                                    <a class="nav-link active" href="#">
-                                        Dashboard
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-md-9 ml-sm-auto col-lg-9 px-md-4">
                     <div class="p-4">
@@ -215,7 +167,6 @@
                                 </tbody>
                             </table>
                         </div>
-
                         <h3> Comments </h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus deleniti, iusto debitis neque beatae dolor. Eum quisquam officia delectus. Veniam laudantium et inventore! Vitae deleniti maiores inventore molestiae quaerat voluptatum.</p>
                     </div>

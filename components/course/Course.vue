@@ -12,7 +12,8 @@
                     <p class="text-secondary">{{ course.category.name }}</p>
                 </div>
                 <div class="hightlight">
-                    <p>{{ price(course.price) }}</p>
+                    <p class="coming-soon bg-secondary" v-if="course.coming_soon">Coming Soon</p>
+                    <p class="price bg-success" v-else>{{ price(course.price) }}</p>
                 </div>
             </div>
         </div>

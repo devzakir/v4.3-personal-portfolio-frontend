@@ -58,7 +58,7 @@ export default {
       login: '/login',
       logout: '/',
       callback: '/login',
-      home: '/account'
+      // home: '/account'
     }
   },
 
