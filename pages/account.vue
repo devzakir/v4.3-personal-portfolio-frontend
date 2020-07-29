@@ -5,8 +5,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-3">
-                        <div class="bg-primary text-white px-4 py-2">Menu</div>
-                        <div class="sidebar-sticky bg-white px-2 py-3">
+                        <div class="bg-primary text-white px-4 py-2 rounded-top">Menu</div>
+                        <div class="sidebar-sticky bg-white rounded-bottom px-2 py-3">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
                                     <nuxt-link class="d-flex align-items-center nav-link" :to="{name: 'account'}">

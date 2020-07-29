@@ -238,18 +238,21 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-12 col-md-6 promote-content">
-                        <h2>Have any project idea?</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At earum cum id autem velit
-                            quidem, vel, amet adipisci nesciunt!</p>
-                        <div class="buttons">
-                            <nuxt-link :to="{ name: 'index', hash:'#contact'}">Get Quote</nuxt-link>
+                        <h2>Do you want to learn Web Development?</h2>
+                        <p class="text-lead">I created several course on Web design and Web Development. These courses specially designed for beginners. </p>
+                        <nuxt-link class="btn btn-light font-weight-bold text-primary text-uppercase py-3 px-5 mt-5" :to="{ name: 'course' }">
+                            Check My Courses
+                            <font-awesome-icon :icon="['fas', 'chevron-right']" />
+                        </nuxt-link>
+                        <!-- <div class="buttons"> -->
                             <!-- <nuxt-link :to="{ name: 'index', hash:'#contact'}">Contact Me</nuxt-link> -->
-                        </div>
+
+                        <!-- </div> -->
                     </div>
-                    <div class="col-12 col-md-6 content-preview">
+                    <div class="col-12 col-md-6 ">
                         <div class="d-flex justify-content-end justify-content-end">
-                            <div>
-                                <img src="~/static/images/project-idea.png" alt="" class="img-fluid">
+                            <div class="bg-white rounded mx-4 p-3">
+                                <img src="~/static/images/tutorial.svg" alt="" class="img-fluid">
                             </div>
                         </div>
                     </div>
