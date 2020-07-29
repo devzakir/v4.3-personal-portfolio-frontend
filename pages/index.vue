@@ -74,6 +74,13 @@
                             </ul>
                             <div class="tabs-content">
                                 <div class="intro" v-if="tabId == 123">
+                                    <div class="content" v-html="getSetting.about"></div>
+                                    <div class="buttons">
+                                        <a target="_blank" :href="getSetting.resume">My Resume</a>
+                                        <nuxt-link  :to="{ name: 'index', hash:'#contact'}">Contact Me</nuxt-link>
+                                    </div>
+                                </div>
+                                <!-- <div class="intro" v-if="tabId == 123">
                                     <h3>Zakir Hossen</h3>
                                     <p>Hi, I am Zakir. A passionate Web Developer from Dhaka, Bangladesh. I prefer to learn consistently to expand my knowledge.</p>
                                     <p class="mt-3">I started my career as a Web Designer. After 3 years of consistently working in this field. It helped me gain lots of knowledge about business, marketing, and user experience. Also, I have tried a few more things to understand customer satisfaction, business engagement & marketing including e-commerce business, blogging, writing, YouTube & affiliate marketing.</p>
@@ -82,7 +89,7 @@
                                         <a target="_blank" :href="getSetting.resume">My Resume</a>
                                         <nuxt-link  :to="{ name: 'index', hash:'#contact'}">Contact Me</nuxt-link>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="skills" v-if="tabId == 124">
                                     <div class="skill-box">
                                         <h6>Front End</h6>
