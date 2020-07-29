@@ -1,7 +1,7 @@
 <template>
     <div>
+        <siteHeader/>
         <section class="banner-section">
-            <siteHeader/>
             <div id="particle-container">
                 <div class="particle"></div>
                 <div class="particle"></div>
