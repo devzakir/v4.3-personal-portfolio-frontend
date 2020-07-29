@@ -1,7 +1,7 @@
 <template>
     <div>
         <breadcrumb name="Course" :slug="course.slug" :title="course.title"/>
-        <section class="single-product">
+        <section class="single-product bg-light">
             <div class="container">
                 <div class="row">
                     <div class="col-8">
@@ -20,14 +20,14 @@
                         </div>
                     </div>
                     <div class="col-4">
-                        <div class="template-box">
+                        <div class="template-box bg-white">
                             <a href="#" class="demo"> <font-awesome-icon :icon="['far', 'eye']" /> Course Overview</a>
                             <button class="btn btn-secondary" type="button" v-if="course.coming_soon">Coming Soon</button>
                             <a href="#" v-else @click.prevent="enrollNow()" class="download">
                                  <font-awesome-icon :icon="['fas', 'cart-plus']" /> Enroll Now
                             </a>
                         </div>
-                        <div class="sidebar-box" v-if="Object.keys(course).length">
+                        <div class="sidebar-box bg-white" v-if="Object.keys(course).length">
                             <h3>Course Summery</h3>
                             <div class="content">
                                 <table>

@@ -34,37 +34,50 @@
                                             Billing Information
                                         </div>
                                         <div class="card-body">
-                                            <form action="">
+                                            <form action="" @submit.prevent="saveBilling">
                                                 <div class="row">
                                                     <div class="col-6">
                                                         <div class="form-group">
                                                             <label for=""> Name </label>
-                                                            <input type="text" class="form-control" name="" placeholder="name">
+                                                            <input type="text" v-model="billing.name" :class="{ 'is-invalid': billing.errors.has('name') }" class="form-control" name="" placeholder="name">
+                                                            <has-error :form="billing" field="name"></has-error>
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="form-group">
                                                             <label for=""> Email </label>
-                                                            <input type="text" class="form-control" name="" placeholder="email">
+                                                            <input type="email" v-model="billing.email" :class="{ 'is-invalid': billing.errors.has('email') }" class="form-control" name="email" placeholder="email">
+                                                            <has-error :form="billing" field="email"></has-error>
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="form-group">
                                                             <label for=""> Phone </label>
-                                                            <input type="text" class="form-control" name="" placeholder="phone">
+                                                            <input type="text" v-model="billing.phone" :class="{ 'is-invalid': billing.errors.has('phone') }" class="form-control" name="phone" placeholder="phone">
+                                                            <has-error :form="billing" field="phone"></has-error>
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="form-group">
                                                             <label for=""> Address </label>
-                                                            <input type="text" class="form-control" name="" placeholder="address">
+                                                            <input type="text" v-model="billing.address" :class="{ 'is-invalid': billing.errors.has('address') }" class="form-control" name="address" placeholder="address">
+                                                            <has-error :form="billing" field="address"></has-error>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <button class="btn btn-primary">Save Billing Info</button>
+                                                    <button type="submit" :disabled="bilingForm" class="btn btn-primary">Save Billing Info</button>
                                                 </div>
                                             </form>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header bg-primary text-white">
+                                            Billing Information
+                                        </div>
+                                        <div class="card-body">
+                                            Billing Name -
                                         </div>
                                     </div>
                                 <!-- </div>
@@ -138,9 +151,15 @@ export default {
         return {
             errorMsg: null,
             authentication: false,
-            bilingForm: true,
+            bilingForm: false,
             paymentForm: true,
             startIndex: 0,
+            billing: this.$vform({
+                name: '',
+                email: '',
+                phone: '',
+                address: '',
+            }),
         }
     },
     methods: {
@@ -149,6 +168,15 @@ export default {
         },
         onComplete: function(){
             alert('Yay. Done!');
+        },
+        async saveBilling(){
+            try {
+                let { data } = await this.billing.post(process.env.API_URL + '/billing');
+                this.bilingForm = true;
+                this.$toast.success("Billing saved successfully!");
+            } catch (error) {
+                console.log(error);
+            }
         },
         validateAuthentication(){
             // console.log('validate authentication');
