@@ -14,6 +14,10 @@ export default {
     components: {
         siteHeader,
         siteFooter
+    },
+    mounted(){
+        let items = JSON.parse(localStorage.getItem('cartProducts'));
+        this.$store.commit('cart/SET_CART_PRODUCTS', items);
     }
 }
 </script>

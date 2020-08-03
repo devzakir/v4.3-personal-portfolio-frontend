@@ -14,7 +14,7 @@
 import Login from '@/components/auth/Login'
 
 export default {
-    auth: 'guest',
+    middleware: 'guest',
     head: {
         title: 'Login',
         meta: [
@@ -31,9 +31,6 @@ export default {
         return {
 
         }
-    },
-    computed: {
-
     },
     mounted(){
 

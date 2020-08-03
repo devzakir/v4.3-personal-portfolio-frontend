@@ -32,7 +32,6 @@ export default {
     methods: {
         loadCategories(){
             this.$axios.get(process.env.API_URL+'/courses').then(response => {
-                console.log(response.data);
                 this.courses = response.data.data;
                 this.courses.next_page_url = response.data.next_page_url;
             });

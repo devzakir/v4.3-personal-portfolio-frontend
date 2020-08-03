@@ -40,7 +40,13 @@ export default {
         async register(){
             try {
                 let { data } = await this.registerForm.post(process.env.API_URL + '/auth/register');
-                console.log(data);
+                let token = data.token;
+                await this.$auth.setUserToken(token);
+
+                if(this.$route.name == 'register'){
+                    this.$toast.success("Success! Registration Successful!");
+                    this.$router.push({ name: 'account' });
+                };
             } catch (error) {
                 console.log(error);
             }

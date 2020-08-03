@@ -1,82 +1,138 @@
 <template>
     <div>
-        <breadcrumb name="Course" :slug="course.slug" :title="course.title"/>
-        <section class="single-product bg-light">
+        <div class="course-intro bg-light">
             <div class="container">
                 <div class="row">
                     <div class="col-8">
-                        <div class="product-image">
-                            <img :src="updateImage(course.image)" alt="" class="img-fluid">
-                        </div>
-                        <div class="mt-5">
-                            <h3> Description </h3>
-                        </div>
-                        <div class="description mt-0" v-html="course.description">
-
-                        </div>
-                        <div class="mt-5" v-if="course.sections && course.sections.length">
-                            <h3> Course Module </h3>
-                            <module-dropdown v-for="section in course.sections" :key="section.id" :section="section" />
+                        <h2 class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+                        <p class="text-load">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis libero error cumque perferendis, voluptatum aperiam consequatur labore ab quam sed explicabo nobis perspiciatis officia cupiditate sunt reiciendis, veniam excepturi provident.</p>
+                    </div>
+                    <div class="col-4 text-right">
+                        <h2 class="text-success mb-4">৳ 2000</h2>
+                        <a href="#" @click.prevent="enrollNow" class="btn btn-primary py-3 px-5 text-uppercase">Enroll Now</a>
+                    </div>
+                </div>
+                <div class="row mt-4 align-content-stretch">
+                    <div class="col-6">
+                        <div class="core-metrics rounded shadow-sm bg-white p-3 h-100">
+                            <ul class="mb-0">
+                                <li class="d-flex align-items-center">
+                                    <div class="icon mr-3 text-success"><font-awesome-icon :icon="['fas', 'user-friends']" /> </div>
+                                    <div class="content">
+                                        <strong> Enrollment: </strong>
+                                        <span> 400 Students </span>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <!-- <div class="icon mr-3"><font-awesome-icon :icon="['fas', 'user-clock']" /> </div> -->
+                                    <div class="icon mr-3 text-primary"><font-awesome-icon :icon="['fas', 'clock']" /> </div>
+                                    <div class="content">
+                                        <strong> Duration: </strong>
+                                        <span> 120 Hours </span>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <div class="icon mr-3 text-danger"><font-awesome-icon :icon="['fas', 'play-circle']" /> </div>
+                                    <div class="content">
+                                        <strong> Videos: </strong>
+                                        <span> 40 Videos</span>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <div class="icon mr-3 text-info"><font-awesome-icon :icon="['fas', 'lightbulb']" /> </div>
+                                    <div class="content">
+                                        <strong> Projects: </strong>
+                                        <span> 15+ </span>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <div class="icon mr-3 text-warning"><font-awesome-icon :icon="['fas', 'signal']" /> </div>
+                                    <div class="content">
+                                        <strong> Level: </strong>
+                                        <span> Begineer </span>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="col-4">
-                        <div class="template-box bg-white">
-                            <a href="#" class="demo"> <font-awesome-icon :icon="['far', 'eye']" /> Course Overview</a>
-                            <button class="btn btn-secondary" type="button" v-if="course.coming_soon">Coming Soon</button>
-                            <a href="#" v-else @click.prevent="enrollNow()" class="download">
-                                 <font-awesome-icon :icon="['fas', 'cart-plus']" /> Enroll Now
-                            </a>
-                        </div>
-                        <div class="sidebar-box bg-white" v-if="Object.keys(course).length">
-                            <h3>Course Summery</h3>
-                            <div class="content">
-                                <table>
-                                    <tr>
-                                        <td> Course Category </td>
-                                        <td> {{ course.category.name }} </td>
-                                    </tr>
-                                    <tr>
-                                        <td> Total Lessons </td>
-                                        <td> {{ course.user_id }} </td>
-                                    </tr>
-                                    <tr>
-                                        <td> Hours of Video </td>
-                                        <td> 420+ </td>
-                                    </tr>
-                                    <tr>
-                                        <td> Projects </td>
-                                        <td> 12+ </td>
-                                    </tr>
-                                    <tr>
-                                        <td> Downloadable </td>
-                                        <td> {{ course.updated_at }} </td>
-                                    </tr>
-                                    <tr>
-                                        <td> License </td>
-                                        <td> GNU GPL 2 </td>
-                                    </tr>
-                                    <tr>
-                                        <td> Tags </td>
-                                        <td> GNU GPL 2 </td>
-                                    </tr>
-                                </table>
-                            </div>
+                    <div class="col-6">
+                        <div class="intro-video d-flex">
+                            <iframe src="https://player.vimeo.com/video/432220749" width="100%" height="320" frameborder="0" controls allow="autoplay; fullscreen" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+        <div class="course-description">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8" id="courseContent">
+                        <div class="description bg-white p-5 shadow rounded">
+                            <div class="content-block mb-5">
+                                <h3 class="mb-3">Course Description</h3>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum error corrupti culpa necessitatibus quod. Inventore sint facere sunt quibusdam aliquid, architecto ex? Unde cumque in tempora! Reprehenderit enim laboriosam sunt?</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta aspernatur laboriosam excepturi esse voluptatum ipsum neque aliquid minus aut odit cumque necessitatibus ducimus voluptatem laudantium corporis aliquam, deleniti eaque soluta.</p>
+                            </div>
+                            <div class="content-block mb-5">
+                                <h3>What you will learn?</h3>
+                                <ul>
+                                    <li>
+                                        Lorem ipsum dolor sit amet.
+                                    </li>
+                                    <li>
+                                        Cumque perferendis porro ullam aperiam.
+                                    </li>
+                                    <li>
+                                        Fugiat eveniet ad quidem et.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-white p-5 mt-5 shadow rounded"  v-if="course.sections && course.sections.length">
+                            <h3 class="mb-3"> Course Module </h3>
+                            <module-dropdown v-for="section in course.sections" :key="section.id" :section="section" :course="course" />
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="box h-auto py-4 px-4 bg-primary shadow rounded text-white">
+                            <h4 class="mb-3 pb-3 border-bottom">This course includes:</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
+                                    <span>7 hours on-demand video 7 hours on-demand video</span>
+                                </li>
+                                <li class="mb-3">
+                                    <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
+                                    <span>6 articles</span>
+                                </li>
+                                <li class="mb-3">
+                                    <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
+                                    <span>2 downloadable resources</span>
+                                </li>
+                                <li class="mb-3">
+                                    <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
+                                    <span>Full lifetime access</span>
+                                </li>
+                                <li class="mb-3">
+                                    <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
+                                    <span>Access on mobile and TV</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
 import ModuleDropdown from '@/components/course/ModuleDropdown'
 import Breadcrumb from '~/components/Breadcrumb';
-
 export default {
     components: {
         'breadcrumb': Breadcrumb,
-        'module-dropdown': ModuleDropdown
+        'module-dropdown': ModuleDropdown,
     },
     async asyncData({$axios, params}){
         let { data } = await $axios.get(process.env.API_URL+'/course/'+params.slug);
@@ -86,19 +142,6 @@ export default {
     data(){
         return {
             course: {},
-            // category_id: 2,
-            // coming_soon: 0,
-            // created_at: "2020-07-23 12:48:59",
-            // description: "asdfasdfasfdasdf",
-            // id: 1,
-            // image: "storage/portfolio/1595508539_.jpeg",
-            // price: 1000,
-            // sale_price: 8000,
-            // slug: "complete-web-design-course-beginner-to-advance-updated",
-            // title: "Complete Web Design Course (Beginner to Advance) - updated",
-            // updated_at: "2020-07-23 12:48:59",
-            // user_id: 1,
-            // video: "https://www.youtube.com/watch?v=S6WdBIvVxfg",
         }
     },
     methods: {
@@ -127,7 +170,7 @@ export default {
                 image: item.image,
             }
             this.$store.dispatch('cart/addToCart', {
-                product: product,
+                product,
                 quantity: 1
             });
 
@@ -144,6 +187,64 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.course-intro {
+    padding: 70px 0 220px;
+}
+.core-metrics {
+    ul{
+        height: 100%;
+        width: 100%;
+        align-items: stretch;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        li {
+            border-bottom: 1px solid #eee;
+            padding: 10px 20px;
+            height: 100%;
+            .icon {
+                width: 50px;
+                text-align: center;
+                svg, i {
+                    font-size: 25px;
+                }
+            }
+            &:last-child {
+                border: 0;
+            }
+        }
+    }
+}
+
+.course-description {
+
+    .container {
+        transform: translateY(-150px);
+    }
+    .content-block {
+        p {
+            margin-bottom: 10px;
+            font-size: 16px;
+            // line-height: 24px;
+        }
+        ul {
+            padding-left: 20px;
+            li {
+                list-style: disc;
+                margin-bottom: 5px;
+            }
+        }
+    }
+    .sticky-features {
+        position: relative;
+        & > .box {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+}
 
 </style>

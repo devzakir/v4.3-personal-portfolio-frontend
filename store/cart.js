@@ -58,13 +58,15 @@ export const mutations = {
 
 export const actions = {
     addToCart({ commit }, { product, quantity }){
+        console.log(product);
+        console.log(quantity);
         let cartProducts = JSON.parse(localStorage.getItem('cartProducts')) || [];
 
         let addToCart = function() {
             let item = {
                 id: Date.now(),
                 qty: quantity,
-                product: product,
+                product,
             }
 
             cartProducts.push(item);

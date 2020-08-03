@@ -32,7 +32,8 @@ export default {
   plugins: [
     { src: '~/plugins/slider.js', mode: 'client' },
     { src: '~/plugins/vform.js'},
-    { src: '~/plugins/form-wizard.js', mode: 'client' }
+    // { src: '~/plugins/form-wizard.js', mode: 'client' },
+    // { src: '~/plugins/affix.js', ssr: false }
   ],
 
   /*
@@ -58,6 +59,7 @@ export default {
       login: '/login',
       logout: '/',
       callback: '/login',
+      home: '',
       // home: '/account'
     }
   },

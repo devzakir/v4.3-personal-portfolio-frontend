@@ -1,6 +1,6 @@
 <template>
-    <div class="card mb-2">
-        <a href="#" @click.prevent="active = !active" :class="active ? 'bg-primary' : 'bg-light'" class="card-header d-flex align-items-center justify-content-between">
+    <div class="card mb-2 shadow-sm">
+        <a href="#" @click.prevent="active = !active" :class="active ? 'bg-primary' : 'bg-white'" class="card-header d-flex align-items-center justify-content-between">
             <p class="mb-0" :class="active ? 'text-white' : 'text-dark'">{{ section.name }}</p>
             <div class="badge" :class="active ? 'bg-white' : 'badge-primary'">
                 <font-awesome-icon v-if="active" :icon="['fas', 'minus']" />
@@ -12,12 +12,12 @@
                 <li v-for="video in section.videos" :key="video.id" class="nav-item d-flex align-items-center">
                     <!-- <font-awesome-icon class="text-success" :icon="['fas', 'check-square']" /> -->
                     <font-awesome-icon class="text-secondary" :icon="['far', 'check-square']" />
-                    <a class="nav-link active d-block w-100" href="#">
+                    <nuxt-link  :to="{ name: 'watch-course-lesson', params:{course: course.slug, lesson: video.slug }}" class="nav-link active d-block w-100">
                         <div class=" d-flex justify-content-between align-items-center">
                             <span>{{ video.title }}</span>
                             <span class="badge badge-success">Time - {{ video.video_time }}</span>
                         </div>
-                    </a>
+                    </nuxt-link>
                 </li>
             </ul>
         </div>
@@ -26,7 +26,7 @@
 
 <script>
 export default {
-    props: ['section'],
+    props: ['section', 'course'],
     data() {
         return {
             active: false

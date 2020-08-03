@@ -1,6 +1,6 @@
 <template>
     <div>
-        <breadcrumb name="dashboard" style="padding: 50px 0 25px" slug="account" title="Dashboard"/>
+        <breadcrumb name="dashboard" slug="account" title="Dashboard"/>
         <section class="section bg-light">
             <div class="container">
                 <div class="row">
@@ -97,7 +97,7 @@ export default {
         }
     },
     mounted(){
-        console.log(this.$auth.user);
+
     }
 }
 </script>

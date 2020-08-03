@@ -14,6 +14,7 @@
 import Register from '@/components/auth/Register';
 
 export default {
+    middleware: 'guest',
     head: {
         title: 'Register Page',
         meta: [

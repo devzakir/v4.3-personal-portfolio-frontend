@@ -1,7 +1,7 @@
 <template>
     <div class="bg-white p-5 shadow rounded">
         <h3 class="text-center">Login to your account</h3>
-        <div class="p-5">
+        <form action="" class="p-5">
             <div class="alert alert-danger" v-if="loginForm.errors.has('account')">
                 {{ loginForm.errors.errors.account[0] }}
             </div>
@@ -21,7 +21,7 @@
                     <nuxt-link :to="{name: 'register'}" class="mt-0 text-secondary">Create an account</nuxt-link>
                 </div>
             </form>
-        </div>
+        </form>
     </div>
 </template>
 
@@ -33,6 +33,12 @@ export default {
                 email: '',
                 password: '',
             }),
+
+            registerForm: this.$vform({
+                name: '',
+                email: '',
+                password: '',
+            }),
         }
     },
     methods: {
@@ -41,13 +47,15 @@ export default {
                 let { data } = await this.loginForm.post( process.env.API_URL + '/auth/login');
                 let token = data.token;
 
-                // this.$auth.loginWith('local', {data: this.loginForm });
-                await this.$auth.setUserToken(token);
-
-                if(this.$route.name == 'login'){
-                    this.$toast.success("Success! Login Successful!");
-                    this.$router.push({ name: 'account' });
-                };
+                this.$auth.loginWith('local', {data: this.loginForm });
+                // await this.$auth.setUserToken(token);
+            } catch (error) {
+                console.log(error);
+            }
+        },
+        async register(){
+            try {
+                let { data } = await this.registerForm.post(process.env.API_URL + '/auth/register');
             } catch (error) {
                 console.log(error);
             }
