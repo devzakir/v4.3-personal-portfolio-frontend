@@ -41,7 +41,7 @@
                         <p>Let me help you increase business egagement with qualityful Websites and Web Applications</p>
                         <div class="buttons">
                             <nuxt-link :to="{ name: 'index', hash:'#about'}">About Me</nuxt-link>
-                            <nuxt-link :to="{ name: 'index', hash:'#portfolio'}">Recent Projects</nuxt-link>
+                            <nuxt-link :to="{ name: 'course' }">Check My Courses</nuxt-link>
                         </div>
                     </div>
                     <div class="col-lg-6 col-12 banner-preview">
