@@ -1,6 +1,5 @@
 <template>
     <div>
-        <siteHeader/>
         <section class="banner-section">
             <div id="particle-container">
                 <div class="particle"></div>
@@ -409,12 +408,7 @@
 </template>
 
 <script>
-import Header from '~/components/Header';
 export default {
-    layout: 'home',
-    components: {
-        'siteHeader': Header,
-    },
     head() {
         return {
             title: 'Zakir Hossen Personal Portfolio',
