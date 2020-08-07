@@ -58,9 +58,8 @@ export const mutations = {
 
 export const actions = {
     addToCart({ commit }, { product, quantity }){
-        console.log(product);
-        console.log(quantity);
-        let cartProducts = JSON.parse(localStorage.getItem('cartProducts')) || [];
+        // let cartProducts = JSON.parse(localStorage.getItem('cartProducts')) || [];
+        let cartProducts = [];
 
         let addToCart = function() {
             let item = {
@@ -141,4 +140,7 @@ export const actions = {
 
         commit('REMOVE_PRODUCT', product);
     },
+    setCartProducts({commit}, items){
+        commit('SET_CART_PRODUCTS', items);
+    }
 }

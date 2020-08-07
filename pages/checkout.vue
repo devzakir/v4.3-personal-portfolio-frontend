@@ -1,14 +1,42 @@
 <template>
     <section class="section">
-        <div class="container">
-            <!-- <div @click="showLogin" v-if="!auth.loggedIn && !showLoginForm" class="p-3 px-4 rounded mb-3 bg-danger border text-white">
-                If you have an account already. Click here to login.
+        <div class="container" v-if="purchased">
+            <div class="alert alert-primary mb-5">
+                <strong>IMPORTANT</strong>
+                <hr>
+                নিচের BILLING DETAILS সেকশনে আপনার নাম, মোবাইল নম্বর, ইমেইল এড্রেস এবং পাসওয়ার্ড (প্রযোজ্য ক্ষেত্রে) সঠিকভাবে প্রদান করুন। তারপর পেইজের একদম নিচে PLACE ORDER বাটনে ক্লিক করে পরবর্তী পেইজে নির্দেশনা অনুযায়ী পেমেন্ট সম্পন্ন করুন। ফ্রি কোর্সের ক্ষেত্রে পে করতে হবে না; সেক্ষেত্রে BILLING DETAILS পূরণের পর PLACE ORDER বাটনে ক্লিক করলেই আপনার একাউন্টে কোর্স যুক্ত হয়ে যাবে।
+                যেকোনো প্রশ্ন বা দরকারে আমাদের ইমেইল করুন - info@zakirhossen.com এই এড্রেসে।
             </div>
-            <div class="row mb-5" v-if="!auth.loggedIn && showLoginForm">
-                <div class="col-6 offset-3">
-                    <login />
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    Fill up the Payment Information to get access to the course
                 </div>
-            </div> -->
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6 offset-3">
+                            <form action="">
+                                <form @submit.prevent="unlockCourse()">
+                                    <div class="form-group">
+                                        <label for="">Enter Bkash Number</label>
+                                        <input type="text" class="form-control" name="bkash-number" placeholder="Enter Bkash Sender Number" v-model="paymentForm.sender" :class="{ 'is-invalid': registerForm.errors.has('email') }">
+                                        <has-error :form="registerForm" field="email"></has-error>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Transaction TrxID</label>
+                                        <input type="text" class="form-control" name="trxid" placeholder="Enter TrxID" v-model="paymentForm.trxid" :class="{ 'is-invalid': registerForm.errors.has('email') }">
+                                        <has-error :form="registerForm" field="email"></has-error>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-success font-weight-bold text-uppercase py-3 w-100">Unlock Course</button>
+                                    </div>
+                                </form>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" v-else>
             <div class="alert alert-primary mb-5">
                 <strong>IMPORTANT</strong>
                 <hr>
@@ -62,34 +90,6 @@
                                 </b-tab>
                             </b-tabs>
                         </div>
-                        <!-- <div class="card">
-                            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                                <h5 class="mb-0">Account Information</h5>
-                                <a href="#" @click="showLoginForm" class="btn btn-light">Login Here</a>
-                            </div>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for=""> Name </label>
-                                    <input type="text" v-model="account.name" :class="{ 'is-invalid': account.errors.has('name') }" class="form-control" name="" placeholder="name">
-                                    <has-error :form="account" field="name"></has-error>
-                                </div>
-                                <div class="form-group">
-                                    <label for=""> Email </label>
-                                    <input type="email" v-model="account.email" :class="{ 'is-invalid': account.errors.has('email') }" class="form-control" name="email" placeholder="email">
-                                    <has-error :form="account" field="email"></has-error>
-                                </div>
-                                <div class="form-group">
-                                    <label for=""> Phone </label>
-                                    <input type="text" v-model="account.phone" :class="{ 'is-invalid': account.errors.has('phone') }" class="form-control" name="phone" placeholder="phone">
-                                    <has-error :form="account" field="phone"></has-error>
-                                </div>
-                                <div class="form-group" v-if="!auth.loggedIn">
-                                    <label for=""> Password </label>
-                                    <input type="password" v-model="account.password" :class="{ 'is-invalid': account.errors.has('password') }" class="form-control" name="password" placeholder="password">
-                                    <has-error :form="account" field="password"></has-error>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
                     <div :class="auth.loggedIn ? 'col-12' : 'col-6'">
                         <div class="row">
@@ -137,11 +137,6 @@
                                 <nuxt-link :to="{name: 'terms-and-condition'}">terms and conditions *</nuxt-link>
                             </label>
                         </div>
-                        <!-- <input type="checkbox" v-model="accept" class="mr-2" name="accept" id="accept">
-                        <label for="accept">
-                            I have read and agree to the website
-                            <nuxt-link :to="{name: 'terms-and-condition'}">terms and conditions *</nuxt-link>
-                        </label> -->
                     </div>
                     <button :disabled="!auth.loggedIn || !aggree" type="submit" class="btn btn-success w-100 py-3 rounded text-uppercase">Place Order</button>
                 </div>
@@ -176,14 +171,6 @@ export default {
         return {
             showLoginForm: false,
             aggree: false,
-            // account: this.$vform({
-            //     name: '',
-            //     email: '',
-            //     phone: '',
-            //     accept: false,
-            //     payment: '',
-            //     course_id: null,
-            // }),
             loginForm: this.$vform({
                 email: '',
                 password: '',
@@ -193,7 +180,12 @@ export default {
                 email: '',
                 password: '',
             }),
-            purchased: true,
+            purchased: false,
+            paymentForm: this.$vform({
+                course_id: null,
+                sender: null,
+                trxid: null,
+            }),
         }
     },
     methods: {
@@ -202,6 +194,10 @@ export default {
                 let { data } = await this.$axios.post(process.env.API_URL + '/purchase', { course_id: this.cartItems[0].product.id });
 
                 this.$toast.success("Success! Course Purchased Successfully!");
+                this.purchased = true;
+                console.log(data);
+
+                this.paymentForm.course_id = data.course_id;
             } catch (error) {
                 console.log(error);
             }
@@ -236,21 +232,30 @@ export default {
                 left: 0,
                 behavior: 'smooth'
             });
+        },
+        async unlockCourse(){
+            try {
+                await this.paymentForm.post(process.env.API_URL+'/unlock-course');
+
+                this.$toast.success("Success! Your payment is under processing");
+                this.$toast.success("Success! You can access your course when it is approved");
+                this.$router.push({ name: 'account-course'});
+            } catch (error) {
+                console.log(error);
+            }
         }
     },
     mounted(){
-
+        setTimeout(() => {
+            if(this.cartItems.length > 1){
+                this.$store.dispatch('cart/setCartProducts', []);
+                this.$toast.warning('Error! No course found');
+            }
+        }, 500);
     },
     computed: {
         auth(){
-            var auth = this.$store.state.auth;
-            // if(auth.loggedIn){
-            //     this.account.name = auth.user.name;
-            //     this.account.email = auth.user.email;
-            //     this.account.phone = auth.user.phone;
-            // }
-
-            return auth;
+            return this.$store.state.auth;;
         },
         cartItems(){
             return this.$store.getters['cart/getCartProducts'];

@@ -174,7 +174,7 @@ export default {
                 quantity: 1
             });
 
-            this.$toast.success("I'm a toast!");
+            this.$toast.success("Course added to cart!");
             this.$router.push({name: 'checkout'});
         }
     },

@@ -6,26 +6,23 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-6">
-                <div class="box mb-3">
+            <div class="col-6" v-for="order in courses" :key="order.id">
+                <div class="box mb-4">
                     <div class="image">
-                        <!-- <img :src="updateImage(course.image)" alt="" class="img-fluid"> -->
-                        <img src="~static/images/about.jpg" alt="" class="img-fluid">
+                        <img :src="updateImage(order.course.image)" alt="" class="img-fluid">
+                        <!-- <img src="~static/images/about.jpg" alt="" class="img-fluid"> -->
                     </div>
                     <div class="info">
                         <div class="title">
-                            <!-- <nuxt-link :to="{name: 'course-slug', params: {slug: course.slug}}">{{ course.title }}.</nuxt-link> -->
-                            <a href="#"> Course Title Goes Here </a>
+                            <a href="#"> {{ order.course.title }} </a>
                         </div>
-                        <!-- <div class="info-footer">
-                            <div class="category">
-                                <p>Course Category</p>
-                            </div>
-                            <div class="hightlight">
-                                <p>FREE</p>
-                            </div>
-                        </div> -->
-                        <nuxt-link :to="{ name: 'watch-course-lesson', params:{ course: 'course', lesson: 'lesson'} }" class="btn btn-primary mt-2">Watch Course</nuxt-link>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <nuxt-link :to="{ name: 'watch-course-lesson', params:{ course: order.course.slug, lesson: 'lesson'} }" class="btn btn-primary mt-2">Watch Course</nuxt-link>
+                            <div v-if="order.payment_status == 4" class="badge badge-warning">Pending</div>
+                            <div v-if="order.payment_status == 3" class="badge badge-info">Processing</div>
+                            <div v-if="order.payment_status == 2" class="badge badge-danger">Rejected</div>
+                            <div v-if="order.payment_status == 1" class="badge badge-success">Approved</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -36,7 +33,24 @@
 <script>
 export default {
     scrollToTop: true,
+    data(){
+        return {
+            courses: [],
+        }
+    },
+    methods: {
+        async loadCourses(){
+            let { data } = await this.$axios.get(process.env.API_URL+'/auth/courses');
+            this.courses = data;
+        },
 
+        updateImage(image){
+            return this.$store.getters.updateImageURL(image);
+        },
+    },
+    mounted(){
+        this.loadCourses();
+    }
 }
 </script>
 
