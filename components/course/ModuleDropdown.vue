@@ -12,7 +12,7 @@
                 <li v-for="video in section.videos" :key="video.id" class="nav-item d-flex align-items-center">
                     <!-- <font-awesome-icon class="text-success" :icon="['fas', 'check-square']" /> -->
                     <font-awesome-icon class="text-secondary" :icon="['far', 'check-square']" />
-                    <nuxt-link  :to="{ name: 'watch-course-lesson', params:{course: course.slug, lesson: video.slug }}" class="nav-link active d-block w-100">
+                    <nuxt-link :to="{ name: 'watch-course-lesson', params:{course: course.slug, lesson: video.slug }}" class="nav-link module-menu d-block w-100">
                         <div class=" d-flex justify-content-between align-items-center">
                             <span>{{ video.title }}</span>
                             <span class="badge badge-success">Time - {{ video.video_time }}</span>
@@ -35,6 +35,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+    a.module-menu.active {
+        color: black;
+    }
 </style>

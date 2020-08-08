@@ -3,17 +3,17 @@
         <div class="course-intro bg-light">
             <div class="container">
                 <div class="row">
-                    <div class="col-8">
-                        <h2 class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
-                        <p class="text-load">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis libero error cumque perferendis, voluptatum aperiam consequatur labore ab quam sed explicabo nobis perspiciatis officia cupiditate sunt reiciendis, veniam excepturi provident.</p>
+                    <div class="col-12 col-md-8">
+                        <h2 class="title">{{ course.title }}</h2>
+                        <p class="text-load">{{ course.short_description }}</p>
                     </div>
-                    <div class="col-4 text-right">
+                    <div class="col-12 col-md-4 text-md-right">
                         <h2 class="text-success mb-4">৳ 2000</h2>
                         <a href="#" @click.prevent="enrollNow" class="btn btn-primary py-3 px-5 text-uppercase">Enroll Now</a>
                     </div>
                 </div>
                 <div class="row mt-4 align-content-stretch">
-                    <div class="col-6">
+                    <div class="col-12 col-md-12 col-lg-6">
                         <div class="core-metrics rounded shadow-sm bg-white p-3 h-100">
                             <ul class="mb-0">
                                 <li class="d-flex align-items-center">
@@ -55,7 +55,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-md-12 col-lg-6">
                         <div class="intro-video d-flex">
                             <iframe src="https://player.vimeo.com/video/432220749" width="100%" height="320" frameborder="0" controls allow="autoplay; fullscreen" allowfullscreen></iframe>
                         </div>
@@ -66,7 +66,7 @@
         <div class="course-description">
             <div class="container">
                 <div class="row">
-                    <div class="col-8" id="courseContent">
+                    <div class="col-12 col-lg-8 col-md-12" id="courseContent">
                         <div class="description bg-white p-5 shadow rounded">
                             <div class="content-block mb-5">
                                 <h3 class="mb-3">Course Description</h3>
@@ -93,7 +93,7 @@
                             <module-dropdown v-for="section in course.sections" :key="section.id" :section="section" :course="course" />
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-lg-4 col-md-12">
                         <div class="box h-auto py-4 px-4 bg-primary shadow rounded text-white">
                             <h4 class="mb-3 pb-3 border-bottom">This course includes:</h4>
                             <ul class="list-unstyled">
