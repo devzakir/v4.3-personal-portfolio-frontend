@@ -6,10 +6,10 @@
                     <div class="col-12 col-sm-6 col-md-3 item">
                         <h5>Links</h5>
                         <ul>
-                            <li><nuxt-link :to="{ name: 'index' }" href="#">Home</nuxt-link></li>
+                            <li><nuxt-link :to="{ name: 'index' }">Home</nuxt-link></li>
                             <li><nuxt-link :to="{ name: 'course' }">Courses</nuxt-link></li>
-                            <li><nuxt-link :to="{ name: 'product' }" href="#">Products</nuxt-link></li>
                             <li><nuxt-link :to="{ name: 'account' }">Account</nuxt-link></li>
+                            <li><nuxt-link :to="{ name: 'product' }">Free Templates</nuxt-link></li>
                             <!-- <li><nuxt-link :to="{ name: 'resource' }" href="#">Resources</nuxt-link></li> -->
                         </ul>
                     </div>
@@ -18,7 +18,6 @@
                         <ul>
                             <li><a href="https://www.fiverr.com/zakir18">Fiverr Profile</a></li>
                             <li><a href="https://www.upwork.com/freelancers/~014e565b3a8183bd74">Upwork Profile</a></li>
-                            <li><a href="#">Freelancer Profile</a></li>
                             <li><a href="#">Contact Me</a></li>
                         </ul>
                     </div>

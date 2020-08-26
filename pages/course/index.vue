@@ -7,9 +7,14 @@
                     <p>Grab websites for free</p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" v-if="courses.length">
                 <div class="col-12 col-md-6 col-lg-4" v-for="course in courses" :key="course.id">
                     <course :course="course" />
+                </div>
+            </div>
+            <div class="row" v-else>
+                <div class="col-12 py-4 text-center">
+                    <h5 class="mb-3">No course found</h5>
                 </div>
             </div>
         </div>

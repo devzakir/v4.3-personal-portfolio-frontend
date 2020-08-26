@@ -1,10 +1,11 @@
 <template>
     <div>
         <div class="p-4">
-            <iframe width="100%" height="615" src="https://www.youtube.com/embed/eR21ynDHwH8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://player.vimeo.com/video/447622518" width="100%" height="580" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
         <div class="mt-4 p-4">
             <div>
+                <h3>{{ lesson.title }}</h3>
                 <h3>Description</h3>
                 <hr>
                 <div class="content" v-html="lesson.description">

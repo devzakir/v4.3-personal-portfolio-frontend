@@ -24,7 +24,7 @@
             <div class="col-4">
                 <div class="px-4 py-3 rounded bg-danger text-white">
                     <h5>0</h5>
-                    <p>Points</p>
+                    <p>Affiliate Income</p>
                 </div>
             </div>
         </div>

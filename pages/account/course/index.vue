@@ -5,7 +5,7 @@
                 Courses
             </div>
         </div>
-        <div class="row">
+        <div class="row" v-if="courses.length">
             <div class="col-6" v-for="order in courses" :key="order.id">
                 <div class="box mb-4">
                     <div class="image">
@@ -25,6 +25,14 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="row" v-else>
+            <div class="col-12 py-4 text-center">
+                <h5 class="mb-3">No course found</h5>
+                <nuxt-link :to="{ name: 'course' }" class="btn btn-primary px-4 py-2">
+                    Browse Course
+                </nuxt-link>
             </div>
         </div>
     </div>

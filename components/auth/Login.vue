@@ -30,8 +30,8 @@ export default {
     data(){
         return {
             loginForm: this.$vform({
-                email: '',
-                password: '',
+                email: 'web.zakirbd@gmail.com',
+                password: '12345678',
             }),
         }
     },

@@ -81,7 +81,9 @@ The failure of Bohubrihi to exercise or enforce any right or provision of the Te
 
 <script>
 export default {
-
+    created(){
+        this.$rotuer.push({ name: 'index' });
+    }
 }
 </script>
 

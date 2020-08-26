@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 heading">
-                    <h2> Free Products </h2>
+                    <h2> Free Templates </h2>
                     <p>Grab websites for free</p>
                 </div>
             </div>
