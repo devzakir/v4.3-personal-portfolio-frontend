@@ -10,15 +10,6 @@
                             <li><nuxt-link :to="{ name: 'course' }">Courses</nuxt-link></li>
                             <li><nuxt-link :to="{ name: 'account' }">Account</nuxt-link></li>
                             <li><nuxt-link :to="{ name: 'product' }">Free Templates</nuxt-link></li>
-                            <!-- <li><nuxt-link :to="{ name: 'resource' }" href="#">Resources</nuxt-link></li> -->
-                        </ul>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-3 item">
-                        <h5>Hire Me</h5>
-                        <ul>
-                            <li><a href="https://www.fiverr.com/zakir18">Fiverr Profile</a></li>
-                            <li><a href="https://www.upwork.com/freelancers/~014e565b3a8183bd74">Upwork Profile</a></li>
-                            <li><a href="#">Contact Me</a></li>
                         </ul>
                     </div>
                     <div class="col-12 col-sm-6 col-md-3 item">
@@ -33,10 +24,17 @@
                     <div class="col-12 col-sm-6 col-md-3 item">
                         <h5>Resource</h5>
                         <ul>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">My Resource</a></li>
+                            <li><a target="_blank" href="https://zakirct.blogspot.com">Blog</a></li>
+                            <li><nuxt-link :to="{ name: 'resource' }">My Resources</nuxt-link></li>
                             <li><a href="#">Useful Links</a></li>
                             <li><a href="#">Free Tools</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3 item">
+                        <h5>Hire Me</h5>
+                        <ul>
+                            <li><a target="_blank" href="https://www.fiverr.com/zakir18">Fiverr Profile</a></li>
+                            <li><a target="_blank" href="https://www.upwork.com/freelancers/~014e565b3a8183bd74">Upwork Profile</a></li>
                         </ul>
                     </div>
                 </div>
