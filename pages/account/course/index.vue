@@ -9,19 +9,27 @@
             <div class="col-6" v-for="order in courses" :key="order.id">
                 <div class="box mb-4">
                     <div class="image">
-                        <img :src="updateImage(order.course.image)" alt="" class="img-fluid">
-                        <!-- <img src="~static/images/about.jpg" alt="" class="img-fluid"> -->
+                        <img v-if="order.course.image" :src="updateImage(order.course.image)" alt="" class="img-fluid">
+                        <img v-else src="~static/images/about.jpg" alt="" class="img-fluid">
                     </div>
                     <div class="info">
                         <div class="title">
-                            <a href="#"> {{ order.course.title }} </a>
+                            <nuxt-link :to="{ name: 'course-slug', params: { slug: order.course.slug } }"> {{ order.course.title }} </nuxt-link>
                         </div>
-                        <div class="d-flex align-items-center justify-content-between">
-                            <nuxt-link :to="{ name: 'watch-course-lesson', params:{ course: order.course.slug, lesson: 'lesson'} }" class="btn btn-primary mt-2">Watch Course</nuxt-link>
-                            <div v-if="order.payment_status == 4" class="badge badge-warning">Pending</div>
-                            <div v-if="order.payment_status == 3" class="badge badge-info">Processing</div>
-                            <div v-if="order.payment_status == 2" class="badge badge-danger">Rejected</div>
-                            <div v-if="order.payment_status == 1" class="badge badge-success">Approved</div>
+                        <div v-if="order.payment_status == 1" class=" mt-2">
+                            <nuxt-link :to="{ name: 'watch-course-lesson', params:{ course: order.course.slug, lesson: 'lesson'} }" class="btn btn-primary">Watch Course</nuxt-link>
+                        </div>
+                        <div v-if="order.payment_status == 4" class="d-flex justify-content-between align-items-center mt-2">
+                            <div class="badge badge-warning my-2">Payment Pending</div>
+                            <nuxt-link :to="{ name: 'account-course-slug', params: { slug: order.course.slug } }" class="btn btn-primary">Submit Payment Info</nuxt-link>
+                        </div>
+                        <div v-if="order.payment_status == 3" class="d-flex justify-content-between align-items-center mt-2">
+                            <div class="badge badge-info my-2">Payment Processing</div>
+                            <nuxt-link :to="{ name: 'account-course-slug', params: { slug: order.course.slug } }" class="btn btn-primary">Submit Payment Again</nuxt-link>
+                        </div>
+                        <div v-if="order.payment_status == 2" class="d-flex justify-content-between align-items-center mt-2">
+                            <div class="badge badge-danger my-2">Payment Info Rejected</div>
+                            <nuxt-link :to="{ name: 'account-course-slug', params: { slug: order.course.slug } }" class="btn btn-primary">Submit Payment Info</nuxt-link>
                         </div>
                     </div>
                 </div>
@@ -41,6 +49,15 @@
 <script>
 export default {
     scrollToTop: true,
+    head: {
+        title: 'Courses',
+        meta: [
+            // { hid: 'description', name: 'description', content: 'Home page description' }
+        ],
+        script: [
+            // { src: '/head.js' },
+        ]
+    },
     data(){
         return {
             courses: [],

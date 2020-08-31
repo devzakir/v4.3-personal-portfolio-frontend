@@ -7,34 +7,7 @@
                 নিচের BILLING DETAILS সেকশনে আপনার নাম, মোবাইল নম্বর, ইমেইল এড্রেস এবং পাসওয়ার্ড (প্রযোজ্য ক্ষেত্রে) সঠিকভাবে প্রদান করুন। তারপর পেইজের একদম নিচে PLACE ORDER বাটনে ক্লিক করে পরবর্তী পেইজে নির্দেশনা অনুযায়ী পেমেন্ট সম্পন্ন করুন। ফ্রি কোর্সের ক্ষেত্রে পে করতে হবে না; সেক্ষেত্রে BILLING DETAILS পূরণের পর PLACE ORDER বাটনে ক্লিক করলেই আপনার একাউন্টে কোর্স যুক্ত হয়ে যাবে।
                 যেকোনো প্রশ্ন বা দরকারে আমাদের ইমেইল করুন - info@zakirhossen.com এই এড্রেসে।
             </div>
-            <div class="card">
-                <div class="card-header bg-primary text-white">
-                    Fill up the Payment Information to get access to the course
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-6 offset-3">
-                            <form action="">
-                                <form @submit.prevent="unlockCourse()">
-                                    <div class="form-group">
-                                        <label for="">Enter Bkash Number</label>
-                                        <input type="text" class="form-control" name="bkash-number" placeholder="Enter Bkash Sender Number" v-model="paymentForm.sender" :class="{ 'is-invalid': registerForm.errors.has('email') }">
-                                        <has-error :form="registerForm" field="email"></has-error>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Transaction TrxID</label>
-                                        <input type="text" class="form-control" name="trxid" placeholder="Enter TrxID" v-model="paymentForm.trxid" :class="{ 'is-invalid': registerForm.errors.has('email') }">
-                                        <has-error :form="registerForm" field="email"></has-error>
-                                    </div>
-                                    <div class="form-group">
-                                        <button class="btn btn-success font-weight-bold text-uppercase py-3 w-100">Unlock Course</button>
-                                    </div>
-                                </form>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <payment-form :course_id="course_id"/>
         </div>
         <div class="container" v-else>
             <div class="alert alert-primary mb-5">
@@ -147,17 +120,14 @@
 
 <script>
 import Login from '@/components/auth/Login'
+import PaymentForm from '@/components/course/PaymentForm'
 
 export default {
     head() {
         return {
             title: 'Zakir Hossen Personal Portfolio',
             meta: [
-                // { hid: 'description', name: 'description', content: 'A passionate Web Developer from Dhaka, Bangladesh. I prefer to learn consistently to expand my knowledge. I am working with Laravel, Vue.js & Nuxt.js.' },
-                // { hid: 'og:type', property: 'og:type', content: "website" },
-                // { hid: 'og:title', name: 'og:title', content: 'A passionate Web Developer from Dhaka, Bangladesh. I prefer to learn consistently to expand my knowledge. I am working with Laravel, Vue.js & Nuxt.js.' },
-                // { hid: 'og:description', name: 'og:description', content: 'A passionate Web Developer from Dhaka, Bangladesh. I prefer to learn consistently to expand my knowledge. I am working with Laravel, Vue.js & Nuxt.js.' },
-                // { hid: 'og:image', property: 'og:image', content: "/images/product.jpg" },
+
             ],
             link: [
                 { rel: 'stylesheet', href: 'https://rawgit.com/lykmapipo/themify-icons/master/css/themify-icons.css' }
@@ -166,6 +136,7 @@ export default {
     },
     components: {
         'login': Login,
+        'payment-form': PaymentForm,
     },
     data(){
         return {
@@ -181,23 +152,17 @@ export default {
                 password: '',
             }),
             purchased: false,
-            paymentForm: this.$vform({
-                course_id: null,
-                sender: null,
-                trxid: null,
-            }),
+            course_id: null,
         }
     },
     methods: {
         async purchase(){
             try {
                 let { data } = await this.$axios.post(process.env.API_URL + '/purchase', { course_id: this.cartItems[0].product.id });
-
                 this.$toast.success("Success! Course Purchased Successfully!");
                 this.purchased = true;
-                console.log(data);
 
-                this.paymentForm.course_id = data.course_id;
+                this.course_id = data.course_id;
             } catch (error) {
                 console.log(error);
             }
@@ -233,17 +198,6 @@ export default {
                 behavior: 'smooth'
             });
         },
-        async unlockCourse(){
-            try {
-                await this.paymentForm.post(process.env.API_URL+'/unlock-course');
-
-                this.$toast.success("Success! Your payment is under processing");
-                this.$toast.success("Success! You can access your course when it is approved");
-                this.$router.push({ name: 'account-course'});
-            } catch (error) {
-                console.log(error);
-            }
-        }
     },
     mounted(){
         setTimeout(() => {

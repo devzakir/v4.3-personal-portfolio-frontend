@@ -20,7 +20,7 @@
                                     <div class="icon mr-3 text-success"><font-awesome-icon :icon="['fas', 'user-friends']" /> </div>
                                     <div class="content">
                                         <strong> Enrollment: </strong>
-                                        <span> 400 Students </span>
+                                        <span> {{ course.enrollment }} Students </span>
                                     </div>
                                 </li>
                                 <li class="d-flex align-items-center">
@@ -28,35 +28,35 @@
                                     <div class="icon mr-3 text-primary"><font-awesome-icon :icon="['fas', 'clock']" /> </div>
                                     <div class="content">
                                         <strong> Duration: </strong>
-                                        <span> 120 Hours </span>
+                                        <span> {{ course.duration }} Hours </span>
                                     </div>
                                 </li>
                                 <li class="d-flex align-items-center">
                                     <div class="icon mr-3 text-danger"><font-awesome-icon :icon="['fas', 'play-circle']" /> </div>
                                     <div class="content">
                                         <strong> Videos: </strong>
-                                        <span> 40 Videos</span>
+                                        <span> {{ course.videos }} Videos</span>
                                     </div>
                                 </li>
                                 <li class="d-flex align-items-center">
                                     <div class="icon mr-3 text-info"><font-awesome-icon :icon="['fas', 'lightbulb']" /> </div>
                                     <div class="content">
                                         <strong> Projects: </strong>
-                                        <span> 15+ </span>
+                                        <span> {{ course.projects }}+ </span>
                                     </div>
                                 </li>
                                 <li class="d-flex align-items-center">
                                     <div class="icon mr-3 text-warning"><font-awesome-icon :icon="['fas', 'signal']" /> </div>
                                     <div class="content">
                                         <strong> Level: </strong>
-                                        <span> Begineer </span>
+                                        <span> {{ course.level }} </span>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-12 col-md-12 col-lg-6">
-                        <div class="intro-video d-flex">
+                        <div class="intro-video d-flex" v-html="course.video">
                             <iframe src="https://player.vimeo.com/video/432220749" width="100%" height="320" frameborder="0" controls allow="autoplay; fullscreen" allowfullscreen></iframe>
                         </div>
                     </div>
@@ -70,22 +70,7 @@
                         <div class="description bg-white p-5 shadow rounded">
                             <div class="content-block mb-5">
                                 <h3 class="mb-3">Course Description</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum error corrupti culpa necessitatibus quod. Inventore sint facere sunt quibusdam aliquid, architecto ex? Unde cumque in tempora! Reprehenderit enim laboriosam sunt?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta aspernatur laboriosam excepturi esse voluptatum ipsum neque aliquid minus aut odit cumque necessitatibus ducimus voluptatem laudantium corporis aliquam, deleniti eaque soluta.</p>
-                            </div>
-                            <div class="content-block mb-5">
-                                <h3>What you will learn?</h3>
-                                <ul>
-                                    <li>
-                                        Lorem ipsum dolor sit amet.
-                                    </li>
-                                    <li>
-                                        Cumque perferendis porro ullam aperiam.
-                                    </li>
-                                    <li>
-                                        Fugiat eveniet ad quidem et.
-                                    </li>
-                                </ul>
+                                <div class="content-block" v-html="course.description"></div>
                             </div>
                         </div>
                         <div class="bg-white p-5 mt-5 shadow rounded"  v-if="course.sections && course.sections.length">
@@ -96,26 +81,11 @@
                     <div class="col-12 col-lg-4 col-md-12">
                         <div class="box h-auto py-4 px-4 bg-primary shadow rounded text-white">
                             <h4 class="mb-3 pb-3 border-bottom">This course includes:</h4>
+                            <div class="content-block highlight" v-html="course.highlight"></div>
                             <ul class="list-unstyled">
                                 <li class="mb-3">
                                     <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
                                     <span>7 hours on-demand video 7 hours on-demand video</span>
-                                </li>
-                                <li class="mb-3">
-                                    <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
-                                    <span>6 articles</span>
-                                </li>
-                                <li class="mb-3">
-                                    <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
-                                    <span>2 downloadable resources</span>
-                                </li>
-                                <li class="mb-3">
-                                    <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
-                                    <span>Full lifetime access</span>
-                                </li>
-                                <li class="mb-3">
-                                    <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
-                                    <span>Access on mobile and TV</span>
                                 </li>
                             </ul>
                         </div>
@@ -246,5 +216,9 @@ export default {
     }
 
 }
-
+.content-block.highlight {
+    li {
+        margin-bottom: 15px;
+    }
+}
 </style>

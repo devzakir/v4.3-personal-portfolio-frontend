@@ -35,7 +35,7 @@
 export default {
     scrollToTop: true,
     head: {
-        title: 'Courses',
+        title: 'Dashboard',
         meta: [
             // { hid: 'description', name: 'description', content: 'Home page description' }
         ],

@@ -5,12 +5,10 @@
         </div>
         <div class="mt-4 p-4">
             <div>
-                <h3>{{ lesson.title }}</h3>
+                <h3 class="mb-4">{{ lesson.title }}</h3>
                 <h3>Description</h3>
                 <hr>
-                <div class="content" v-html="lesson.description">
-
-                </div>
+                <div class="content" v-html="lesson.description"> </div>
             </div>
             <div class="mt-5">
                 <h3> Comments </h3>

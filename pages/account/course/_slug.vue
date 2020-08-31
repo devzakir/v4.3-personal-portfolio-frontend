@@ -1,21 +1,30 @@
 <template>
     <div>
-        <h2>Course Preview Page</h2>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid, provident cupiditate corrupti ducimus ea molestias ratione ab voluptatum nemo. Voluptatem cum esse amet officia ab? Dicta fugiat officiis similique?
+        <payment-form :course_id="course.id"/>
     </div>
 </template>
 
 <script>
+import PaymentForm from '@/components/course/PaymentForm'
 export default {
-    head: {
-        title: 'Course Details Page',
-        meta: [
-            // { hid: 'description', name: 'description', content: 'Home page description' }
-        ],
-        script: [
-            // { src: '/head.js' },
-        ]
+    components: {
+        'payment-form': PaymentForm,
     },
+    data(){
+        return {
+            course: {},
+        }
+    },
+    async asyncData({$axios, params}){
+        let { data } = await $axios.get(process.env.API_URL+'/course/'+params.slug);
+
+        return { course: data }
+    },
+    data(){
+        return {
+
+        }
+    }
 }
 </script>
 

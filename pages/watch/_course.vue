@@ -7,13 +7,13 @@
             <div class="navbar-nav-scroll ml-2">
                 <ul class="navbar-nav bd-navbar-nav flex-row">
                     <li class="nav-item active">
-                        <nuxt-link class="nav-link" :to="{name: 'course-slug', params: {slug: 'course-name-here' }}" >Course Name Goes Here</nuxt-link>
+                        <nuxt-link class="nav-link" :to="{name: 'course-slug', params: {slug: course.slug }}" >{{ course.title }}</nuxt-link>
                     </li>
                 </ul>
             </div>
             <ul class="navbar-nav ml-md-auto">
                 <li class="nav-item" v-if="!auth.loggedIn">
-                    <nuxt-link :to="{name: 'login'}" class="btn btn-warning d-none d-lg-inline-block text-dark ml-auto mb-3 mb-md-0 ml-md-3">
+                    <nuxt-link :to="{ name: 'login' }" class="btn btn-warning d-none d-lg-inline-block text-dark ml-auto mb-3 mb-md-0 ml-md-3">
                         <font-awesome-icon  class="mr-2" :icon="['fas', 'user']" />
                         Login
                     </nuxt-link>
@@ -60,7 +60,6 @@ export default {
             try {
                 let { data } = await this.$axios.get(process.env.API_URL+'/course/'+ this.$route.params.course);
                 this.course = data;
-                console.log(data);
             } catch (error) {
                 console.log(error);
             }
