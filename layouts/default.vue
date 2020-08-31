@@ -17,10 +17,14 @@ export default {
     },
     mounted(){
         let items = JSON.parse(localStorage.getItem('cartProducts'));
-        if(items.length > 1){
+        if(items){
+            if(items.length > 1){
+                this.$store.dispatch('cart/setCartProducts', []);
+            }else {
+                this.$store.dispatch('cart/setCartProducts', items);
+            }
+        }else{
             this.$store.dispatch('cart/setCartProducts', []);
-        }else {
-            this.$store.dispatch('cart/setCartProducts', items);
         }
     }
 }

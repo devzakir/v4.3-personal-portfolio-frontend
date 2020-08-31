@@ -44,7 +44,7 @@
 import ModuleDropdown from '@/components/course/ModuleDropdown'
 export default {
     layout: 'lesson',
-    // middleware: 'auth',
+    middleware: 'auth',
     components: {
         'module-dropdown': ModuleDropdown
     },

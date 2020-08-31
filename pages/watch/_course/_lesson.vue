@@ -12,7 +12,7 @@
             </div>
             <div class="mt-5">
                 <h3> Comments </h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus deleniti, iusto debitis neque beatae dolor. Eum quisquam officia delectus. Veniam laudantium et inventore! Vitae deleniti maiores inventore molestiae quaerat voluptatum.</p>
+                <Disqus shortname='zakirhossen' />
             </div>
         </div>
     </div>
@@ -20,11 +20,14 @@
 
 <script>
 import ModuleDropdown from '@/components/course/ModuleDropdown'
+import { Disqus } from 'vue-disqus'
+
 export default {
     props: ['course'],
     layout: 'lesson',
     components: {
-        'module-dropdown': ModuleDropdown
+        'module-dropdown': ModuleDropdown,
+        Disqus
     },
     data(){
         return {
