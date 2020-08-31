@@ -17,7 +17,7 @@
                             <nuxt-link :to="{ name: 'course-slug', params: { slug: order.course.slug } }"> {{ order.course.title }} </nuxt-link>
                         </div>
                         <div v-if="order.payment_status == 1" class=" mt-2">
-                            <nuxt-link :to="{ name: 'watch-course-lesson', params:{ course: order.course.slug, lesson: 'lesson'} }" class="btn btn-primary">Watch Course</nuxt-link>
+                            <nuxt-link :to="{ name: 'watch-course', params:{ course: order.course.slug } }" class="btn btn-primary">Watch Course</nuxt-link>
                         </div>
                         <div v-if="order.payment_status == 4" class="d-flex justify-content-between align-items-center mt-2">
                             <div class="badge badge-warning my-2">Payment Pending</div>

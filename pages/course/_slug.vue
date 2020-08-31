@@ -2,14 +2,17 @@
     <div>
         <div class="course-intro bg-light">
             <div class="container">
-                <div class="row">
+                <div class="row align-items-center">
                     <div class="col-12 col-md-8">
                         <h2 class="title">{{ course.title }}</h2>
                         <p class="text-load">{{ course.short_description }}</p>
                     </div>
-                    <div class="col-12 col-md-4 text-md-right">
+                    <div v-if="!purchase" class="col-12 col-md-4 text-md-right">
                         <h2 class="text-success mb-4">{{ price() }}</h2>
                         <a href="#" @click.prevent="enrollNow" class="btn btn-primary py-3 px-5 text-uppercase">Enroll Now</a>
+                    </div>
+                    <div v-else class="col-12 col-md-4 text-md-right">
+                        <nuxt-link :to="{ name: 'watch-course', params:{ course: course.slug } }" class="btn btn-success py-3 px-5 text-uppercase">Go to Course</nuxt-link>
                     </div>
                 </div>
                 <div class="row mt-4 align-content-stretch">
@@ -107,11 +110,12 @@ export default {
     async asyncData({$axios, params}){
         let { data } = await $axios.get(process.env.API_URL+'/course/'+params.slug);
 
-        return { course: data }
+        return { course: data['course'], purchase: data['purchase'] }
     },
     data(){
         return {
             course: {},
+            purchase: false,
         }
     },
     methods: {
