@@ -55,6 +55,12 @@ export default {
             },
         }
     },
+    async asyncData({$axios, params, error}){
+        await $axios.get(process.env.API_URL+'/course/access/'+params.course).then((res) => {})
+        .catch((e) => {
+            error({ statusCode: 404, message: 'You do not have permission to access this course.' })
+        })
+    },
     methods: {
         async loadCourse(){
             try {
