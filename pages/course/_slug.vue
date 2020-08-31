@@ -4,8 +4,10 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-12 col-md-8">
-                        <h2 class="title">{{ course.title }}</h2>
-                        <p class="text-load">{{ course.short_description }}</p>
+                        <div class="mb-md-3 mb-3 mb-lg-0">
+                            <h2 class="title">{{ course.title }}</h2>
+                            <p class="text-load">{{ course.short_description }}</p>
+                        </div>
                     </div>
                     <div v-if="!purchase" class="col-12 col-md-4 text-md-right">
                         <h2 class="text-success mb-4">{{ price() }}</h2>
@@ -59,7 +61,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-12 col-lg-6">
-                        <div class="intro-video d-flex" v-html="course.video">
+                        <div class="intro-video d-flex mt-md-5 mt-3 mt-lg-0" v-html="course.video">
                             <iframe src="https://player.vimeo.com/video/432220749" width="100%" height="320" frameborder="0" controls allow="autoplay; fullscreen" allowfullscreen></iframe>
                         </div>
                     </div>
@@ -76,7 +78,7 @@
                                 <div class="content-block" v-html="course.description"></div>
                             </div>
                         </div>
-                        <div class="bg-white p-5 mt-5 shadow rounded"  v-if="course.sections && course.sections.length">
+                        <div class="bg-white p-md-5 py-4 px-4 mt-5 shadow rounded mb-md-5 mb-3"  v-if="course.sections && course.sections.length">
                             <h3 class="mb-3"> Course Module </h3>
                             <module-dropdown v-for="section in course.sections" :key="section.id" :section="section" :course="course" />
                         </div>

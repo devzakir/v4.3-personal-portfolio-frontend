@@ -9,19 +9,19 @@
             </div>
         </div>
         <div class="row mt-4">
-            <div class="col-4">
+            <div class="col-sm-6 col-12 col-md-4 mb-lg-0 mb-md-0 mb-2">
                 <div class="px-4 py-3 rounded bg-primary text-white">
                     <h5>0</h5>
                     <p>Courses</p>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-sm-6 col-12 col-md-4 mb-lg-0 mb-md-0 mb-2">
                 <div class="px-4 py-3 rounded bg-success text-white">
                     <h5>0</h5>
                     <p>Lesson Completed</p>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-sm-6 col-12 col-md-4 mb-lg-0 mb-md-0 mb-2">
                 <div class="px-4 py-3 rounded bg-danger text-white">
                     <h5>0</h5>
                     <p>Affiliate Income</p>

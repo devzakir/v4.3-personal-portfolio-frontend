@@ -6,14 +6,14 @@
         <div class="card-body">
             <form action="" method="post" @submit.prevent="updateUser()">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-md-6 col-12">
                         <div class="form-group">
                             <label for="">Enter your name</label>
                             <input type="text" class="form-control" placeholder="name" v-model="user.name" :class="{ 'is-invalid': user.errors.has('name') }">
                             <has-error :form="user" field="name"></has-error>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6 col-12">
                         <div class="form-group">
                             <label for="">Enter your email</label>
                             <input type="text" class="form-control" placeholder="email" v-model="user.email" :class="{ 'is-invalid': user.errors.has('email') }">
@@ -24,14 +24,14 @@
                         <h5 class="text-secondary">Update Password</h5>
                         <hr>
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6 col-12">
                         <div class="form-group">
                             <label for="">New password</label>
                             <input type="password" name="new_password" class="form-control" placeholder="new password" v-model="user.new_password" :class="{ 'is-invalid': user.errors.has('new_password') }">
                             <has-error :form="user" field="new_password"></has-error>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6 col-12">
                         <div class="form-group">
                             <label for="">Confirm password</label>
                             <input type="password" name="confirm_password" class="form-control" placeholder="confirm password" v-model="user.confirm_password" :class="{ 'is-invalid': user.errors.has('confirm_password') }">

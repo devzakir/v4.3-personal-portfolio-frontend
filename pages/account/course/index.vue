@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="row" v-if="courses.length">
-            <div class="col-6" v-for="order in courses" :key="order.id">
+            <div class="col-lg-6 col-md-6 col-12" v-for="order in courses" :key="order.id">
                 <div class="box mb-4">
                     <div class="image">
                         <img v-if="order.course.image" :src="updateImage(order.course.image)" alt="" class="img-fluid">

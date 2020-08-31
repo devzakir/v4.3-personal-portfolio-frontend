@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="p-4">
-            <iframe src="https://player.vimeo.com/video/447622518" width="100%" height="580" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <div class="course-video" v-html="lesson.video"></div>
         </div>
         <div class="mt-4 p-4">
             <div>
@@ -38,7 +38,6 @@ export default {
         async loadLesson(){
             let { data } = await this.$axios.get(process.env.API_URL+'/watch/'+ this.$route.params.course+'/'+this.$route.params.lesson);
             this.lesson = data;
-            console.log(data);
         }
     },
     computed: {

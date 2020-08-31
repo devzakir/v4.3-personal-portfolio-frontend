@@ -4,7 +4,7 @@
         <section class="section bg-light">
             <div class="container">
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-lg-3 col-12 mb-4 mb-md-4 mb-lg-0">
                         <div class="bg-primary text-white rounded-top" style="padding: 0.75rem 1.25rem">Menu</div>
                         <div class="sidebar-sticky bg-white rounded-bottom px-2 py-3 border border-top-0">
                             <ul class="nav flex-column">
@@ -55,7 +55,7 @@
                             </ul> -->
                         </div>
                     </div>
-                    <div class="col-9">
+                    <div class="col-lg-9 col-12">
                         <nuxt-child />
                     </div>
                 </div>

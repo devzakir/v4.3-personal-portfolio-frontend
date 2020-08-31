@@ -8,10 +8,10 @@
                             <img src="~static/images/logo-white.png" alt="" class="img-fluid">
                         </nuxt-link>
                         <ul class="mobile-nav" :class="{'active' : dropdown}">
-                            <li><nuxt-link :to="{name: 'index'}"> Home </nuxt-link></li>
-                            <li><nuxt-link :to="{name: 'course'}"> Courses </nuxt-link></li>
-                            <li><nuxt-link :to="{name: 'product'}"> free Templates </nuxt-link></li>
-                            <li><nuxt-link :to="{name: 'resource'}"> Resources </nuxt-link></li>
+                            <li><nuxt-link @click.native="dropdown = false" :to="{name: 'index'}"> Home </nuxt-link></li>
+                            <li><nuxt-link @click.native="dropdown = false" :to="{name: 'course'}"> Courses </nuxt-link></li>
+                            <li><nuxt-link @click.native="dropdown = false" :to="{name: 'product'}"> free Templates </nuxt-link></li>
+                            <li><nuxt-link @click.native="dropdown = false" :to="{name: 'resource'}"> Resources </nuxt-link></li>
                         </ul>
                         <ul class="right ml-auto">
                             <li v-if="setting.facebook">
@@ -107,4 +107,13 @@ export default {
 <style lang="scss">
     // @import '../assets/scss/layout/_header.scss';
     // @import '~/assets/scss/layout/header';
+    @media(max-width: 575px){
+        header .menu-part .right li {
+            display: none;
+            &.focus-btn {
+                display: block;
+            }
+        }
+    }
+
 </style>

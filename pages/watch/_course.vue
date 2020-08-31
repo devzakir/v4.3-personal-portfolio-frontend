@@ -28,11 +28,11 @@
         </header>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-3 col-lg-3 d-md-block bg-light sidebar collapse py-3">
+                <div class="col-md-3 col-12 col-lg-3 d-md-block bg-light sidebar collapse show py-3">
                     <h4 class="mb-3 text-secondary">Course Module</h4>
                     <module-dropdown v-for="section in course.sections" :key="section.id" :section="section" :course="course" />
                 </div>
-                <div class="col-md-9 ml-sm-auto col-lg-9 px-md-4">
+                <div class="col-md-9 col-12 ml-sm-auto col-lg-9 px-md-4">
                     <nuxt-child :course="course"/>
                 </div>
             </div>
@@ -65,7 +65,9 @@ export default {
         async loadCourse(){
             try {
                 let { data } = await this.$axios.get(process.env.API_URL+'/course/'+ this.$route.params.course);
-                this.course = data;
+                this.course = data['course'];
+
+                console.log(this.course);
             } catch (error) {
                 console.log(error);
             }
@@ -78,7 +80,6 @@ export default {
     },
     mounted(){
         this.loadCourse();
-        console.log(this.$route);
     }
 }
 </script>
