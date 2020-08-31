@@ -1,8 +1,8 @@
 <template>
     <div>
-        <header class="navbar navbar-expand navbar-dark bg-primary flex-column flex-md-row bd-navbar">
+        <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
             <nuxt-link :to="{name: 'index'}" class="logo d-flex align-items-center navbar-brand mr-0 mr-md-2">
-                <img src="~static/images/logo.png" alt="" class="img-fluid">
+                <img src="~static/images/logo-white.png" alt="" class="img-fluid">
             </nuxt-link>
             <div class="navbar-nav-scroll ml-2">
                 <ul class="navbar-nav bd-navbar-nav flex-row">
