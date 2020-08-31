@@ -8,7 +8,7 @@
                         <p class="text-load">{{ course.short_description }}</p>
                     </div>
                     <div class="col-12 col-md-4 text-md-right">
-                        <h2 class="text-success mb-4">৳ 2000</h2>
+                        <h2 class="text-success mb-4">{{ price() }}</h2>
                         <a href="#" @click.prevent="enrollNow" class="btn btn-primary py-3 px-5 text-uppercase">Enroll Now</a>
                     </div>
                 </div>
@@ -115,13 +115,6 @@ export default {
         }
     },
     methods: {
-        price(value){
-            if(value > 0){
-                return value;
-            }else {
-                return 'Free';
-            }
-        },
         updateImage(image){
             return this.$store.getters.updateImageURL(image);
         },
@@ -146,6 +139,11 @@ export default {
 
             this.$toast.success("Course added to cart!");
             this.$router.push({name: 'checkout'});
+        },
+
+        price(){
+            let price = this.course.sale_price ? this.course.sale_price : this.course.price;
+            return '৳ ' + price;
         }
     },
     computed: {

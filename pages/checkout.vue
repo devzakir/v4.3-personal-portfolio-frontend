@@ -160,9 +160,14 @@ export default {
             try {
                 let { data } = await this.$axios.post(process.env.API_URL + '/purchase', { course_id: this.cartItems[0].product.id });
                 this.$toast.success("Success! Course Purchased Successfully!");
-                this.purchased = true;
 
-                this.course_id = data.course_id;
+                if(data.payment_status == 1 && data.status == 1){
+                    this.$router.push({ name: 'account-course'});
+                }else {
+                    this.purchased = true;
+                    this.course_id = data.course_id;
+                }
+
             } catch (error) {
                 console.log(error);
             }

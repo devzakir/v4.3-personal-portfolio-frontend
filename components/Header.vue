@@ -14,7 +14,7 @@
                             <li><nuxt-link :to="{name: 'resource'}"> Resources </nuxt-link></li>
                         </ul>
                         <ul class="right ml-auto">
-                            <!-- <li v-if="setting.facebook">
+                            <li v-if="setting.facebook">
                                 <a :href="setting.facebook" target="_blank">
                                     <font-awesome-icon :icon="['fab', 'facebook-f']" />
                                  </a>
@@ -43,7 +43,7 @@
                                 <a :href="setting.quora" target="_blank">
                                     <font-awesome-icon :icon="['fab', 'quora']" />
                                  </a>
-                            </li> -->
+                            </li>
                             <li class="focus-btn" v-if="!auth.loggedIn">
                                 <nuxt-link :to="{name: 'login'}">
                                     <font-awesome-icon  class="mr-2" :icon="['fas', 'user']" />
