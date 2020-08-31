@@ -20,11 +20,6 @@ export default {
 
         return { course: data }
     },
-    data(){
-        return {
-
-        }
-    }
 }
 </script>
 
