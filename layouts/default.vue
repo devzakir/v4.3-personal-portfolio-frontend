@@ -14,10 +14,26 @@ export default {
     components: {
         siteHeader,
         siteFooter
+    },
+    mounted(){
+        let items = JSON.parse(localStorage.getItem('cartProducts'));
+        if(items){
+            if(items.length > 1){
+                this.$store.dispatch('cart/setCartProducts', []);
+            }else {
+                this.$store.dispatch('cart/setCartProducts', items);
+            }
+        }else{
+            this.$store.dispatch('cart/setCartProducts', []);
+        }
     }
 }
 </script>
 
 <style lang="scss">
     @import '~/assets/scss/main.scss';
+
+    .Vue-Toastification__progress-bar {
+        opacity: 1 !important;
+    }
 </style>

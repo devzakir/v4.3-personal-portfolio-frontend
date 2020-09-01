@@ -44,7 +44,7 @@
                     @include animate();
                 }
             }
-            .details{                
+            .details{
                 padding: 30px;
                 @include animate();
                 small{
@@ -84,10 +84,13 @@
         h2{
             color: $white;
             margin-bottom: 15px;
+            font-size: 40px;
         }
         p{
-            color: darken($white,10%);
-            max-width: 300px;
+            color: darken($white, 5%);
+            // max-width: 300px;
+            font-size: 18px;
+            line-height: 26px;
         }
         .buttons{
             button, a{
@@ -108,12 +111,12 @@
     }
 }
 
-// Responsive 
+// Responsive
 @media(max-width: 991px){
-    
+
 }
 @media( min-width:768px ) and (max-width: 991px){
-    
+
 }
 
 @media(max-width:767px){
@@ -126,5 +129,5 @@
 }
 
 @media(max-width: 575px){
-    
+
 }

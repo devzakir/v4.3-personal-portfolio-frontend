@@ -5,54 +5,17 @@
 
 .banner-section{
     position: relative;
-    background-image: url('~static/images/background.png');
-    background-position: top right;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: white;
-    header.active{
-        background-color: transparent;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: 99;
-        .menu-part li a {
-            color: $color;
-            border-color: $color;
-            &::after{
-                background-color: $color;
-            }
-            &.hire-me{
-                border-color: $color;
-                &:hover{
-                    border-color: white;
-                }
-                // position: unset;
-                // z-index: 1;
-                // &:hover{                
-                //     color: white;
-                //     background-color: transparent;
-                // }
-                // &::after{
-                //     height: 100%;
-                //     background-color: $white;
-
-                //     z-index: -1;
-                // }
-            }
-        }
-    }
     .particle {
         position: absolute;
         border-radius: 50%;
     }
-    
+
     @for $i from 1 through 30 {
         @keyframes particle-animation-#{$i} {
             100% {
                 transform: translate3d((random(90) * 1vw), (random(90) * 1vh), (random(100) * 1px));
             }
-        }        
+        }
         .particle:nth-child(#{$i}){
             animation: particle-animation-#{$i} 60s infinite;
             $size: random(8) + 8 + px;
@@ -67,7 +30,7 @@
 }
 
 .banner{
-    min-height: 100vh;
+    min-height: calc(90vh - 90px);
     .intro{
         h1{
             font-size: 45px;
@@ -87,24 +50,24 @@
 }
 
 
-// Responsive 
+// Responsive
 @media(max-width: 991px){
     .banner-img {
         display: none;
     }
 }
 @media( min-width:768px ) and (max-width: 991px){
-    .banner-section header.active .menu-part .logo {
+    .banner-section header .menu-part .logo {
         max-width: 40px;
         margin-right: 10px;
     }
-    
-    .banner-section header.active .menu-part li a {
+
+    .banner-section header .menu-part li a {
         padding: 20px 5px;
         &.hire-me {
             padding: 5px 10px;
         }
-    } 
+    }
 }
 
 @media(max-width:767px){
@@ -119,5 +82,5 @@
 }
 
 @media(max-width: 575px){
-    
+
 }

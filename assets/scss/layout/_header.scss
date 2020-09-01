@@ -1,68 +1,6 @@
 /* header section */
-header.active {
+header{
     background-color: $color;
-    .menu-part{
-        li {
-            a {
-                color: $white;
-                position: relative;
-                &::after{
-                    content: '';
-                    position: absolute;
-                    width: 0%;
-                    height: 2px;
-                    background-color: $white;
-                    bottom: 0;
-                    left: 0;
-                    z-index:5;
-                    @include animate();
-                }
-                &:hover{
-                    &::after{
-                        width: 100%;
-                    }
-                }
-                &.nuxt-link-active.nuxt-link-exact-active{
-                    &::after{
-                        width: 100%;
-                    }
-                }
-            }
-        }
-        .right {
-            li {
-                a {
-                    &.hire-me {
-                        border: 1px solid #fff;
-                        &::after {
-                            display: none;
-                        }
-                        &:hover{
-                            background-color: $white;
-                            color: $color;
-                            
-                        }
-                    }
-                }
-            }
-        } 
-
-    }
-}
-
-
-header.active{
-    &+ .about-section:before{
-        content: "";
-        position: absolute;
-        z-index: -1;
-        width: 100%;
-        height: 130%;
-        top: 0;
-        -webkit-transform: skewY(-12deg);
-        transform: skewY(-12deg);
-        background: #f6f9fc;
-    }
     .menu-part{
         padding: 15px 0;
         .logo{
@@ -76,6 +14,8 @@ header.active{
                 font-size: 14px;
                 text-transform: uppercase;
                 font-weight: 600;
+                color: $white;
+                position: relative;
                 &.hire-me {
                     border: 1px solid $color;
                     padding: 5px 10px;
@@ -85,6 +25,29 @@ header.active{
                         background-color: $color;
                         color: $white;
                     }
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    width: 0;
+                    height: 2px;
+                    background-color: $white;
+                    bottom: 0;
+                    left: 0;
+                    z-index:5;
+                    @include animate();
+                }
+                &:hover, &.active{
+                    &::after{
+                        width: 100%;
+                    }
+                }
+            }
+            .focus-btn {
+                a {
+                    background-color: white;
+                    padding: 3px 5px;
+                    border-radius: 10px;
                 }
             }
         }
@@ -97,6 +60,14 @@ header.active{
                     font-weight: 600;
                     &.hire-me {
                         // font-weight: 600;
+                        border: 1px solid #fff;
+                        &::after {
+                            display: none;
+                        }
+                        &:hover{
+                            background-color: $white;
+                            color: $color;
+                        }
                     }
                 }
             }
@@ -104,6 +75,21 @@ header.active{
         .menu-toggle {
             display: none;
         }
+    }
+}
+
+
+header{
+    &+ .about-section:before{
+        content: "";
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 130%;
+        top: 0;
+        -webkit-transform: skewY(-12deg);
+        transform: skewY(-12deg);
+        background: #f6f9fc;
     }
 }
 
@@ -117,7 +103,7 @@ header.active{
 
 // Responsive
 @media(max-width: 991px){
-    header.active{
+    header{
         .menu-part {
             flex-wrap: wrap;
             .logo {
@@ -141,9 +127,9 @@ header.active{
                         width: 100%;
                         margin: 0;
                         padding: 10px 20px;
-                    } 
+                    }
                 }
-            } 
+            }
             .menu-toggle {
                 display: flex;
                 order: 3;
@@ -158,26 +144,26 @@ header.active{
 
 
 @media( min-width:768px ) and (max-width: 991px){
-    .banner-section header.active .menu-part .logo {
+    .banner-section header .menu-part .logo {
         max-width: 40px;
         margin-right: 10px;
     }
-    
-    .banner-section header.active .menu-part li a {
+
+    .banner-section header .menu-part li a {
         padding: 20px 5px;
         &.hire-me {
             padding: 5px 10px;
         }
     }
 
-    header.active .menu-part li a {
+    header .menu-part li a {
         padding: 20px 4px;
     }
-    
-    header.active .menu-part li a.hire-me {
+
+    header .menu-part li a.hire-me {
         margin-left: 0;
     }
- 
+
 }
 
 @media(max-width:767px){
@@ -204,12 +190,12 @@ header.active{
             order: 2;
         }
     }
-    
-    header.active .menu-part li a.hire-me{
+
+    header .menu-part li a.hire-me{
         display: none;
     }
 
-    header.active .menu-part ul.mobile-nav {
+    header .menu-part ul.mobile-nav {
         display: none;
         text-align: center;
         &.active {
@@ -231,12 +217,12 @@ header.active{
                         }
                     }
                 }
-            } 
+            }
         }
     }
 
     .banner-section {
-        header.active .menu-part ul.mobile-nav {
+        header .menu-part ul.mobile-nav {
             &.active {
                 background-color: $white;
                 margin-top: 0;
@@ -250,12 +236,12 @@ header.active{
                             }
                         }
                     }
-                } 
+                }
             }
         }
     }
 
-    header.active .menu-part li.nav-toggle {
+    header .menu-part li.nav-toggle {
         display: inline-block !important;
         height: 45px;
         width: 50px;
@@ -278,5 +264,5 @@ header.active{
 }
 
 @media(max-width: 575px){
-    
+
 }

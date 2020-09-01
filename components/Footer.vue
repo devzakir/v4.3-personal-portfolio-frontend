@@ -6,40 +6,35 @@
                     <div class="col-12 col-sm-6 col-md-3 item">
                         <h5>Links</h5>
                         <ul>
-                            <li><a href="#">About Me</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Portfolio</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                            <li><a href="#">Contact Me</a></li>
+                            <li><nuxt-link :to="{ name: 'index' }">Home</nuxt-link></li>
+                            <li><nuxt-link :to="{ name: 'course' }">Courses</nuxt-link></li>
+                            <li><nuxt-link :to="{ name: 'account' }">Account</nuxt-link></li>
+                            <li><nuxt-link :to="{ name: 'product' }">Free Templates</nuxt-link></li>
                         </ul>
                     </div>
                     <div class="col-12 col-sm-6 col-md-3 item">
-                        <h5>Hire Me</h5>
+                        <h5>Follow Me</h5>
                         <ul>
-                            <li><a href="#">Get a Quote</a></li>
-                            <li><a href="#">Upwork Profile</a></li>
-                            <li><a href="#">Fiverr Profile</a></li>
-                            <li><a href="#">Freelancer Profile</a></li>
-                            <li><a href="#">Contact Me</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-3 item">
-                        <h5>Find Me</h5>
-                        <ul>
-                            <li><a href="#">Github</a></li>
-                            <li><a href="#">StackOverflow</a></li>
-                            <li><a href="#">Quora</a></li>
-                            <li><a href="#">LinkedIn</a></li>
-                            <li><a href="#">Facebook</a></li>
+                            <li v-if="setting.facebook"><a :href="setting.facebook" target="_blank"> Facebook </a></li>
+                            <li v-if="setting.linkedin"><a :href="setting.linkedin" target="_blank"> LinkedIn </a></li>
+                            <li v-if="setting.github"><a :href="setting.github" target="_blank"> Github </a></li>
+                            <li v-if="setting.skype"><a :href="setting.skype" target="_blank"> Skype </a></li>
                         </ul>
                     </div>
                     <div class="col-12 col-sm-6 col-md-3 item">
                         <h5>Resource</h5>
                         <ul>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">My Resource</a></li>
+                            <li><a target="_blank" href="https://zakirct.blogspot.com">Blog</a></li>
+                            <li><nuxt-link :to="{ name: 'resource' }">My Resources</nuxt-link></li>
                             <li><a href="#">Useful Links</a></li>
                             <li><a href="#">Free Tools</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3 item">
+                        <h5>Hire Me</h5>
+                        <ul>
+                            <li><a target="_blank" href="https://www.fiverr.com/zakir18">Fiverr Profile</a></li>
+                            <li><a target="_blank" href="https://www.upwork.com/freelancers/~014e565b3a8183bd74">Upwork Profile</a></li>
                         </ul>
                     </div>
                 </div>
@@ -50,7 +45,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="footer-text text-center">
-                            <p class="mb-0"> Design & Developed with 🧡 by <a href="#"> Zakir Hossen</a></p>
+                            <p class="mb-0"> Design & Developed with 🧡 by <nuxt-link :to="{name: 'index'}"> Zakir Hossen</nuxt-link></p>
                         </div>
                     </div>
                 </div>
@@ -61,7 +56,11 @@
 
 <script>
 export default {
-
+    computed: {
+        setting(){
+            return this.$store.getters.getSetting;
+        }
+    },
 }
 </script>
 

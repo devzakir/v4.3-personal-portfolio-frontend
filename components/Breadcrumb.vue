@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="heading">
+                    <div class="heading mb-0">
                         <h2>{{ title }}</h2>
                         <div class="index">
                             <router-link :to="{ name: 'index'}">Home</router-link> <font-awesome-icon :icon="['fas', 'chevron-right']" />

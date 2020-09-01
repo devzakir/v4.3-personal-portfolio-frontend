@@ -1,0 +1,42 @@
+<template>
+    <div class="card mb-2 shadow-sm">
+        <a href="#" @click.prevent="active = !active" :class="active ? 'bg-primary' : 'bg-white'" class="card-header d-flex align-items-center justify-content-between">
+            <p class="mb-0" :class="active ? 'text-white' : 'text-dark'">{{ section.name }}</p>
+            <div class="badge" :class="active ? 'bg-white' : 'badge-primary'">
+                <font-awesome-icon v-if="active" :icon="['fas', 'minus']" />
+                <font-awesome-icon v-else :icon="['fas', 'plus']" />
+            </div>
+        </a>
+        <div class="card-body py-2" v-if="active">
+            <ul class="nav flex-column" v-if="section.videos">
+                <li v-for="video in section.videos" :key="video.id" class="nav-item d-flex align-items-center">
+                    <!-- <font-awesome-icon class="text-success" :icon="['fas', 'check-square']" /> -->
+                    <font-awesome-icon class="text-secondary" :icon="['far', 'check-square']" />
+                    <nuxt-link :to="{ name: 'watch-course-lesson', params:{course: course.slug, lesson: video.slug }}" class="nav-link module-menu d-block w-100">
+                        <div class=" d-flex justify-content-between align-items-center">
+                            <span>{{ video.title }}</span>
+                            <span class="badge badge-success">Time - {{ video.video_time }}</span>
+                        </div>
+                    </nuxt-link>
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    props: ['section', 'course'],
+    data() {
+        return {
+            active: false
+        }
+    }
+}
+</script>
+
+<style scoped>
+    a.module-menu.active {
+        color: black;
+    }
+</style>

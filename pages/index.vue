@@ -1,7 +1,6 @@
 <template>
     <div>
         <section class="banner-section">
-            <siteHeader/>
             <div id="particle-container">
                 <div class="particle"></div>
                 <div class="particle"></div>
@@ -42,7 +41,7 @@
                         <p>Let me help you increase business egagement with qualityful Websites and Web Applications</p>
                         <div class="buttons">
                             <nuxt-link :to="{ name: 'index', hash:'#about'}">About Me</nuxt-link>
-                            <nuxt-link :to="{ name: 'index', hash:'#portfolio'}">Recent Projects</nuxt-link>
+                            <nuxt-link :to="{ name: 'course' }">Check My Courses</nuxt-link>
                         </div>
                     </div>
                     <div class="col-lg-6 col-12 banner-preview">
@@ -74,6 +73,13 @@
                             </ul>
                             <div class="tabs-content">
                                 <div class="intro" v-if="tabId == 123">
+                                    <div class="content" v-html="getSetting.about"></div>
+                                    <div class="buttons">
+                                        <a target="_blank" :href="getSetting.resume">My Resume</a>
+                                        <nuxt-link  :to="{ name: 'index', hash:'#contact'}">Contact Me</nuxt-link>
+                                    </div>
+                                </div>
+                                <!-- <div class="intro" v-if="tabId == 123">
                                     <h3>Zakir Hossen</h3>
                                     <p>Hi, I am Zakir. A passionate Web Developer from Dhaka, Bangladesh. I prefer to learn consistently to expand my knowledge.</p>
                                     <p class="mt-3">I started my career as a Web Designer. After 3 years of consistently working in this field. It helped me gain lots of knowledge about business, marketing, and user experience. Also, I have tried a few more things to understand customer satisfaction, business engagement & marketing including e-commerce business, blogging, writing, YouTube & affiliate marketing.</p>
@@ -82,7 +88,7 @@
                                         <a target="_blank" :href="getSetting.resume">My Resume</a>
                                         <nuxt-link  :to="{ name: 'index', hash:'#contact'}">Contact Me</nuxt-link>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="skills" v-if="tabId == 124">
                                     <div class="skill-box">
                                         <h6>Front End</h6>
@@ -238,18 +244,21 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-12 col-md-6 promote-content">
-                        <h2>Have any project idea?</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At earum cum id autem velit
-                            quidem, vel, amet adipisci nesciunt!</p>
-                        <div class="buttons">
-                            <nuxt-link :to="{ name: 'index', hash:'#contact'}">Get Quote</nuxt-link>
+                        <h2>Do you want to learn Web Development?</h2>
+                        <p class="text-lead">I created several course on Web design and Web Development. These courses specially designed for beginners. </p>
+                        <nuxt-link class="btn btn-light font-weight-bold text-primary text-uppercase py-3 px-5 mt-5" :to="{ name: 'course' }">
+                            Check My Courses
+                            <font-awesome-icon :icon="['fas', 'chevron-right']" />
+                        </nuxt-link>
+                        <!-- <div class="buttons"> -->
                             <!-- <nuxt-link :to="{ name: 'index', hash:'#contact'}">Contact Me</nuxt-link> -->
-                        </div>
+
+                        <!-- </div> -->
                     </div>
-                    <div class="col-12 col-md-6 content-preview">
+                    <div class="col-12 col-md-6 ">
                         <div class="d-flex justify-content-end justify-content-end">
-                            <div>
-                                <img src="~/static/images/project-idea.png" alt="" class="img-fluid">
+                            <div class="bg-white rounded mx-4 p-3">
+                                <img src="~/static/images/tutorial.svg" alt="" class="img-fluid">
                             </div>
                         </div>
                     </div>
@@ -399,12 +408,7 @@
 </template>
 
 <script>
-import Header from '~/components/Header';
 export default {
-    layout: 'home',
-    components: {
-        'siteHeader': Header,
-    },
     head() {
         return {
             title: 'Zakir Hossen Personal Portfolio',
@@ -451,7 +455,7 @@ export default {
         async loadMorePortfolio(){
             let data = await this.$axios.$get(this.next_page);
             data.data.forEach(element => {
-                this.portfolios.push(element); 
+                this.portfolios.push(element);
             });
             this.next_page = data.next_page_url;
         },
@@ -459,13 +463,13 @@ export default {
         async contact() {
             try {
                 await this.contactForm.post(process.env.API_URL+'/contact');
-                // clear login form 
+                // clear login form
                 this.contactForm.name = '';
                 this.contactForm.email = '';
                 this.contactForm.subject = '';
                 this.contactForm.message = '';
             }catch(e){
-                
+
             }
         },
 
@@ -489,6 +493,11 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+    .owl-carousel .owl-item img {
+        display: block;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
 </style>

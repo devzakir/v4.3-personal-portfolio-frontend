@@ -1,16 +1,12 @@
 <template>
-    <div>
-        <nuxt />
-        <siteFooter/>
-    </div>
+    <nuxt />
 </template>
 
 <script>
-import siteFooter from '~/components/Footer';
 
 export default {
     components: {
-        siteFooter
+
     }
 }
 </script>
