@@ -1,20 +1,21 @@
 <template>
     <section class="section">
         <div class="container" v-if="purchased">
-            <div class="alert alert-primary mb-5">
+            <div class="alert alert-danger mb-5">
                 <strong>IMPORTANT</strong>
                 <hr>
-                নিচের BILLING DETAILS সেকশনে আপনার নাম, মোবাইল নম্বর, ইমেইল এড্রেস এবং পাসওয়ার্ড (প্রযোজ্য ক্ষেত্রে) সঠিকভাবে প্রদান করুন। তারপর পেইজের একদম নিচে PLACE ORDER বাটনে ক্লিক করে পরবর্তী পেইজে নির্দেশনা অনুযায়ী পেমেন্ট সম্পন্ন করুন। ফ্রি কোর্সের ক্ষেত্রে পে করতে হবে না; সেক্ষেত্রে BILLING DETAILS পূরণের পর PLACE ORDER বাটনে ক্লিক করলেই আপনার একাউন্টে কোর্স যুক্ত হয়ে যাবে।
-                যেকোনো প্রশ্ন বা দরকারে আমাদের ইমেইল করুন - info@zakirhossen.com এই এড্রেসে।
+                নিচের BILLING DETAILS সেকশনে আপনার বিকাশ নম্বর এবং “Transaction TrxID” (যা আপনার বিকাশের ট্রানজেকশন মেসেজ এ থাকবে) নির্ভুল ভাবে টাইপ করুন এবং UNLOCK COURSE বাটনে ক্লিক করুন । যেকোনো প্রশ্ন বা দরকারে আমাদের ইমেইল করুন - info@zakirhossen.com এই এড্রেসে।
             </div>
             <payment-form :course_id="course_id"/>
         </div>
         <div class="container" v-else>
-            <div class="alert alert-primary mb-5">
+            <div class="alert alert-danger mb-5">
                 <strong>IMPORTANT</strong>
                 <hr>
-                নিচের BILLING DETAILS সেকশনে আপনার নাম, মোবাইল নম্বর, ইমেইল এড্রেস এবং পাসওয়ার্ড (প্রযোজ্য ক্ষেত্রে) সঠিকভাবে প্রদান করুন। তারপর পেইজের একদম নিচে PLACE ORDER বাটনে ক্লিক করে পরবর্তী পেইজে নির্দেশনা অনুযায়ী পেমেন্ট সম্পন্ন করুন। ফ্রি কোর্সের ক্ষেত্রে পে করতে হবে না; সেক্ষেত্রে BILLING DETAILS পূরণের পর PLACE ORDER বাটনে ক্লিক করলেই আপনার একাউন্টে কোর্স যুক্ত হয়ে যাবে।
-                যেকোনো প্রশ্ন বা দরকারে আমাদের ইমেইল করুন - info@zakirhossen.com এই এড্রেসে।
+                <div>
+                    <template v-if="!auth.loggedIn"> নিচের Registration সেকশনে আপনার সম্পূর্ণ নাম, ইমেইল এড্রেস এবং পাসওয়ার্ড সঠিকভাবে প্রদান করে Registration / Login সম্পূর্ণ করুন। </template>
+                    নিচে ডানপাশে Order Summery তে আপনার পছন্দের কোর্স এর নির্ধারিত টাকার পরিমান Payment Gateway তে দেয়া বিকাশ নম্বরে সেন্ড করুন। ফ্রি কোর্সের ক্ষেত্রে Pay করতে হবে না। যেকোনো প্রশ্ন বা দরকারে আমাদের ইমেইল করুন - info@zakirhossen.com এই এড্রেসে।
+                </div>
             </div>
 
             <form action="" @submit.prevent="purchase">
@@ -88,13 +89,14 @@
                                     <div class="card-header bg-primary text-white">
                                         Payment Gateway
                                     </div>
-                                    <div class="card-body d-flex justify-content-between">
+                                    <div class="card-body d-flex justify-content-between align-items-center">
                                         <div class="form-group mb-0 d-flex align-items-center">
                                             <input type="radio" class="mr-2" name="payment" id="payment" checked>
                                             <label for="payment" style="max-width: 100px">
                                                 <img src="~static/images/bkash.png" class="img-fluid" alt="">
                                             </label>
                                         </div>
+                                        <h4>01625 59 25 66 <small>(Personal)</small></h4>
                                     </div>
                                 </div>
                             </div>
@@ -107,7 +109,7 @@
                             <input type="checkbox" v-model="aggree" class="mr-2 custom-control-input" id="aggree">
                             <label class="custom-control-label" for="aggree">
                                 I have read and agree to the website
-                                <nuxt-link :to="{name: 'terms-and-condition'}">terms and conditions *</nuxt-link>
+                                <nuxt-link :to="{ name: 'terms-and-conditions' }">terms and conditions *</nuxt-link>
                             </label>
                         </div>
                     </div>
