@@ -207,12 +207,13 @@ export default {
         },
     },
     mounted(){
-        setTimeout(() => {
-            if(this.cartItems.length > 1){
+        this.$nextTick(function () {
+            if(this.cartItems.length !== 1){
                 this.$store.dispatch('cart/setCartProducts', []);
-                this.$toast.warning('Error! No course found');
+                this.$toast.error('Error! Your cart is empty');
+                this.$router.push({ name: 'course' });
             }
-        }, 500);
+        });
     },
     computed: {
         auth(){
@@ -228,9 +229,5 @@ export default {
 <style>
     .stepTitle {
         margin-top: 10px;
-    }
-    .wizard-icon-circle.checked{
-        background-color: #245cd1;
-        color: white;
     }
 </style>
