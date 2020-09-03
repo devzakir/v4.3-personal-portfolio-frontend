@@ -318,7 +318,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <no-ssr> <!-- important to add no-ssr-->
+                        <client-only> <!-- important to add no-ssr-->
                         <carousel v-if="testimonials.length" :autoplay="true" :nav="false" :items="1" :mouseDrag="true" :touchDrag="true" :dots="true">
                             <div v-for="testimonial in testimonials" :key="testimonial.id" class="item">
                                 <div class="client-avatar">
@@ -333,7 +333,7 @@
                                 </div>
                             </div>
                         </carousel>
-                        </no-ssr>
+                        </client-only>
                     </div>
                 </div>
             </div>

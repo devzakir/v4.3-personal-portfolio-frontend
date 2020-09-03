@@ -121,7 +121,6 @@
 </template>
 
 <script>
-import Login from '@/components/auth/Login'
 import PaymentForm from '@/components/course/PaymentForm'
 
 export default {
@@ -132,12 +131,11 @@ export default {
 
             ],
             link: [
-                { rel: 'stylesheet', href: 'https://rawgit.com/lykmapipo/themify-icons/master/css/themify-icons.css' }
+
             ],
         }
     },
     components: {
-        'login': Login,
         'payment-form': PaymentForm,
     },
     data(){
