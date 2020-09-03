@@ -73,7 +73,7 @@
                 <div class="row">
                     <div class="col-12 col-lg-8 col-md-12" id="courseContent">
                         <div class="description bg-white p-5 shadow rounded">
-                            <div class="content-block mb-5">
+                            <div class="content-block">
                                 <h3 class="mb-3">Course Description</h3>
                                 <div class="content-block" v-html="course.description"></div>
                             </div>
