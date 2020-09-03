@@ -46,7 +46,9 @@ export default {
 
     },
     mounted() {
-        this.loadCategories();
+        this.$nextTick(() => {
+            this.loadCategories();
+        });
     }
   }
 </script>

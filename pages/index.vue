@@ -487,8 +487,10 @@ export default {
         }
     },
     mounted(){
-        this.loadPortfolio();
-        this.loadTestimonial();
+        this.$nextTick(() => {
+            this.loadPortfolio();
+            this.loadTestimonial();
+        });
     }
 }
 </script>

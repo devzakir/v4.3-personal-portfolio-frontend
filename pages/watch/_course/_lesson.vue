@@ -45,7 +45,9 @@ export default {
         }
     },
     mounted(){
-        this.loadLesson();
+        this.$nextTick(() => {
+            this.loadLesson();
+        });
     }
 }
 </script>

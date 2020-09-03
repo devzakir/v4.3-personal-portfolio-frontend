@@ -79,7 +79,9 @@ export default {
         }
     },
     mounted(){
-        this.loadCourse();
+        this.$nextTick(() => {
+            this.loadCourse();
+        });
     }
 }
 </script>

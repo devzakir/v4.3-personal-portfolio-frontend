@@ -93,7 +93,9 @@ export default {
         }
     },
     mounted(){
-        this.loadUser();
+        this.$nextTick(() => {
+            this.loadUser();
+        });
     }
 }
 </script>
