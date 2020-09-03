@@ -14,9 +14,9 @@
         </a>
         <div class="card-body py-2" v-if="active">
             <ul class="nav flex-column" v-if="section.videos">
-                <li v-for="video in section.videos" :key="video.id" class="nav-item d-flex py-3">
+                <li v-for="video in section.videos" :key="video.id" class="nav-item d-flex py-2">
                     <!-- <font-awesome-icon class="text-success" :icon="['fas', 'check-square']" /> -->
-                    <font-awesome-icon class="text-secondary" :icon="['far', 'check-square']" />
+                    <font-awesome-icon class="text-secondary mt-1" :icon="['far', 'check-square']" />
                     <nuxt-link v-if="!video.coming_soon" :to="{ name: 'watch-course-lesson', params:{course: course.slug, lesson: video.slug }}"
                         class="nav-link module-menu d-block w-100 py-0 px-3">
                         {{ video.title }}  <span class="badge badge-success">Time - {{ video.video_time }}</span>
