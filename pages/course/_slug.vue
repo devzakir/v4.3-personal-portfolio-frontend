@@ -86,13 +86,38 @@
                     <div class="col-12 col-lg-4 col-md-12">
                         <div class="box h-auto py-4 px-4 bg-primary shadow rounded text-white">
                             <h4 class="mb-3 pb-3 border-bottom">This course includes:</h4>
-                            <div class="content-block highlight" v-html="course.highlight"></div>
-                            <ul class="list-unstyled">
-                                <li class="mb-3">
-                                    <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
-                                    <span>7 hours on-demand video 7 hours on-demand video</span>
-                                </li>
-                            </ul>
+                            <div class="highlight">
+                                <ul class="list-unstyled">
+                                    <li class="mb-3" v-if="course.duration">
+                                        <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
+                                        <span> {{ course.duration }} hours on-demand video </span>
+                                    </li>
+                                    <li class="mb-3" v-if="course.videos">
+                                        <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
+                                        <span> {{ course.videos }} Lessons </span>
+                                    </li>
+                                    <li class="mb-3" v-if="course.resources">
+                                        <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
+                                        <span> {{ course.resources }} downloadable resources </span>
+                                    </li>
+                                    <li class="mb-3">
+                                        <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
+                                        <span> 24/7 support system </span>
+                                    </li>
+                                    <li class="mb-3">
+                                        <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
+                                        <span> Full lifetime access </span>
+                                    </li>
+                                    <li class="mb-3">
+                                        <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
+                                        <span> Access on mobile and TV </span>
+                                    </li>
+                                    <li class="mb-0">
+                                        <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
+                                        <span> Assignments </span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
