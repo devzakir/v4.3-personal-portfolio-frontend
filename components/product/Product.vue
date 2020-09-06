@@ -1,7 +1,7 @@
 <template>
     <div class="box">
         <div class="image">
-            <img :src="updateImage(product.image)" alt="" class="img-fluid">
+            <img :src="fixImage(product.image)" alt="" class="img-fluid">
         </div>
         <div class="info">
             <div class="title">
@@ -24,9 +24,9 @@
 export default {
     props:['product'],
     methods: {
-        updateImage(image){
+        fixImage(image){
             if(image){
-                return this.$store.getters.updateImageURL(image);
+                return this.$store.getters.fixImageURL(image);
             }
         },
     }

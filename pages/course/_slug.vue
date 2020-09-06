@@ -130,6 +130,22 @@
 import ModuleDropdown from '@/components/course/ModuleDropdown'
 import Breadcrumb from '~/components/Breadcrumb';
 export default {
+
+    head() {
+        let course = this.course;
+        let self = this;
+        let title = course.title + ' | ZakirHossen.com ';
+        return {
+            title: title,
+            meta: [
+                { hid: 'description', name: 'description', content: course.short_description },
+                { hid: 'og:type', property: 'og:type', content: "og:course" },
+                { hid: 'og:title', property: 'og:title', content: title },
+                { hid: 'og:description', property: 'og:description', content: course.short_description },
+                { hid: 'og:image', property: 'og:image', content: self.courseImage },
+            ],
+        }
+    },
     components: {
         'breadcrumb': Breadcrumb,
         'module-dropdown': ModuleDropdown,
@@ -143,11 +159,12 @@ export default {
         return {
             course: {},
             purchase: false,
+            courseImage: '',
         }
     },
     methods: {
-        updateImage(image){
-            return this.$store.getters.updateImageURL(image);
+        fixImage(image){
+            return this.$store.getters.fixImageURL(image);
         },
         enrollNow(){
             // let items = JSON.parse(localStorage.getItem('cartProducts'));
@@ -175,7 +192,7 @@ export default {
         price(){
             let price = this.course.sale_price ? this.course.sale_price : this.course.price;
             return '৳ ' + price;
-        }
+        },
     },
     computed: {
 
@@ -185,6 +202,9 @@ export default {
             console.log('hello');
         });
     },
+    created(){
+        this.courseImage = this.fixImage(this.course.image);
+    }
 }
 </script>
 

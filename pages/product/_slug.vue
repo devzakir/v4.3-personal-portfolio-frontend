@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="product-image">
-                            <img :src="updateImage(product.image)" alt="" class="img-fluid">
+                            <img :src="fixImage(product.image)" alt="" class="img-fluid">
                         </div>
                         <div class="description">
                             <p> {{ product.description }}</p>
@@ -73,8 +73,8 @@ export default {
         }
     },
     methods: {
-        updateImage(image){
-            return this.$store.getters.updateImageURL(image);
+        fixImage(image){
+            return this.$store.getters.fixImageURL(image);
         }
     },
     computed: {

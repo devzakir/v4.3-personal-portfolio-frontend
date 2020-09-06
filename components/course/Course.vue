@@ -1,7 +1,7 @@
 <template>
     <div class="box">
         <div class="image">
-            <img :src="updateImage(course.image)" alt="" class="img-fluid">
+            <img :src="fixImage(course.image)" alt="" class="img-fluid">
         </div>
         <div class="info">
             <div class="title">
@@ -24,8 +24,8 @@
 export default {
     props: ['course'],
     methods: {
-        updateImage(image){
-            return this.$store.getters.updateImageURL(image);
+        fixImage(image){
+            return this.$store.getters.fixImageURL(image);
         },
         price(course){
             let price = course.sale_price ? course.sale_price : course.price;
