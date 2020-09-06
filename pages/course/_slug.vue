@@ -78,7 +78,7 @@
                                 <div class="content-block" v-html="course.description"></div>
                             </div>
                         </div>
-                        <div class="bg-white p-md-5 py-4 px-4 mt-5 shadow rounded mb-md-5 mb-3"  v-if="course.sections && course.sections.length">
+                        <div class="bg-white p-md-5 py-4 px-4 mt-5 shadow rounded mb-md-0 mb-3"  v-if="course.sections && course.sections.length">
                             <h3 class="mb-3"> Course Module </h3>
                             <module-dropdown v-for="section in course.sections" :key="section.id" :section="section" :course="course" />
                         </div>
@@ -156,7 +156,9 @@ export default {
 
     },
     mounted() {
-
+        this.$nextTick(function () {
+            console.log('hello');
+        });
     },
 }
 </script>
