@@ -73,12 +73,12 @@
                 <div class="row">
                     <div class="col-12 col-lg-8 col-md-12" id="courseContent">
                         <div class="description bg-white p-5 shadow rounded">
-                            <div class="content-block mb-5">
+                            <div class="content-block">
                                 <h3 class="mb-3">Course Description</h3>
                                 <div class="content-block" v-html="course.description"></div>
                             </div>
                         </div>
-                        <div class="bg-white p-md-5 py-4 px-4 mt-5 shadow rounded mb-md-5 mb-3"  v-if="course.sections && course.sections.length">
+                        <div class="bg-white p-md-5 py-4 px-4 mt-5 shadow rounded mb-md-0 mb-3"  v-if="course.sections && course.sections.length">
                             <h3 class="mb-3"> Course Module </h3>
                             <module-dropdown v-for="section in course.sections" :key="section.id" :section="section" :course="course" />
                         </div>
@@ -86,13 +86,38 @@
                     <div class="col-12 col-lg-4 col-md-12">
                         <div class="box h-auto py-4 px-4 bg-primary shadow rounded text-white">
                             <h4 class="mb-3 pb-3 border-bottom">This course includes:</h4>
-                            <div class="content-block highlight" v-html="course.highlight"></div>
-                            <ul class="list-unstyled">
-                                <li class="mb-3">
-                                    <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
-                                    <span>7 hours on-demand video 7 hours on-demand video</span>
-                                </li>
-                            </ul>
+                            <div class="highlight">
+                                <ul class="list-unstyled">
+                                    <li class="mb-3" v-if="course.duration">
+                                        <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
+                                        <span> {{ course.duration }} hours on-demand video </span>
+                                    </li>
+                                    <li class="mb-3" v-if="course.videos">
+                                        <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
+                                        <span> {{ course.videos }} Lessons </span>
+                                    </li>
+                                    <li class="mb-3" v-if="course.resources">
+                                        <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
+                                        <span> {{ course.resources }} downloadable resources </span>
+                                    </li>
+                                    <li class="mb-3">
+                                        <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
+                                        <span> 24/7 support system </span>
+                                    </li>
+                                    <li class="mb-3">
+                                        <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
+                                        <span> Full lifetime access </span>
+                                    </li>
+                                    <li class="mb-3">
+                                        <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
+                                        <span> Access on mobile and TV </span>
+                                    </li>
+                                    <li class="mb-0">
+                                        <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
+                                        <span> Assignments </span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -105,6 +130,22 @@
 import ModuleDropdown from '@/components/course/ModuleDropdown'
 import Breadcrumb from '~/components/Breadcrumb';
 export default {
+
+    head() {
+        let course = this.course;
+        let self = this;
+        let title = course.title + ' | ZakirHossen.com ';
+        return {
+            title: title,
+            meta: [
+                { hid: 'description', name: 'description', content: course.short_description },
+                { hid: 'og:type', property: 'og:type', content: "og:course" },
+                { hid: 'og:title', property: 'og:title', content: title },
+                { hid: 'og:description', property: 'og:description', content: course.short_description },
+                { hid: 'og:image', property: 'og:image', content: self.courseImage },
+            ],
+        }
+    },
     components: {
         'breadcrumb': Breadcrumb,
         'module-dropdown': ModuleDropdown,
@@ -118,11 +159,12 @@ export default {
         return {
             course: {},
             purchase: false,
+            courseImage: '',
         }
     },
     methods: {
-        updateImage(image){
-            return this.$store.getters.updateImageURL(image);
+        fixImage(image){
+            return this.$store.getters.fixImageURL(image);
         },
         enrollNow(){
             // let items = JSON.parse(localStorage.getItem('cartProducts'));
@@ -150,14 +192,19 @@ export default {
         price(){
             let price = this.course.sale_price ? this.course.sale_price : this.course.price;
             return '৳ ' + price;
-        }
+        },
     },
     computed: {
 
     },
     mounted() {
-
+        this.$nextTick(function () {
+            console.log('hello');
+        });
     },
+    created(){
+        this.courseImage = this.fixImage(this.course.image);
+    }
 }
 </script>
 

@@ -286,7 +286,7 @@
                     <div class="col-12 col-md-6 col-lg-4" v-for="portfolio in portfolios" :key="portfolio.id">
                         <div class="item">
                             <div class="preview">
-                                <img :src="updateImage(portfolio.image)" alt="" class="img-fluid">
+                                <img :src="fixImage(portfolio.image)" alt="" class="img-fluid">
                             </div>
                             <div class="details">
                                 <small>{{ portfolio.category_name }}</small>
@@ -318,11 +318,11 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <no-ssr> <!-- important to add no-ssr-->
+                        <client-only> <!-- important to add no-ssr-->
                         <carousel v-if="testimonials.length" :autoplay="true" :nav="false" :items="1" :mouseDrag="true" :touchDrag="true" :dots="true">
                             <div v-for="testimonial in testimonials" :key="testimonial.id" class="item">
                                 <div class="client-avatar">
-                                    <img :src="updateImage(testimonial.avatar)" alt="" class="img-fluid">
+                                    <img :src="fixImage(testimonial.avatar)" alt="" class="img-fluid">
                                 </div>
                                 <div class="testimonial-description">
                                     <p> {{ testimonial.description }} </p>
@@ -333,7 +333,7 @@
                                 </div>
                             </div>
                         </carousel>
-                        </no-ssr>
+                        </client-only>
                     </div>
                 </div>
             </div>
@@ -446,9 +446,9 @@ export default {
             let data = await this.$axios.$get(process.env.API_URL+'/testimonial');
             this.testimonials = data;
         },
-        updateImage(image){
+        fixImage(image){
             if(image){
-                return this.$store.getters.updateImageURL(image);
+                return this.$store.getters.fixImageURL(image);
             }
             return 'null';
         },
@@ -475,7 +475,7 @@ export default {
 
         getAuthorImage(){
             if(this.getSetting.avatar){
-                return this.updateImage(this.getSetting.avatar);
+                return this.fixImage(this.getSetting.avatar);
             }else {
                 return "~/static/images/my-photo.png";
             }
@@ -487,8 +487,10 @@ export default {
         }
     },
     mounted(){
-        this.loadPortfolio();
-        this.loadTestimonial();
+        this.$nextTick(() => {
+            this.loadPortfolio();
+            this.loadTestimonial();
+        });
     }
 }
 </script>

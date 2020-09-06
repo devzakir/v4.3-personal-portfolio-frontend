@@ -87,11 +87,13 @@ export default {
         },
     },
     mounted(){
-        if(Object.keys(this.getSetting).length){
-            this.setting = this.getSetting;
-        }else {
-            this.loadSetting();
-        }
+        this.$nextTick(() => {
+            if(Object.keys(this.getSetting).length){
+                this.setting = this.getSetting;
+            }else {
+                this.loadSetting();
+            }
+        });
     },
     computed: {
         getSetting(){

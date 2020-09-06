@@ -18,7 +18,7 @@ export default {
     async asyncData({$axios, params}){
         let { data } = await $axios.get(process.env.API_URL+'/course/'+params.slug);
 
-        return { course: data }
+        return { course: data['course'] }
     },
 }
 </script>

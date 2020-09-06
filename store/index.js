@@ -6,7 +6,7 @@ export const getters = {
     getSetting(state){
         return state.setting;
     },
-    updateImageURL(){
+    fixImageURL(){
         return function(image){
             // return 'https://api.zakirhossen.com'+image;
             return process.env.APP_URL + image;
