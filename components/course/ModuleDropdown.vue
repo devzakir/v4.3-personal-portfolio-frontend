@@ -45,18 +45,36 @@ export default {
             active: false,
         };
     },
-    watch: {
-        section_id(newValue, oldValue) {
-            if(newValue == this.section.id){
-                this.active = true;
+    mounted(){
+        this.$nextTick(() => {
+            if(this.section_id){
+                if(this.section_id == this.section.id){
+                    this.active = true;
+                }
             }
-        }
-    }
+        });
+    },
+    // watch: {
+    //     section_id: {
+    //         handler: function(newValue) {
+
+    //         console.log('section id')
+    //         console.log(newValue);
+    //         console.log('section_id')
+    //         console.log(section_id);
+
+    //             if(newValue == this.section.id){
+    //                 this.active = true;
+    //             }
+    //         },
+    //         deep: true
+    //     }
+    // }
 };
 </script>
 
 <style scoped>
-a.module-menu.active {
-    color: black;
-}
+    a.module-menu.active {
+        color: black;
+    }
 </style>

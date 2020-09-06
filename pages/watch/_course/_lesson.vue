@@ -1,6 +1,6 @@
 <template>
     <div>
-        <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+        <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar" v-if="course">
             <nuxt-link :to="{name: 'index'}" class="logo d-flex align-items-center navbar-brand mr-0 mr-md-2">
                 <img src="~static/images/logo-white.png" alt="" class="img-fluid">
             </nuxt-link>
@@ -26,7 +26,7 @@
                 </li>
             </ul>
         </header>
-        <div class="container-fluid">
+        <div class="container-fluid" v-if="course">
             <div class="row">
                 <div class="col-md-3 col-12 col-lg-3 d-md-block bg-light sidebar collapse show py-3">
                     <h4 class="mb-3 text-secondary">Course Module</h4>
@@ -66,9 +66,6 @@ export default {
     },
     data(){
         return {
-            course: {
-                sections: {}
-            },
             lesson: {},
         }
     },
@@ -82,7 +79,7 @@ export default {
         async loadCourse(){
             try {
                 let { data } = await this.$axios.get(process.env.API_URL+'/course/'+ this.$route.params.course);
-                this.course = data['course'];
+                this.$store.dispatch('course/ADD_COURSE', data['course']);
             } catch (error) {
                 console.log(error);
             }
@@ -96,12 +93,19 @@ export default {
     computed: {
         auth(){
             return this.$store.state.auth;
+        },
+        course(){
+            let slug = this.$route.params.course;
+            return this.$store.getters['course/getCourse'](slug);
         }
     },
     mounted(){
         this.$nextTick(() => {
-            this.loadCourse();
             this.loadLesson();
+
+            if(this.course && !Object.keys(this.course).length){
+                this.loadCourse();
+            }
         });
     }
 }
