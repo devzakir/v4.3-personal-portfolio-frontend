@@ -10,7 +10,17 @@
                         </div>
                     </div>
                     <div v-if="!purchase" class="col-12 col-md-4 text-md-right">
-                        <h2 class="text-success mb-4">{{ price() }}</h2>
+                        <h2 class="text-success mb-4">
+                            <template v-if="course.sale_price">
+                                {{ price() }}
+                                <span style="text-decoration: line-through;color: #a2a2a2;font-size: 20px;letter-spacing: -1px;">
+                                    {{ originalPrice() }}
+                                </span>
+                            </template>
+                            <template v-else>
+                                {{ price() }}
+                            </template>
+                        </h2>
                         <a href="#" @click.prevent="enrollNow" class="btn btn-primary py-3 px-5 text-uppercase">Enroll Now</a>
                     </div>
                     <div v-else class="col-12 col-md-4 text-md-right">
@@ -192,6 +202,9 @@ export default {
         price(){
             let price = this.course.sale_price ? this.course.sale_price : this.course.price;
             return '৳ ' + price;
+        },
+        originalPrice(){
+            return '৳ ' + this.course.price;
         },
     },
     computed: {
