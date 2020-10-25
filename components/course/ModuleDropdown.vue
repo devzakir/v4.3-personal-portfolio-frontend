@@ -1,6 +1,6 @@
 <template>
     <div class="card mb-2 shadow-sm">
-        <a href="#" @click.prevent="active = !active" :class="active ? 'bg-primary' : 'bg-white'" class="card-header d-flex align-items-center justify-content-between" >
+        <a href="#" @click.prevent="showDropdown = !showDropdown" :class="active || showDropdown ? 'bg-primary' : 'bg-white'" class="card-header d-flex align-items-center justify-content-between" >
             <p class="mb-0" :class="active ? 'text-white' : 'text-dark'">{{ section.name }}</p>
             <div class="badge" :class="active ? 'bg-white' : 'badge-primary'">
                 <font-awesome-icon v-if="active" :icon="['fas', 'minus']" />
@@ -42,16 +42,21 @@ export default {
     },
     data() {
         return {
-            active: false,
+            showDropdown: false,
         };
+    },
+    computed: {
+        active(){
+            if(this.section_id && this.section_id == this.section.id){
+                return true;
+            }else {
+                return this.showDropdown;
+            }
+        }
     },
     mounted(){
         this.$nextTick(() => {
-            if(this.section_id){
-                if(this.section_id == this.section.id){
-                    this.active = true;
-                }
-            }
+
         });
     },
     // watch: {
