@@ -104,11 +104,15 @@
                                     </li>
                                     <li class="mb-3" v-if="course.videos">
                                         <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
-                                        <span> {{ course.videos }} Lessons </span>
+                                        <span> {{ course.videos }}+ lessons available </span>
                                     </li>
                                     <li class="mb-3" v-if="course.resources">
                                         <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
                                         <span> {{ course.resources }} downloadable resources </span>
+                                    </li>
+                                    <li class="mb-3">
+                                        <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
+                                        <span> Practical Assignments </span>
                                     </li>
                                     <li class="mb-3">
                                         <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
@@ -118,13 +122,9 @@
                                         <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
                                         <span> Full lifetime access </span>
                                     </li>
-                                    <li class="mb-3">
-                                        <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
-                                        <span> Access on mobile and TV </span>
-                                    </li>
                                     <li class="mb-0">
                                         <font-awesome-icon :icon="['fas', 'check-circle']" class="mr-2" />
-                                        <span> Assignments </span>
+                                        <span> Access on mobile and TV </span>
                                     </li>
                                 </ul>
                             </div>
