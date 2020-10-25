@@ -20,8 +20,13 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  // loading: { color: '#245cd1' },
-  loading: { color: '#000000' },
+  // loading: { color: '#ffc107', height: '4px' }, // blue
+  // loading: { color: '#245cd1', height: '4px' }, // blue
+  // loading: { color: '#000000', height: '4px' }, // black
+  loading: { color: '#ffffff', height: '4px' }, // white
+  // loading: { color: '#FF9B53', height: '4px' }, // orange
+  // loading: { color: '#6a64e7', height: '4px' }, // ligth purble
+  // loading: { color: '#40db2e', height: '4px' }, // light green
   /*
   ** Global CSS
   */

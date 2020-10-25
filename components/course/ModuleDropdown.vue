@@ -1,6 +1,6 @@
 <template>
     <div class="card mb-2 shadow-sm">
-        <a href="#" @click.prevent="active = !active" :class="active ? 'bg-primary' : 'bg-white'" class="card-header d-flex align-items-center justify-content-between" >
+        <a href="#" @click.prevent="showDropdown = !showDropdown" :class="active || showDropdown ? 'bg-primary' : 'bg-white'" class="card-header d-flex align-items-center justify-content-between" >
             <p class="mb-0" :class="active ? 'text-white' : 'text-dark'">{{ section.name }}</p>
             <div class="badge" :class="active ? 'bg-white' : 'badge-primary'">
                 <font-awesome-icon v-if="active" :icon="['fas', 'minus']" />
@@ -13,7 +13,7 @@
                     <font-awesome-icon class="text-secondary mt-1" :icon="['far', 'check-square']" />
                     <nuxt-link v-if="!video.coming_soon" :to="{ name: 'watch-course-lesson', params:{course: course.slug, lesson: video.slug }}"
                         class="nav-link module-menu d-block w-100 py-0 px-3">
-                        {{ video.title }}  <span class="badge badge-success">Time - {{ video.video_time }}</span>
+                        {{ video.title }}  <span class="badge badge-success">Time - {{ decimalNumber(video.video_time) }}</span>
                     </nuxt-link>
                     <a v-else href="javascript:void(0)" class="nav-link module-menu d-block w-100 py-0 px-3">
                         {{ video.title }}<span class="badge badge-warning ml-1">Coming Soon</span>
@@ -42,16 +42,26 @@ export default {
     },
     data() {
         return {
-            active: false,
+            showDropdown: false,
         };
+    },
+    methods: {
+        decimalNumber(time){
+            return time.toFixed(2);
+        }
+    },
+    computed: {
+        active(){
+            if(this.section_id && this.section_id == this.section.id){
+                return true;
+            }else {
+                return this.showDropdown;
+            }
+        }
     },
     mounted(){
         this.$nextTick(() => {
-            if(this.section_id){
-                if(this.section_id == this.section.id){
-                    this.active = true;
-                }
-            }
+
         });
     },
     // watch: {

@@ -13,11 +13,11 @@
                         <img v-else src="~static/images/about.jpg" alt="" class="img-fluid">
                     </div>
                     <div class="info">
-                        <div class="title">
+                        <div class="title mb-4">
                             <nuxt-link :to="{ name: 'course-slug', params: { slug: order.course.slug } }"> {{ order.course.title }} </nuxt-link>
                         </div>
                         <div v-if="order.payment_status == 1" class=" mt-2">
-                            <nuxt-link :to="{ name: 'watch-course', params:{ course: order.course.slug } }" class="btn btn-primary">Watch Course</nuxt-link>
+                            <nuxt-link :to="{ name: 'watch-course', params:{ course: order.course.slug } }" class="btn btn-primary bg-color">Watch Course</nuxt-link>
                         </div>
                         <div v-if="order.payment_status == 4" class="d-flex justify-content-between align-items-center mt-2">
                             <div class="badge badge-warning my-2">Payment Pending</div>
@@ -38,7 +38,7 @@
         <div class="row" v-else>
             <div class="col-12 py-4 text-center">
                 <h5 class="mb-3">No course found</h5>
-                <nuxt-link :to="{ name: 'course' }" class="btn btn-primary px-4 py-2">
+                <nuxt-link :to="{ name: 'course' }" class="btn btn-primary bg-color px-4 py-2">
                     Browse Course
                 </nuxt-link>
             </div>

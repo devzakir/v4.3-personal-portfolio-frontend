@@ -44,6 +44,7 @@
                         </div>
                         <div class="mt-5">
                             <h3> Comments </h3>
+                            <hr>
                             <Disqus shortname='zakirhossen' />
                         </div>
                     </div>
@@ -115,5 +116,8 @@ export default {
     header .logo {
         max-width: 40px;
         margin-right: 10px;
+    }
+    .course-video {
+        text-align: center;
     }
 </style>
