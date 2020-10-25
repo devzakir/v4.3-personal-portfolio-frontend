@@ -201,7 +201,11 @@ export default {
 
         price(){
             let price = this.course.sale_price ? this.course.sale_price : this.course.price;
-            return '৳ ' + price;
+            if(price > 0){
+                return '৳ ' + price;
+            }else {
+                return 'Free';
+            }
         },
         originalPrice(){
             return '৳ ' + this.course.price;
