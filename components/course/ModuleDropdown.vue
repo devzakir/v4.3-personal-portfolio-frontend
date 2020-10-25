@@ -13,7 +13,7 @@
                     <font-awesome-icon class="text-secondary mt-1" :icon="['far', 'check-square']" />
                     <nuxt-link v-if="!video.coming_soon" :to="{ name: 'watch-course-lesson', params:{course: course.slug, lesson: video.slug }}"
                         class="nav-link module-menu d-block w-100 py-0 px-3">
-                        {{ video.title }}  <span class="badge badge-success">Time - {{ video.video_time }}</span>
+                        {{ video.title }}  <span class="badge badge-success">Time - {{ decimalNumber(video.video_time) }}</span>
                     </nuxt-link>
                     <a v-else href="javascript:void(0)" class="nav-link module-menu d-block w-100 py-0 px-3">
                         {{ video.title }}<span class="badge badge-warning ml-1">Coming Soon</span>
@@ -44,6 +44,11 @@ export default {
         return {
             showDropdown: false,
         };
+    },
+    methods: {
+        decimalNumber(time){
+            return time.toFixed(2);
+        }
     },
     computed: {
         active(){
