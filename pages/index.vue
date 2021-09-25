@@ -38,7 +38,7 @@
                     <div class="col-lg-6 col-12 intro">
                         <h5>Hi! I am Zakir. </h5>
                         <h1>Full Stack Web Developer</h1>
-                        <p>Let me help you increase business egagement with qualityful Websites and Web Applications</p>
+                        <p>Let me help you increase business engagement with qualityful Websites and Web Applications</p>
                         <div class="buttons">
                             <nuxt-link :to="{ name: 'index', hash:'#about'}">About Me</nuxt-link>
                             <nuxt-link :to="{ name: 'course' }">Check My Courses</nuxt-link>
